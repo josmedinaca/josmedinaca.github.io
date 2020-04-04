@@ -67,7 +67,6 @@
 
                     <h2 class="fs-title">Lugar de procedencia y residencia</h2>
                     <div class="alert alert-warning alert-dismissible" role="alert">
-                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                         <strong>¡Recuerde!</strong> El Área Metropolitana de Bogotá está conformada por los siguientes municipios: Bojacá, Cajicá, Chía, Cogua, Cota, El Rosal, Facatativá, Funza, Gachancipá, La Calera, Madrid, Mosquera, Nemocón, Soacha,
                         Sibaté, Sopó, Subachoque, Tabio, Tenjo, Tocancipá, Zipacón y Zipaquirá
                     </div>
@@ -79,10 +78,10 @@
                                              <option value="3">Soy de otra región o departamento de Colombia</option>
                         </select>
                     </div>
-
+                    <p>Departamento donde se encuentra</p>
                     <div class="dropdown" id="situacion" name="situacion">
                         <select class="form-control form-control-xs " class="dropbtn">
-                                             <option value="" selected hidden>Departamento donde se encuentra</option>
+                                             <option value="" selected hidden>Seleccione</option>
                                              <option value="1">Amazonas</option>
                                              <option value="2">Antioquia</option>
                                              <option value="3">Arauca</option>
@@ -119,7 +118,8 @@
 
                         </select>
                     </div>
-                    <input type="text" name="phone2" id="phone2" placeholder="Ciudad o municipio en el que se encuentra" />
+                    <p>Ciudad o municipio en el que se encuentra <strong>actualmente</strong></p>
+                    <input type="text" name="phone2" id="phone2" placeholder="Ciudad o municipio" />
                     <h5>Si se encuentra actualmente en Bogotá o el Área Metropolitana, ¿Planea regresar a su lugar de procedencia en el mes de abril?</h5>
                     <div class="dropdown">
                         <select name="identType" id="identType" onchange="showDiv('hidden_div', this)" class="form-control form-control-xs " class="dropbtn ">
@@ -155,50 +155,49 @@
                     <hr/>
                     <img src="Captura.svg" style="width:70%">
                     <hr>
-                    <input type="text" name="direccion" id="direccion" placeholder="Dirección" />
-                    <input type="text" name="direccion2" id="direccion2" placeholder="Datos adicionales a dirección" />
-                    <div class="dropdown" id="situacion" name="situacion">
-                        <select class="form-control form-control-xs " class="dropbtn">
-                                             <option value="0" selected hidden>Situación actual de residencia</option>
-                                             <option value="1">Estoy viviendo con mi nucleo familiar u otros familiares</option>
-                                             <option value="2">Estoy viviendo en habitación de alojamiento o residencia estudiantil</option>
-                                             <option value="3">Estoy viviendo en una habitación en una residencia familiar o de particulares</option>
-                                             <option value="4">Estoy viviendo en una casa o apartamento compartido con amigos o compañeros</option>
-                                             <option value="5">Estoy viviendo en una casa, apartamento o apartaestudio completamente solo</option>
-                        </select>
+                    <div class="alert alert-warning alert-dismissible" role="alert">
+                        Solo incluya la vía principal, vía secundaria(generadora) y numero de predio o placa (incluyendo letras y Bis, Este, Sur si aplica) por ejemplo: DIAGONAL 32B BIS A SUR # 6C - 32 ESTE. No incluya complementos como conjunto, barrio, bloque, apartamento
+                        u otros.
                     </div>
+                    <p>Indique la dirección donde reside actualmente sin el complemento (utilice de ser posible la que aparece en los recibos de servicios)</p>
+                    <input type="text" name="direccion" id="direccion" placeholder="Dirección" />
+                    <div class="alert alert-warning alert-dismissible" role="alert">
+                        Incluya aquí cualquier complemento a la dirección como Interior, Torre, Bloque, Conjunto, Apartamento, etc.
+                    </div>
+                    <p>Indique el complemento de la dirección (si aplica)</p>
+                    <input type="text" name="direccion2" id="direccion2" placeholder="Datos adicionales a dirección" />
+                    <p></p>
+
                     <input type="button" name="previous" class="previous action-button-previous" value="Anterior" />
                     <input type="button" name="next" class="next action-button" value="Siguiente" />
                 </fieldset>
                 <fieldset>
                     <h2 class="fs-title">Factores agravantes del IVSE</h2>
-                    <div class="alert alert-warning alert-dismissible" role="alert">
-                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button> A continuación se le preguntará si cuenta con alguno de los factores agravantes del Instrumento de Valoración
-                        Socioeconómica (IVSE) que son de carácter sobreviniente
+                    <div class="alert alert-warning alert-dismissible" role="alert"> A continuación se le preguntará si cuenta con alguno de los factores agravantes del Instrumento de Valoración Socioeconómica (IVSE) que son de carácter sobreviniente
                         <a href="http://www.legal.unal.edu.co/rlunal/home/doc.jsp?d_i=76384" target="_blank">
-                            <p>http://www.legal.unal.edu.co/rlunal/home/doc.jsp?d_i=76384</p>
+                            <p>https://bit.ly/34gRaEY</p>
                         </a>
                     </div>
+                    <p>¿Es víctima de desplazamiento forzado?</p>
                     <div class="dropdown" id="situacion" name="situacion">
                         <select class="form-control form-control-xs " class="dropbtn">
-                                             <option value="0" selected hidden>¿Es víctima de desplazamiento forzado?</option>
+                                             <option value="0" selected >NO</option>
                                              <option value="1">SI, y estoy certificada por el Departamento de Prosperidad Social (DPS)</option>
                                              <option value="2">SI, pero no estoy certificada por el DPS</option>
-                                             <option value="3">NO</option>
                         </select>
                     </div>
+                    <p>¿Es persona damnificada por fenómenos naturales?</p>
                     <div class="dropdown" id="situacion" name="situacion">
                         <select class="form-control form-control-xs " class="dropbtn">
-                                             <option value="0" selected hidden>¿Es persona damnificada por fenómenos naturales ?</option>
+                                             <option value="0" selected >NO</option>
                                              <option value="1">SI, y cuento con constancia expedida por la autoridad competente</option>
                                              <option value="2">SI, pero no estoy certificada por el DPS</option>
-                                             <option value="3">NO</option>
                         </select>
                     </div>
+                    <p>¿Se reconoce usted como persona en situación de discapacidad? ¿De qué tipo?</p>
                     <div class="dropdown" id="situacion" name="situacion">
                         <select class="form-control form-control-xs " onchange="showDiv2('hidden_div2', this)" class="dropbtn">
-                                             <option value="" selected hidden>¿Se reconoce usted como persona en situación de discapacidad? ¿De qué tipo?</option>
-                                             <option value="1">NO</option>
+                                             <option value="1" selected>NO</option>
                                              <option value="2">SI, Motora</option>
                                              <option value="3">SI, Hipoacusia</option>
                                              <option value="4">SI, Sordo (Deficiencia auditiva total)</option>
@@ -209,38 +208,37 @@
                                              <option value="9">SI, Discapacidades Múltiples</option>
                         </select>
                     </div>
+
                     <div class="dropdown" id="hidden_div2" name="situacion">
+                        <p>¿Su condición se encuentra certificada por la EPS?</p>
                         <select class="form-control form-control-xs " class="dropbtn">
-                                             <option value="0" selected hidden>¿Su condición se encuentra certificada por la EPS?</option>
                                              <option value="1">SI</option>
-                                             <option value="2">NO</option>
+                                             <option value="2" selected>NO</option>
                         </select>
                     </div>
+                    <p>¿Tiene hijos?</p>
                     <div class="dropdown" id="situacion" name="situacion">
                         <select class="form-control form-control-xs " class="dropbtn">
-                                             <option value="" selected hidden>¿Tiene hijos?</option>
                                              <option value="1">SI, y alguno tiene menos de 1 año</option>
                                              <option value="2">SI, y alguno tiene entre 1 y menos de 5 años</option>
                                              <option value="3">SI, y alguno tiene entre 5 y más años</option>
-                                             <option value="4">NO tengo hijos</option>
+                                             <option value="4" selected>NO tengo hijos</option>
                         </select>
                     </div>
-
+                    <p>¿Se encuentra en condición de embarazo?</p>
                     <div class="dropdown" id="situacion" name="situacion">
                         <select class="form-control form-control-xs " class="dropbtn">
-                                             <option value="" selected hidden>¿Se encuentra en condición de embarazo?</option>
                                              <option value="1">Sí</option>
                                              <option value="2">No</option>
-                                             <option value="3">No Aplica</option>
+                                             <option value="3" selected>No Aplica</option>
                         </select>
                     </div>
-
+                    <p>¿Pertenece a algún grupo étnico?</p>
                     <div class="dropdown" id="situacion" name="situacion">
                         <select class="form-control form-control-xs " class="dropbtn">
-                                             <option value="" selected hidden>¿Pertenece a algún grupo étnico?</option>
                                              <option value="1">SI, y estoy certificado por el Ministerio del Interior</option>
                                              <option value="2">SI, pero no estoy certificado por MinInterior</option>
-                                             <option value="3">NO</option>
+                                             <option value="3" selected>NO</option>
                         </select>
                     </div>
                     <input type="button" name="previous" class="previous action-button-previous" value="Anterior" />
@@ -249,17 +247,7 @@
                 <fieldset>
                     <h2 class="fs-title">SITUACIÓN SOCIOECONÓMICA</h2>
                     <h5>Indique de quien depende económicamente en la actualidad y en que porcentaje aproximadamente (la suma debe dar cercana a 100%)</h5>
-                    <!-- <div class="btn-group" data-toggle="buttons">
-                        <label>
-                            10%<input type="radio" name="options" id="option1" value="10" autocomplete="off" checked> <span></span>
-                        </label>
-                        <label>
-                            20%<input type="radio" name="options" id="option2" autocomplete="off"> <span></span> 
-                        </label>
-                        <label>
-                            30% <input type="radio" name="options" id="option3" autocomplete="off"> <span></span> 
-                        </label>
-                    </div> -->
+
                     <div class="row">
                         <div class="col-md-3"><input type="number" name="direccion" id="s1" placeholder="Papá" /> <span class="pxSpan">%</span></div>
                         <div class="col-md-3"><input type="number" name="direccion" id="s2" placeholder="Mamá" /><span class="pxSpan">%</span></div>
@@ -298,15 +286,16 @@
                     <p>¿Convive en estos momentos con alguna de las personas que dependen económicamente de usted?</p>
                     <div class="dropdown" id="situacion" name="situacion">
                         <select class="form-control form-control-xs " class="dropbtn">
-                                             <option value="0" selected >Si</option>
-                                             <option value="1">No</option>
-                                             <option value="2">No aplica (no tengo dependientes económicos)</option>
+                                             <option value="0"  >Si</option>
+                                             <option value="1" >No</option>
+                                             <option value="2" selected>No aplica (no tengo dependientes económicos)</option>
                         </select>
                     </div>
                     <p>Indique cual de las siguientes situaciones se ajusta mejor a su situación actual de residencia</p>
                     <div class="dropdown" id="situacion" name="situacion">
                         <select class="form-control form-control-xs " class="dropbtn">
-                                             <option value="1" selected>Estoy viviendo con mi nucleo familiar u otros familiares</option>
+                            <option value="" selected hidden>Seleccione</option>
+                                             <option value="1" >Estoy viviendo con mi nucleo familiar u otros familiares</option>
                                              <option value="2">Estoy viviendo en habitación de alojamiento o residencia estudiantil</option>
                                              <option value="3">Estoy viviendo en una habitación en una residencia familiar o de particulares</option>
                                              <option value="4">Estoy viviendo en una casa o apartamento compartido con amigos o compañeros</option>
@@ -316,7 +305,8 @@
                     <p>Actualmente presenta alguna de las siguientes dificultades respecto a su alojamiento o lugar donde reside</p>
                     <div class="dropdown" id="situacion" name="situacion">
                         <select class="form-control form-control-xs " class="dropbtn">
-                                             <option value="0" selected >Me estan pidiendo irme de donde vivo actualmente</option>
+                            <option value="" selected hidden>Seleccione</option>
+                                             <option value="0"  >Me estan pidiendo irme de donde vivo actualmente</option>
                                              <option value="1">Tengo planeado irme de donde vivo actualmente</option>
                                              <option value="2">Me están exigiendo gastos mayores a los habituales en donde vivo</option>
                                              <option value="3">Ninguna</option>
@@ -379,7 +369,7 @@
                     <div class="alert alert-warning alert-dismissible" role="alert">
                         Si no está seguro puede consultar su puntaje SISBEN acá:
                         <a href="https://wssisbenconsulta.sisben.gov.co/dnp_sisbenconsulta/dnp_sisben_consulta.aspx" target="_blank">
-                            <p>https://wssisbenconsulta.sisben.gov.co/dnp_sisbenconsulta/dnp_sisben_consulta.aspx</p>
+                            <p>https://bit.ly/2JDjsQr</p>
                         </a>
                     </div>
                     <p>Si respondió SI en la pregunta anterior Indique su puntaje SISBEN</p>
