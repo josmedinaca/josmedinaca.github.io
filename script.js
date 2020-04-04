@@ -212,17 +212,17 @@ function postToGoogle() {
         type: "GET",
         dataType: "jsonp",
         success: function(d) {
-            alert("Formulario enviado con exito");
-            location.reload();
+            //alert("Formulario enviado con exito");
+
         },
         error: function(x, y, z) {
-            alert("Formulario enviado con exito");
-            location.reload();
+            //alert("Formulario enviado con exito");
+
             console.log("ESO");
 
         }
     });
-
+    $("#myModal2").modal('show');
     return false;
 }
 $(document).ready(function() {

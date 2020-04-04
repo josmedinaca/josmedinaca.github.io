@@ -888,7 +888,23 @@
                     <hr/>
                     <p>¿Tiene alguna duda, inquietud o situación adicional en la que requiera acompañamiento y que quisiera comentar?</p>
                     <input type="text" name="long" id='long' placeholder="..." />
+                    <div class="modal fade" id="myModal2" tabindex="0" role="dialog" aria-labelledby="myModalLabel">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                    <h4 class="modal-title" id="myModalLabel">DATOS ENVIADOS</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <p>Formulario enviado con éxito,,,,, faltan cositas, paciencia</p>
 
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default center-block" onclick="window.location.reload();" data-dismiss="modal">Aceptar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     <input type="button" name="previous" class="previous action-button-previous" value="Anterior" />
                     <input type="submit" name="submit" onclick="postToGoogle()" class="submit action-button" value="Enviar" />
                 </fieldset>
