@@ -428,3 +428,7 @@ function d() {
         console.log("YESS");
     }
 }
+
+$(document).ready(function() {
+    $("#myModal").modal('show');
+});

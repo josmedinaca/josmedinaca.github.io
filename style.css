@@ -11,9 +11,9 @@
 
 html {
     height: 100%;
-    background: #6441A5;
+    background: #9fdf9f;
     /* fallback for old browsers */
-    background: -webkit-linear-gradient(to left, #6441A5, #2a0845);
+    background: -webkit-linear-gradient(to left, #9fdf9f, #29a329);
     /* Chrome 10-25, Safari 5.1-6 */
 }
 
@@ -72,7 +72,7 @@ body {
     -moz-box-shadow: none !important;
     -webkit-box-shadow: none !important;
     box-shadow: none !important;
-    border: 1px solid #ee0979;
+    border: 1px solid #809fff;
     outline-width: 0;
     transition: All 0.5s ease-in;
     -webkit-transition: All 0.5s ease-in;
@@ -85,7 +85,7 @@ body {
 
 #msform .action-button {
     width: 100px;
-    background: #ee0979;
+    background: #808080;
     font-weight: bold;
     color: white;
     border: 0 none;
@@ -97,12 +97,12 @@ body {
 
 #msform .action-button:hover,
 #msform .action-button:focus {
-    box-shadow: 0 0 0 2px white, 0 0 0 3px #ee0979;
+    box-shadow: 0 0 0 2px white, 0 0 0 3px #808080;
 }
 
 #msform .action-button-previous {
     width: 100px;
-    background: #C5C5F1;
+    background: #b3b3b3;
     font-weight: bold;
     color: white;
     border: 0 none;
@@ -114,7 +114,7 @@ body {
 
 #msform .action-button-previous:hover,
 #msform .action-button-previous:focus {
-    box-shadow: 0 0 0 2px white, 0 0 0 3px #C5C5F1;
+    box-shadow: 0 0 0 2px white, 0 0 0 3px #b3b3b3;
 }
 
 
@@ -199,7 +199,7 @@ body {
 
 #progressbar li.active:before,
 #progressbar li.active:after {
-    background: #ee0979;
+    background: #00b300;
     color: white;
 }
 

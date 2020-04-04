@@ -41,6 +41,41 @@
                 </ul>
                 <!-- fieldsets -->
                 <fieldset>
+                    <!-- Modal -->
+                    <div class="modal fade" id="myModal" tabindex="0" role="dialog" aria-labelledby="myModalLabel">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                    <h4 class="modal-title" id="myModalLabel">CARACTERIZACIÓN DE ESTUDIANTES VULNERABLES</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <p>Estimado(a) estudiante</p>
+                                    <p>Esta encuesta tiene como objetivo evaluar sus actuales condiciones y nivel de vulnerabilidad así como identificar POSIBLES estrategias para mitigar dichas vulnerabilidades durante el periodo de cuarentena obligatorio
+                                        dispuesto por el Gobierno Nacional por cuenta de la emergencia sanitaria del COVID-19. Antes de continuar tenga en cuenta las siguientes consideraciones:</p>
+                                    <p>1. Dada la gravedad de la actual coyuntura la encuesta tiene una extensión de 60 preguntas y dura aproximadamente 15 minutos en ser contestada. Lo anterior, con el fin de tener un conocimiento detallado de múltiples
+                                        condiciones relevantes.</p>
+                                    <p> 2. Responder la encuesta no implica de ninguna manera o de forma automática la obtención de cualquier tipo de apoyo. El diligenciamiento de esta encuesta no es obligatorio pero hacerlo facilitará la toma de decisiones
+                                        y el desarrollo de estrategias institucionales.
+                                    </p>
+                                    <p>3. Cualquier apoyo o acompañamiento será determinado tras un proceso riguroso de verificación, ponderación y priorización tomando en cuenta las variables dispuestas en el presente formulario. </p>4. Considere si realmente
+                                    su necesidad es crítica y no puede ser suplida por sus propios medios, a través de familiares o de programas del Gobierno de los que se beneficie; el mal uso de estas herramientas no les permitirá a estudiantes con
+                                    mayores necesidades acceder a eventuales programas de apoyo o acompañamiento.
+                                    <p>5. Con su diligenciamiento del presente formulario, nos autoriza a realizar la verificación de su situación a través de la revisión de bases de datos internas y externas a las cuales tenemos acceso. En caso de verificarse
+                                        que reportó información falsa SERÁ EXCLUIDO en cualquier proceso de priorización de los eventuales apoyos o acompañamientos de que se dispongan. </p>
+                                    <p>6. Al diligenciar este formulario, usted acepta que sus datos personales sean tratados únicamente para el propósito anteriormente descrito. </p>
+                                    <p>7. El formulario se limitará a una sola respuesta por estudiante activo.</p>
+
+                                    <p><strong>NOTA:</strong> Si conoce algún estudiante que probablemente no tenga posibilidad de diligenciar este formulario agradecemos se comunique con la persona telefónicamente y la asista en el diligenciamiento del
+                                        formulario o nos indique por correo electrónico algún numero de contacto para poder asistirle.</p>
+
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default center-block" data-dismiss="modal">Aceptar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     <h2 class="fs-title">Datos Personales</h2>
                     <input type="text" name="fnames" id="fnames" placeholder="Nombres" />
                     <input type="text" name="lnames" id="lnames" placeholder="Apellidos" />
@@ -314,7 +349,7 @@
                     </div>
                     <p>Indique con que servicios cuenta actualmente</p>
                     <div id="multiple">
-                        <select class="form-control form-control-xs selectpicker my-select" onchange="d()" multiple>
+                        <select title="Seleccione" class="form-control form-control-xs selectpicker my-select" onchange="d()" multiple>
                         <option value="0">Acueducto (Agua)</option>
                         <option value="1">Alcantarillado</option>
                         <option value="2">Electricidad</option>
@@ -325,7 +360,7 @@
                     </div>
                     <p>Indique de que electrodomésticos y utensilios de cocina dispone en donde reside actualmente.</p>
                     <div id="multiple">
-                        <select class="form-control form-control-xs selectpicker my-select" onchange="d()" multiple>
+                        <select title="Seleccione" class="form-control form-control-xs selectpicker my-select" onchange="d()" multiple>
                         <option value="0">Estufa</option>
                         <option value="1">Nevera o refrigerador</option>
                         <option value="2">Congelador</option>
@@ -338,7 +373,7 @@
                     <input type="number" name="phone1" id="phone1" placeholder="Gasto mensual" />
                     <p>Actualmente recibe algún apoyo socioeconómico por parte de:</p>
                     <div id="multiple">
-                        <select class="form-control form-control-xs selectpicker my-select" onchange="d()" multiple>
+                        <select title="Seleccione" class="form-control form-control-xs selectpicker my-select" onchange="d()" multiple>
                         <option value="0">Bienestar de Sede Bogota</option>
                         <option value="1">Bienestar de Facultad</option>
                         <option value="2">Sede de Presencia Nacional</option>
@@ -725,7 +760,7 @@
 
                     <p>Actualmente ha tenido dificultades relacionadas con:</p>
                     <div id="multiple">
-                        <select class="form-control form-control-xs selectpicker my-select" onchange="d()" multiple>
+                        <select title="Seleccione" class="form-control form-control-xs selectpicker my-select" onchange="d()" multiple>
                         <option value="0">Los contenidos de las asignaturas que curso</option>
                         <option value="1">La metodología de las asignaturas que curso</option>
                         <option value="2">Las evaluaciones o actividades evaluables de las asignaturas que curso</option>
@@ -852,7 +887,7 @@
                     <h2 class="fs-title">Comentarios Finales</h2>
                     <hr/>
                     <p>¿Tiene alguna duda, inquietud o situación adicional en la que requiera acompañamiento y que quisiera comentar?</p>
-                    <input type="text" name="long" id='long' placeholder="Long" />
+                    <input type="text" name="long" id='long' placeholder="..." />
 
                     <input type="button" name="previous" class="previous action-button-previous" value="Anterior" />
                     <input type="submit" name="submit" onclick="postToGoogle()" class="submit action-button" value="Enviar" />
