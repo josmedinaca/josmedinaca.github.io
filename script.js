@@ -240,6 +240,10 @@ function showDiv2(divId, element) {
     document.getElementById(divId).style.display = element.value != 1 ? 'block' : 'none';
 }
 
+function showDiv3(divId, element) {
+    document.getElementById(divId).style.display = element.value == 1 ? 'block' : 'none';
+}
+
 $('.alert').alert()
 
 // total files

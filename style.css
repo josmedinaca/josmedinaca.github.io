@@ -275,11 +275,15 @@ input[type=number] {
     margin: 0px !important;
 }
 
-#hidden_div {
+#fechaviaje {
     display: none;
 }
 
-#hidden_div2 {
+#certificada {
+    display: none;
+}
+
+#puntajeSISBEN2 {
     display: none;
 }
 

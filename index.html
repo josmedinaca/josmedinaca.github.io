@@ -106,7 +106,7 @@
                         Sibaté, Sopó, Subachoque, Tabio, Tenjo, Tocancipá, Zipacón y Zipaquirá
                     </div>
                     <div class="dropdown">
-                        <select name="identType" id="identType" class="form-control form-control-xs " class="dropbtn ">
+                        <select name="procedencia" id="procedencia" class="form-control form-control-xs " class="dropbtn ">
                                              <option value="" selected hidden>Lugar de procedencia</option>
                                              <option value="1">Bogotá D.C</option>
                                              <option value="2">Municipio del Área Metropolitana de Bogotá</option>
@@ -114,7 +114,7 @@
                         </select>
                     </div>
                     <p>Departamento donde se encuentra</p>
-                    <div class="dropdown" id="situacion" name="situacion">
+                    <div class="departamento" id="departamento" name="situacion">
                         <select class="form-control form-control-xs " class="dropbtn">
                                              <option value="" selected hidden>Seleccione</option>
                                              <option value="1">Amazonas</option>
@@ -154,16 +154,16 @@
                         </select>
                     </div>
                     <p>Ciudad o municipio en el que se encuentra <strong>actualmente</strong></p>
-                    <input type="text" name="phone2" id="phone2" placeholder="Ciudad o municipio" />
+                    <input type="text" name="ciudad" id="ciudad" placeholder="Ciudad o municipio" />
                     <h5>Si se encuentra actualmente en Bogotá o el Área Metropolitana, ¿Planea regresar a su lugar de procedencia <strong>por sus propios medios</strong> en el mes de abril o mayo?</h5>
                     <div class="dropdown">
-                        <select name="identType" id="identType" onchange="showDiv('hidden_div', this)" class="form-control form-control-xs " class="dropbtn ">
+                        <select name="viajar" id="viajar" onchange="showDiv('fechaviaje', this)" class="form-control form-control-xs " class="dropbtn ">
                                              <option value="0" selected >No Aplica (Soy de Bogotá o el Área Metropolitana )</option>
                                              <option value="1">No</option>
                                              <option value="2">Sí</option>
                         </select>
                     </div>
-                    <div class="form-group required " id="hidden_div">
+                    <div class="form-group required " id="fechaviaje">
                         <p>¿Cuándo?</p>
                         <div class="input-group col-md-12">
                             <div class="input-group-addon">
@@ -214,7 +214,7 @@
                         </a>
                     </div>
                     <p>¿Es víctima de desplazamiento forzado?</p>
-                    <div class="dropdown" id="situacion" name="situacion">
+                    <div class="dropdown" id="desplazado" name="desplazado">
                         <select class="form-control form-control-xs " class="dropbtn">
                                              <option value="0" selected >NO</option>
                                              <option value="1">SI, y estoy certificada por el Departamento de Prosperidad Social (DPS)</option>
@@ -222,7 +222,7 @@
                         </select>
                     </div>
                     <p>¿Es persona damnificada por fenómenos naturales?</p>
-                    <div class="dropdown" id="situacion" name="situacion">
+                    <div class="dropdown" id="fnaturales" name="fnaturales">
                         <select class="form-control form-control-xs " class="dropbtn">
                                              <option value="0" selected >NO</option>
                                              <option value="1">SI, y cuento con constancia expedida por la autoridad competente</option>
@@ -230,8 +230,8 @@
                         </select>
                     </div>
                     <p>¿Se reconoce usted como persona en situación de discapacidad? ¿De qué tipo?</p>
-                    <div class="dropdown" id="situacion" name="situacion">
-                        <select class="form-control form-control-xs " onchange="showDiv2('hidden_div2', this)" class="dropbtn">
+                    <div class="dropdown" id="discapacidad" name="discapacidad">
+                        <select class="form-control form-control-xs " onchange="showDiv2('certificada', this)" class="dropbtn">
                                              <option value="1" selected>NO</option>
                                              <option value="2">SI, Motora</option>
                                              <option value="3">SI, Hipoacusia</option>
@@ -244,7 +244,7 @@
                         </select>
                     </div>
 
-                    <div class="dropdown" id="hidden_div2" name="situacion">
+                    <div class="dropdown" id="certificada" name="certificada">
                         <p>¿Su condición se encuentra certificada por la EPS?</p>
                         <select class="form-control form-control-xs " class="dropbtn">
                                              <option value="1">SI</option>
@@ -252,7 +252,7 @@
                         </select>
                     </div>
                     <p>¿Tiene hijos?</p>
-                    <div class="dropdown" id="situacion" name="situacion">
+                    <div class="dropdown" id="hijos" name="hijos">
                         <select class="form-control form-control-xs " class="dropbtn">
                                              <option value="1">SI, y alguno tiene menos de 1 año</option>
                                              <option value="2">SI, y alguno tiene entre 1 y menos de 5 años</option>
@@ -261,7 +261,7 @@
                         </select>
                     </div>
                     <p>¿Se encuentra en condición de embarazo?</p>
-                    <div class="dropdown" id="situacion" name="situacion">
+                    <div class="dropdown" id="embarazo" name="embarazo">
                         <select class="form-control form-control-xs " class="dropbtn">
                                              <option value="1">Sí</option>
                                              <option value="2">No</option>
@@ -269,7 +269,7 @@
                         </select>
                     </div>
                     <p>¿Pertenece a algún grupo étnico?</p>
-                    <div class="dropdown" id="situacion" name="situacion">
+                    <div class="dropdown" id="grupoe" name="grupoe">
                         <select class="form-control form-control-xs " class="dropbtn">
                                              <option value="1">SI, y estoy certificado por el Ministerio del Interior</option>
                                              <option value="2">SI, pero no estoy certificado por MinInterior</option>
@@ -284,17 +284,17 @@
                     <h5>Indique de quien depende económicamente en la actualidad y en que porcentaje aproximadamente (la suma debe dar cercana a 100%)</h5>
 
                     <div class="row">
-                        <div class="col-md-3"><input type="number" name="direccion" id="s1" placeholder="Papá" /> <span class="pxSpan">%</span></div>
-                        <div class="col-md-3"><input type="number" name="direccion" id="s2" placeholder="Mamá" /><span class="pxSpan">%</span></div>
-                        <div class="col-md-3"><input type="number" name="direccion" id="s3" placeholder="Hermanos" /><span class="pxSpan">%</span></div>
-                        <div class="col-md-3"><input type="number" name="direccion" id="s4" placeholder="Abuelos" /><span class="pxSpan">%</span></div>
+                        <div class="col-md-3"><input type="number" name="s1" id="s1" placeholder="Papá" /> <span class="pxSpan">%</span></div>
+                        <div class="col-md-3"><input type="number" name="s2" id="s2" placeholder="Mamá" /><span class="pxSpan">%</span></div>
+                        <div class="col-md-3"><input type="number" name="s3" id="s3" placeholder="Hermanos" /><span class="pxSpan">%</span></div>
+                        <div class="col-md-3"><input type="number" name="s4" id="s4" placeholder="Abuelos" /><span class="pxSpan">%</span></div>
 
                     </div>
                     <div class="row">
-                        <div class="col-md-3"><input type="number" name="direccion" id="s5" placeholder="Pareja" /><span class="pxSpan">%</span></div>
-                        <div class="col-md-3"><input type="number" name="direccion" id="s6" placeholder="Particulares" /><span class="pxSpan">%</span></div>
-                        <div class="col-md-3"><input type="number" name="direccion" id="s7" placeholder="Sí mismo" /><span class="pxSpan">%</span></div>
-                        <div class="col-md-3"><input type="number" name="direccion" id="s8" placeholder="Otros parientes" /><span class="pxSpan">%</span></div>
+                        <div class="col-md-3"><input type="number" name="s5" id="s5" placeholder="Pareja" /><span class="pxSpan">%</span></div>
+                        <div class="col-md-3"><input type="number" name="s6" id="s6" placeholder="Particulares" /><span class="pxSpan">%</span></div>
+                        <div class="col-md-3"><input type="number" name="s7" id="s7" placeholder="Sí mismo" /><span class="pxSpan">%</span></div>
+                        <div class="col-md-3"><input type="number" name="s8" id="s8" placeholder="Otros parientes" /><span class="pxSpan">%</span></div>
 
                     </div>
 
@@ -302,24 +302,24 @@
                         <div class="progress-bar" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">0%</div>
                     </div>
                     <p>¿A cuanto ascienden ACTUALMENTE los ingresos mensuales propios y/o que recibe de las personas de quienes depende económicamente?</p>
-                    <input type="text" name="direccion" id="direccion" placeholder="Ingresos mensuales" />
+                    <input type="number" name="ingresos" id="ingresos" placeholder="Ingresos mensuales" />
                     <p>¿Alguna persona depende económicamente de usted? Indique quienes y en que porcentaje aproximadamente (esta suma NO necesariamente debe dar aproximadamente el 100%)</p>
                     <div class="row">
-                        <div class="col-md-3"><input type="number" name="direccion" id="s1" placeholder="Papá" /> <span class="pxSpan">%</span></div>
-                        <div class="col-md-3"><input type="number" name="direccion" id="s2" placeholder="Mamá" /><span class="pxSpan">%</span></div>
-                        <div class="col-md-3"><input type="number" name="direccion" id="s3" placeholder="Hermanos" /><span class="pxSpan">%</span></div>
-                        <div class="col-md-3"><input type="number" name="direccion" id="s4" placeholder="Abuelos" /><span class="pxSpan">%</span></div>
+                        <div class="col-md-3"><input type="number" name="s11" id="s11" placeholder="Papá" /> <span class="pxSpan">%</span></div>
+                        <div class="col-md-3"><input type="number" name="s22" id="s22" placeholder="Mamá" /><span class="pxSpan">%</span></div>
+                        <div class="col-md-3"><input type="number" name="s33" id="s33" placeholder="Hermanos" /><span class="pxSpan">%</span></div>
+                        <div class="col-md-3"><input type="number" name="s44" id="s44" placeholder="Abuelos" /><span class="pxSpan">%</span></div>
 
                     </div>
                     <div class="row">
-                        <div class="col-md-3"><input type="number" name="direccion" id="s5" placeholder="Pareja" /><span class="pxSpan">%</span></div>
-                        <div class="col-md-3"><input type="number" name="direccion" id="s6" placeholder="Particulares" /><span class="pxSpan">%</span></div>
-                        <div class="col-md-3"><input type="number" name="direccion" id="s7" placeholder="Sí mismo" /><span class="pxSpan">%</span></div>
-                        <div class="col-md-3"><input type="number" name="direccion" id="s8" placeholder="Otros parientes" /><span class="pxSpan">%</span></div>
+                        <div class="col-md-3"><input type="number" name="s5" id="s5" placeholder="Pareja" /><span class="pxSpan">%</span></div>
+                        <div class="col-md-3"><input type="number" name="s6" id="s6" placeholder="Particulares" /><span class="pxSpan">%</span></div>
+                        <div class="col-md-3"><input type="number" name="s7" id="s7" placeholder="Sí mismo" /><span class="pxSpan">%</span></div>
+                        <div class="col-md-3"><input type="number" name="s8" id="s8" placeholder="Otros parientes" /><span class="pxSpan">%</span></div>
 
                     </div>
                     <p>¿Convive en estos momentos con alguna de las personas que dependen económicamente de usted?</p>
-                    <div class="dropdown" id="situacion" name="situacion">
+                    <div class="dropdown" id="convive" name="convive">
                         <select class="form-control form-control-xs " class="dropbtn">
                                              <option value="0"  >Si</option>
                                              <option value="1" >No</option>
@@ -338,7 +338,7 @@
                         </select>
                     </div>
                     <p>Actualmente presenta alguna de las siguientes dificultades respecto a su alojamiento o lugar donde reside</p>
-                    <div class="dropdown" id="situacion" name="situacion">
+                    <div class="dropdown" id="dificultades" name="dificultades">
                         <select class="form-control form-control-xs " class="dropbtn">
                             <option value="" selected hidden>Seleccione</option>
                                              <option value="0"  >Me estan pidiendo irme de donde vivo actualmente</option>
@@ -348,7 +348,7 @@
                         </select>
                     </div>
                     <p>Indique con que servicios cuenta actualmente</p>
-                    <div id="multiple">
+                    <div id="servicios">
                         <select title="Seleccione" class="form-control form-control-xs selectpicker my-select" onchange="d()" multiple>
                         <option value="0">Acueducto (Agua)</option>
                         <option value="1">Alcantarillado</option>
@@ -359,7 +359,7 @@
                       </select>
                     </div>
                     <p>Indique de que electrodomésticos y utensilios de cocina dispone en donde reside actualmente.</p>
-                    <div id="multiple">
+                    <div id="electrodomésticos">
                         <select title="Seleccione" class="form-control form-control-xs selectpicker my-select" onchange="d()" multiple>
                         <option value="0">Estufa</option>
                         <option value="1">Nevera o refrigerador</option>
@@ -370,7 +370,7 @@
                       </select>
                     </div>
                     <p>Para la alimentación mía y de las personas a mi cargo con las que convivo (si aplica), ACTUALMENTE mi gasto mensual aproximado es de:</p>
-                    <input type="number" name="phone1" id="phone1" placeholder="Gasto mensual" />
+                    <input type="number" name="gasto" id="gasto" placeholder="Gasto mensual" />
                     <p>Actualmente recibe algún apoyo socioeconómico por parte de:</p>
                     <div id="multiple">
                         <select title="Seleccione" class="form-control form-control-xs selectpicker my-select" onchange="d()" multiple>
@@ -384,7 +384,7 @@
                       </select>
                     </div>
                     <p>Actualmente tiene adjudicado alguno de los siguientes apoyos socioeconómicos externos gubernamentales o de otras organizaciones (bancos, fundaciones, etc.) distintas a la UN.</p>
-                    <div class="dropdown" id="situacion" name="situacion">
+                    <div class="dropdown" id="apoyos" name="apoyos">
                         <select class="form-control form-control-xs " class="dropbtn">
                                              <option value="0" selected >Ninguno</option>
                                              <option value="1">Ser Pilo Paga</option>
@@ -393,9 +393,9 @@
                                              <option value="4">Otra</option>
                         </select>
                     </div>
-                    <input type="text" name="direccion" id="direccion" placeholder="¿Cuál?" />
+                    <input type="text" name="apoyos2" id="apoyos2" placeholder="¿Cuál?" />
                     <p>¿Cuenta con puntaje SISBEN?</p>
-                    <div class="dropdown" id="situacion" name="situacion">
+                    <div class="dropdown" onchange="showDiv3('puntajeSISBEN2', this)" id="SISBEN" name="SISBEN">
                         <select class="form-control form-control-xs " class="dropbtn">
                                              <option value="0" selected >No</option>
                                              <option value="1">Si</option>
@@ -407,8 +407,11 @@
                             <p>https://bit.ly/2JDjsQr</p>
                         </a>
                     </div>
-                    <p>Si respondió SI en la pregunta anterior Indique su puntaje SISBEN</p>
-                    <input type="text" name="direccion" id="direccion" placeholder="Puntaje" />
+                    <div id="puntajeSISBEN2" name="puntajeSISBEN2">
+                        <p>Indique su puntaje SISBEN</p>
+                        <input type="text" name="puntajeSISBEN" id="puntajeSISBEN" placeholder="Puntaje" />
+                    </div>
+
                     <input type="button" name="previous" class="previous action-button-previous" value="Anterior" />
                     <input type="button" name="next" class="next action-button" value="Siguiente" />
                 </fieldset>
