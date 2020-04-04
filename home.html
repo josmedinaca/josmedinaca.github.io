@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Formulario de Bienestar Universitario</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css'>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js" integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew==" crossorigin=""></script>
+    <link rel='icon' src="Captura.PNG" type='image/x-icon' />
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.43/css/bootstrap-datetimepicker.min.css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-multiselect/0.9.13/css/bootstrap-multiselect.css">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/css/bootstrap-select.min.css">
+
+
+</head>
+
+<body>
+    <!-- partial:index.partial.html -->
+    <!-- MultiStep Form -->
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <form id="msform" autocomplete="off">
+                <!-- progressbar -->
+                <ul id="progressbar">
+                    <li class="active"></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+                <!-- fieldsets -->
+                <fieldset>
+                    <h2 class="fs-title">Datos Personales</h2>
+                    <input type="text" name="fnames" id="fnames" placeholder="Nombres" />
+                    <input type="text" name="lnames" id="lnames" placeholder="Apellidos" />
+                    <input type="email" name="email" id="email" placeholder="Correo" />
+                    <input type="number" name="phone1" id="phone1" placeholder="Telefono 1" />
+                    <input type="number" name="phone2" id="phone2" placeholder="Telefono 2" />
+
+                    <input type="number" name="ident" id="ident" placeholder="Numero de Identificacion" />
+                    <div class="dropdown">
+                        <select name="identType" id="identType" class="form-control form-control-xs " class="dropbtn ">
+                                             <option value="" selected hidden>Tipo de identificacion</option>
+                                             <option value="1">Cedula de ciudadania</option>
+                                             <option value="2">Tarjeta de Identidad</option>
+                                             <option value="3">Pasaporte</option>
+                        </select>
+                    </div>
+                    <br>
+
+                    <input type="button" name="next" class="next action-button" value="Siguiente" />
+
+
+                </fieldset>
+                <fieldset>
+
+                    <h2 class="fs-title">Lugar de procedencia y residencia</h2>
+                    <div class="alert alert-warning alert-dismissible" role="alert">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <strong>¡Recuerde!</strong> El Área Metropolitana de Bogotá está conformada por los siguientes municipios: Bojacá, Cajicá, Chía, Cogua, Cota, El Rosal, Facatativá, Funza, Gachancipá, La Calera, Madrid, Mosquera, Nemocón, Soacha,
+                        Sibaté, Sopó, Subachoque, Tabio, Tenjo, Tocancipá, Zipacón y Zipaquirá
+                    </div>
+                    <div class="dropdown">
+                        <select name="identType" id="identType" class="form-control form-control-xs " class="dropbtn ">
+                                             <option value="" selected hidden>Lugar de procedencia</option>
+                                             <option value="1">Bogotá D.C</option>
+                                             <option value="2">Municipio del Área Metropolitana de Bogotá</option>
+                                             <option value="3">Soy de otra región o departamento de Colombia</option>
+                        </select>
+                    </div>
+
+                    <div class="dropdown" id="situacion" name="situacion">
+                        <select class="form-control form-control-xs " class="dropbtn">
+                                             <option value="" selected hidden>Departamento donde se encuentra</option>
+                                             <option value="1">Amazonas</option>
+                                             <option value="2">Antioquia</option>
+                                             <option value="3">Arauca</option>
+                                             <option value="4">Atlántico</option>
+                                             <option value="5">Bogotá D.C.</option>
+                                             <option value="6">Bolívar</option>
+                                             <option value="7">Caldas</option>
+                                             <option value="8">Caquetá</option>
+                                             <option value="9">Casanare</option>
+                                             <option value="10">Cauca</option>
+                                             <option value="11">Cesar</option>
+                                             <option value="12">Chocó</option>
+                                             <option value="13">Córdoba</option>
+                                             <option value="14">Cundinamarca</option>
+                                             <option value="15">Guainía</option>
+                                             <option value="16">Guaviare</option>
+                                             <option value="17">Huila</option>
+                                             <option value="18">La Guajira</option>
+                                             <option value="19">Magdalena</option>
+                                             <option value="20">Meta</option>
+                                             <option value="21">Nariño</option>
+                                             <option value="22">Norte de Santander</option>
+                                             <option value="23">Putumayo</option>
+                                             <option value="24">Quindío</option>
+                                             <option value="25">Risaralda</option>
+                                             <option value="26">San Andrés y Providencia</option>
+                                             <option value="27">Santander</option>
+                                             <option value="28">Sucre</option>
+                                             <option value="29">Tolima</option>
+                                             <option value="30">Valle del Cauca</option>
+                                             <option value="31">Vaupés</option>
+                                             <option value="32">Vichada</option>
+
+
+                        </select>
+                    </div>
+                    <input type="text" name="phone2" id="phone2" placeholder="Ciudad o municipio en el que se encuentra" />
+                    <h5>Si se encuentra actualmente en Bogotá o el Área Metropolitana, ¿Planea regresar a su lugar de procedencia en el mes de abril?</h5>
+                    <div class="dropdown">
+                        <select name="identType" id="identType" onchange="showDiv('hidden_div', this)" class="form-control form-control-xs " class="dropbtn ">
+                                             <option value="0" selected >No Aplica (Soy de Bogotá o el Área Metropolitana )</option>
+                                             <option value="1">No</option>
+                                             <option value="2">Sí</option>
+                        </select>
+                    </div>
+                    <div class="form-group required " id="hidden_div">
+                        <p>¿Cuándo?</p>
+                        <div class="input-group col-md-12">
+                            <div class="input-group-addon">
+                                <span class="glyphicon glyphicon-calendar"></span>
+                            </div>
+                            <input type="text" class="form-control onlyDate" name="frmSaveOffice_startdt" id="calOnlyDate" placeholder="dd/mm/aa" required>
+
+                        </div>
+                    </div>
+                    <input type="button" name="previous" class="previous action-button-previous" value="Anterior" />
+                    <input type="button" name="next" class="next action-button" value="Siguiente" />
+                </fieldset>
+                <fieldset>
+                    <h2 class="fs-title">Ubicación</h2>
+                    <h3 class="fs-subtitle">Seleccione su ubicación en el mapa</h3>
+                    </hr>
+                    <!--Google map-->
+                    <div id="mapid"></div>
+
+                    <!--Google Maps-->
+                    <hr/>
+                    <input type="text" name="lat" id='lat' placeholder="Lat" readonly="readonly" />
+                    <input type="text" name="long" id='long' placeholder="Long" readonly="readonly" />
+                    <hr/>
+                    <img src="Captura.svg" style="width:70%">
+                    <hr>
+                    <input type="text" name="direccion" id="direccion" placeholder="Dirección" />
+                    <input type="text" name="direccion2" id="direccion2" placeholder="Datos adicionales a dirección" />
+                    <div class="dropdown" id="situacion" name="situacion">
+                        <select class="form-control form-control-xs " class="dropbtn">
+                                             <option value="0" selected hidden>Situación actual de residencia</option>
+                                             <option value="1">Estoy viviendo con mi nucleo familiar u otros familiares</option>
+                                             <option value="2">Estoy viviendo en habitación de alojamiento o residencia estudiantil</option>
+                                             <option value="3">Estoy viviendo en una habitación en una residencia familiar o de particulares</option>
+                                             <option value="4">Estoy viviendo en una casa o apartamento compartido con amigos o compañeros</option>
+                                             <option value="5">Estoy viviendo en una casa, apartamento o apartaestudio completamente solo</option>
+                        </select>
+                    </div>
+                    <input type="button" name="previous" class="previous action-button-previous" value="Anterior" />
+                    <input type="button" name="next" class="next action-button" value="Siguiente" />
+                </fieldset>
+                <fieldset>
+                    <h2 class="fs-title">Factores agravantes del IVSE</h2>
+                    <div class="alert alert-warning alert-dismissible" role="alert">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button> A continuación se le preguntará si cuenta con alguno de los factores agravantes del Instrumento de Valoración
+                        Socioeconómica (IVSE) que son de carácter sobreviniente
+                        <a href="http://www.legal.unal.edu.co/rlunal/home/doc.jsp?d_i=76384" target="_blank">
+                            <p>http://www.legal.unal.edu.co/rlunal/home/doc.jsp?d_i=76384</p>
+                        </a>
+                    </div>
+                    <div class="dropdown" id="situacion" name="situacion">
+                        <select class="form-control form-control-xs " class="dropbtn">
+                                             <option value="0" selected hidden>¿Es víctima de desplazamiento forzado?</option>
+                                             <option value="1">SI, y estoy certificada por el Departamento de Prosperidad Social (DPS)</option>
+                                             <option value="2">SI, pero no estoy certificada por el DPS</option>
+                                             <option value="3">NO</option>
+                        </select>
+                    </div>
+                    <div class="dropdown" id="situacion" name="situacion">
+                        <select class="form-control form-control-xs " class="dropbtn">
+                                             <option value="0" selected hidden>¿Es persona damnificada por fenómenos naturales ?</option>
+                                             <option value="1">SI, y cuento con constancia expedida por la autoridad competente</option>
+                                             <option value="2">SI, pero no estoy certificada por el DPS</option>
+                                             <option value="3">NO</option>
+                        </select>
+                    </div>
+                    <div class="dropdown" id="situacion" name="situacion">
+                        <select class="form-control form-control-xs " onchange="showDiv2('hidden_div2', this)" class="dropbtn">
+                                             <option value="" selected hidden>¿Se reconoce usted como persona en situación de discapacidad? ¿De qué tipo?</option>
+                                             <option value="1">NO</option>
+                                             <option value="2">SI, Motora</option>
+                                             <option value="3">SI, Hipoacusia</option>
+                                             <option value="4">SI, Sordo (Deficiencia auditiva total)</option>
+                                             <option value="5">SI, Visual (Baja visión)</option>
+                                             <option value="6">SI, Visual (Ciego/a)</option>
+                                             <option value="7">SI, Psicosocial </option>
+                                             <option value="8">SI, Intelectual </option>
+                                             <option value="9">SI, Discapacidades Múltiples</option>
+                        </select>
+                    </div>
+                    <div class="dropdown" id="hidden_div2" name="situacion">
+                        <select class="form-control form-control-xs " class="dropbtn">
+                                             <option value="0" selected hidden>¿Su condición se encuentra certificada por la EPS?</option>
+                                             <option value="1">SI</option>
+                                             <option value="2">NO</option>
+                        </select>
+                    </div>
+                    <div class="dropdown" id="situacion" name="situacion">
+                        <select class="form-control form-control-xs " class="dropbtn">
+                                             <option value="" selected hidden>¿Tiene hijos?</option>
+                                             <option value="1">SI, y alguno tiene menos de 1 año</option>
+                                             <option value="2">SI, y alguno tiene entre 1 y menos de 5 años</option>
+                                             <option value="3">SI, y alguno tiene entre 5 y más años</option>
+                                             <option value="4">NO tengo hijos</option>
+                        </select>
+                    </div>
+
+                    <div class="dropdown" id="situacion" name="situacion">
+                        <select class="form-control form-control-xs " class="dropbtn">
+                                             <option value="" selected hidden>¿Se encuentra en condición de embarazo?</option>
+                                             <option value="1">Sí</option>
+                                             <option value="2">No</option>
+                                             <option value="3">No Aplica</option>
+                        </select>
+                    </div>
+
+                    <div class="dropdown" id="situacion" name="situacion">
+                        <select class="form-control form-control-xs " class="dropbtn">
+                                             <option value="" selected hidden>¿Pertenece a algún grupo étnico?</option>
+                                             <option value="1">SI, y estoy certificado por el Ministerio del Interior</option>
+                                             <option value="2">SI, pero no estoy certificado por MinInterior</option>
+                                             <option value="3">NO</option>
+                        </select>
+                    </div>
+                    <input type="button" name="previous" class="previous action-button-previous" value="Anterior" />
+                    <input type="button" name="next" class="next action-button" value="Siguiente" />
+                </fieldset>
+                <fieldset>
+                    <h2 class="fs-title">SITUACIÓN SOCIOECONÓMICA</h2>
+                    <h5>Indique de quien depende económicamente en la actualidad y en que porcentaje aproximadamente (la suma debe dar cercana a 100%)</h5>
+                    <!-- <div class="btn-group" data-toggle="buttons">
+                        <label>
+                            10%<input type="radio" name="options" id="option1" value="10" autocomplete="off" checked> <span></span>
+                        </label>
+                        <label>
+                            20%<input type="radio" name="options" id="option2" autocomplete="off"> <span></span> 
+                        </label>
+                        <label>
+                            30% <input type="radio" name="options" id="option3" autocomplete="off"> <span></span> 
+                        </label>
+                    </div> -->
+                    <div class="row">
+                        <div class="col-md-3"><input type="number" name="direccion" id="s1" placeholder="Papá" /> <span class="pxSpan">%</span></div>
+                        <div class="col-md-3"><input type="number" name="direccion" id="s2" placeholder="Mamá" /><span class="pxSpan">%</span></div>
+                        <div class="col-md-3"><input type="number" name="direccion" id="s3" placeholder="Hermanos" /><span class="pxSpan">%</span></div>
+                        <div class="col-md-3"><input type="number" name="direccion" id="s4" placeholder="Abuelos" /><span class="pxSpan">%</span></div>
+
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3"><input type="number" name="direccion" id="s5" placeholder="Pareja" /><span class="pxSpan">%</span></div>
+                        <div class="col-md-3"><input type="number" name="direccion" id="s6" placeholder="Particulares" /><span class="pxSpan">%</span></div>
+                        <div class="col-md-3"><input type="number" name="direccion" id="s7" placeholder="Sí mismo" /><span class="pxSpan">%</span></div>
+                        <div class="col-md-3"><input type="number" name="direccion" id="s8" placeholder="Otros parientes" /><span class="pxSpan">%</span></div>
+
+                    </div>
+
+                    <div class="progress">
+                        <div class="progress-bar" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">0%</div>
+                    </div>
+                    <p>¿A cuanto ascienden ACTUALMENTE los ingresos mensuales propios y/o que recibe de las personas de quienes depende económicamente?</p>
+                    <input type="text" name="direccion" id="direccion" placeholder="Ingresos mensuales" />
+                    <p>¿Alguna persona depende económicamente de usted? Indique quienes y en que porcentaje aproximadamente (esta suma NO necesariamente debe dar aproximadamente el 100%)</p>
+                    <div class="row">
+                        <div class="col-md-3"><input type="number" name="direccion" id="s1" placeholder="Papá" /> <span class="pxSpan">%</span></div>
+                        <div class="col-md-3"><input type="number" name="direccion" id="s2" placeholder="Mamá" /><span class="pxSpan">%</span></div>
+                        <div class="col-md-3"><input type="number" name="direccion" id="s3" placeholder="Hermanos" /><span class="pxSpan">%</span></div>
+                        <div class="col-md-3"><input type="number" name="direccion" id="s4" placeholder="Abuelos" /><span class="pxSpan">%</span></div>
+
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3"><input type="number" name="direccion" id="s5" placeholder="Pareja" /><span class="pxSpan">%</span></div>
+                        <div class="col-md-3"><input type="number" name="direccion" id="s6" placeholder="Particulares" /><span class="pxSpan">%</span></div>
+                        <div class="col-md-3"><input type="number" name="direccion" id="s7" placeholder="Sí mismo" /><span class="pxSpan">%</span></div>
+                        <div class="col-md-3"><input type="number" name="direccion" id="s8" placeholder="Otros parientes" /><span class="pxSpan">%</span></div>
+
+                    </div>
+                    <p>¿Convive en estos momentos con alguna de las personas que dependen económicamente de usted?</p>
+                    <div class="dropdown" id="situacion" name="situacion">
+                        <select class="form-control form-control-xs " class="dropbtn">
+                                             <option value="0" selected >Si</option>
+                                             <option value="1">No</option>
+                                             <option value="2">No aplica (no tengo dependientes económicos)</option>
+                        </select>
+                    </div>
+                    <p>Indique cual de las siguientes situaciones se ajusta mejor a su situación actual de residencia</p>
+                    <div class="dropdown" id="situacion" name="situacion">
+                        <select class="form-control form-control-xs " class="dropbtn">
+                                             <option value="1" selected>Estoy viviendo con mi nucleo familiar u otros familiares</option>
+                                             <option value="2">Estoy viviendo en habitación de alojamiento o residencia estudiantil</option>
+                                             <option value="3">Estoy viviendo en una habitación en una residencia familiar o de particulares</option>
+                                             <option value="4">Estoy viviendo en una casa o apartamento compartido con amigos o compañeros</option>
+                                             <option value="5">Estoy viviendo en una casa, apartamento o apartaestudio completamente solo</option>
+                        </select>
+                    </div>
+                    <p>Actualmente presenta alguna de las siguientes dificultades respecto a su alojamiento o lugar donde reside</p>
+                    <div class="dropdown" id="situacion" name="situacion">
+                        <select class="form-control form-control-xs " class="dropbtn">
+                                             <option value="0" selected >Me estan pidiendo irme de donde vivo actualmente</option>
+                                             <option value="1">Tengo planeado irme de donde vivo actualmente</option>
+                                             <option value="2">Me están exigiendo gastos mayores a los habituales en donde vivo</option>
+                                             <option value="3">Ninguna</option>
+                        </select>
+                    </div>
+                    <p>Indique con que servicios cuenta actualmente</p>
+                    <div id="multiple">
+                        <select class="form-control form-control-xs selectpicker my-select" onchange="d()" multiple>
+                        <option value="0">Acueducto (Agua)</option>
+                        <option value="1">Alcantarillado</option>
+                        <option value="2">Electricidad</option>
+                        <option value="3">Gas natural</option>
+                        <option value="4">Computador</option>
+                        <option value="5">Acceso a internet</option>
+                      </select>
+                    </div>
+                    <p>Indique de que electrodomésticos y utensilios de cocina dispone en donde reside actualmente.</p>
+                    <div id="multiple">
+                        <select class="form-control form-control-xs selectpicker my-select" onchange="d()" multiple>
+                        <option value="0">Estufa</option>
+                        <option value="1">Nevera o refrigerador</option>
+                        <option value="2">Congelador</option>
+                        <option value="3">Horno microondas</option>
+                        <option value="4">Licuadora</option>
+                        <option value="5">Olla a presión</option>
+                      </select>
+                    </div>
+                    <p>Para la alimentación mía y de las personas a mi cargo con las que convivo (si aplica), ACTUALMENTE mi gasto mensual aproximado es de:</p>
+                    <input type="number" name="phone1" id="phone1" placeholder="Gasto mensual" />
+                    <p>Actualmente recibe algún apoyo socioeconómico por parte de:</p>
+                    <div id="multiple">
+                        <select class="form-control form-control-xs selectpicker my-select" onchange="d()" multiple>
+                        <option value="0">Bienestar de Sede Bogota</option>
+                        <option value="1">Bienestar de Facultad</option>
+                        <option value="2">Sede de Presencia Nacional</option>
+                        <option value="2">Oficina de Enlace</option>
+                        <option value="3">Iniciativas estudiantiles </option>
+                        <option value="4">Iniciativas docentes</option>
+                        <option value="5">Iniciativas de egresados</option>
+                      </select>
+                    </div>
+                    <p>Actualmente tiene adjudicado alguno de los siguientes apoyos socioeconómicos externos gubernamentales o de otras organizaciones (bancos, fundaciones, etc.) distintas a la UN.</p>
+                    <div class="dropdown" id="situacion" name="situacion">
+                        <select class="form-control form-control-xs " class="dropbtn">
+                                             <option value="0" selected >Ninguno</option>
+                                             <option value="1">Ser Pilo Paga</option>
+                                             <option value="2">Generación E</option>
+                                             <option value="3">Jóvenes en Acción</option>
+                                             <option value="4">Otra</option>
+                        </select>
+                    </div>
+                    <input type="text" name="direccion" id="direccion" placeholder="¿Cuál?" />
+                    <p>¿Cuenta con puntaje SISBEN?</p>
+                    <div class="dropdown" id="situacion" name="situacion">
+                        <select class="form-control form-control-xs " class="dropbtn">
+                                             <option value="0" selected >No</option>
+                                             <option value="1">Si</option>
+                        </select>
+                    </div>
+                    <div class="alert alert-warning alert-dismissible" role="alert">
+                        Si no está seguro puede consultar su puntaje SISBEN acá:
+                        <a href="https://wssisbenconsulta.sisben.gov.co/dnp_sisbenconsulta/dnp_sisben_consulta.aspx" target="_blank">
+                            <p>https://wssisbenconsulta.sisben.gov.co/dnp_sisbenconsulta/dnp_sisben_consulta.aspx</p>
+                        </a>
+                    </div>
+                    <p>Si respondió SI en la pregunta anterior Indique su puntaje SISBEN</p>
+                    <input type="text" name="direccion" id="direccion" placeholder="Puntaje" />
+                    <input type="button" name="previous" class="previous action-button-previous" value="Anterior" />
+                    <input type="button" name="next" class="next action-button" value="Siguiente" />
+                </fieldset>
+                <fieldset>
+                    <h2 class="fs-title">Salud</h2>
+                    <br/>
+                    <p>Indique por favor la EPS en la que se encuentra afiliado. Si no tiene EPS coloque <strong>NO TENGO</strong></p>
+                    <input type="text" name="direccion" id="direccion" placeholder="EPS" />
+                    <div class="alert alert-warning alert-dismissible" role="alert">
+                        Portabilidad es el trámite por el cual usted hace el traslado de la cobertura en salud de la EPS que recibe habitualmente en su lugar de procedencia al lugar de residencia en el que se encuentra viviendo actualmente de forma temporal
+                    </div>
+                    <p>¿Realizó la portabilidad de EPS a su actual lugar de residencia?</p>
+
+                    <div class="dropdown" id="situacion" name="situacion">
+                        <select class="form-control form-control-xs " class="dropbtn">
+                                             <option value="0" selected >Sí</option>
+                                             <option value="1">No</option>
+                                             <option value="2">No aplica (Me encuentro en mi lugar de procedencia)</option>
+                        </select>
+                    </div>
+                    <p>¿Es usted consumidor habitual (consumo de dos o más veces al mes) de sustancias como cigarrillo, alcohol, éxtasis (pepas), bazuco, cocaína (perico), hongos y/o alucinógenos (LCD), inhalantes (solventes), marihuana, heroína, energizantes,
+                        entre otros?</p>
+                    <div class="dropdown" id="situacion" name="situacion">
+                        <select class="form-control form-control-xs " class="dropbtn">
+                                             <option value="0" selected >Sí</option>
+                                             <option value="1">No</option>
+                        </select>
+                    </div>
+                    <p><strong>VALIDADOR ACA</strong>Si contesto SI a la pregunta anterior, ¿se ha visto afectado en su consumo por la actual emergencia sanitaria? </p>
+                    <div class="dropdown" id="situacion" name="situacion">
+                        <select class="form-control form-control-xs " class="dropbtn">
+                                             <option value="0" selected >SI, ha aumentado mi consumo</option>
+                                             <option value="1">SI, me he visto obligado a disminuir mi consumo</option>
+                                             <option value="2">NO</option>
+                        </select>
+                    </div>
+                    <p>¿Considera que actualmente necesita algún tipo de apoyo o acompañamiento frente a su consumo?</p>
+                    <div class="dropdown" id="situacion" name="situacion">
+                        <select class="form-control form-control-xs " class="dropbtn">
+                                             <option value="0" selected >Sí</option>
+                                             <option value="2">No</option>
+                        </select>
+                    </div>
+                    <p>¿Cuántas horas en promedio esta durmiendo diariamente?</p>
+                    <input type="text" name="direccion2" id="direccion2" placeholder="Horas de sueño" />
+                    <p>¿Este sueño le aporta descanso?</p>
+                    <div class="dropdown" id="situacion" name="situacion">
+                        <select class="form-control form-control-xs " class="dropbtn">
+                                             <option value="0" selected >Sí</option>
+                                             <option value="2">No</option>
+                        </select>
+                    </div>
+                    <h4><strong>Durante el último mes ha experimentado:</strong></h4>
+                    <h5>Tristeza</h5>
+                    <div class="dropdown" id="situacion" name="situacion">
+                        <select class="form-control form-control-xs " class="dropbtn">
+                                             <option value="1"selected>Nunca</option>
+                                             <option value="2">Pocas veces</option>
+                                             <option value="3">Muchas veces</option>
+                                             <option value="4">Siempre</option>
+                        </select>
+                    </div>
+                    <h5>Aislamiento mayor al habitual</h5>
+                    <div class="dropdown" id="situacion" name="situacion">
+                        <select class="form-control form-control-xs " class="dropbtn">
+                                             <option value="1"selected>Nunca</option>
+                                             <option value="2">Pocas veces</option>
+                                             <option value="3">Muchas veces</option>
+                                             <option value="4">Siempre</option>
+                        </select>
+                    </div>
+                    <h5>Poco interés por hacer cosas o desesperanza</h5>
+                    <div class="dropdown" id="situacion" name="situacion">
+                        <select class="form-control form-control-xs " class="dropbtn">
+                                             <option value="1"selected>Nunca</option>
+                                             <option value="2">Pocas veces</option>
+                                             <option value="3">Muchas veces</option>
+                                             <option value="4">Siempre</option>
+                        </select>
+                    </div>
+                    <h5>Irritabilidad, mal genio o enojo</h5>
+                    <div class="dropdown" id="situacion" name="situacion">
+                        <select class="form-control form-control-xs " class="dropbtn">
+                                             <option value="1"selected>Nunca</option>
+                                             <option value="2">Pocas veces</option>
+                                             <option value="3">Muchas veces</option>
+                                             <option value="4">Siempre</option>
+                        </select>
+                    </div>
+                    <h5>Angustia o ansiedad</h5>
+                    <div class="dropdown" id="situacion" name="situacion">
+                        <select class="form-control form-control-xs " class="dropbtn">
+                                             <option value="1"selected>Nunca</option>
+                                             <option value="2">Pocas veces</option>
+                                             <option value="3">Muchas veces</option>
+                                             <option value="4">Siempre</option>
+                        </select>
+                    </div>
+                    <h5>Autoagresión, deseos de hacerse daño</h5>
+                    <div class="dropdown" id="situacion" name="situacion">
+                        <select class="form-control form-control-xs " class="dropbtn">
+                                             <option value="1"selected>Nunca</option>
+                                             <option value="2">Pocas veces</option>
+                                             <option value="3">Muchas veces</option>
+                                             <option value="4">Siempre</option>
+                        </select>
+                    </div>
+                    <h5>Ideas suicidas</h5>
+                    <div class="dropdown" id="situacion" name="situacion">
+                        <select class="form-control form-control-xs " class="dropbtn">
+                                             <option value="1"selected>Nunca</option>
+                                             <option value="2">Pocas veces</option>
+                                             <option value="3">Muchas veces</option>
+                                             <option value="4">Siempre</option>
+                        </select>
+                    </div>
+                    <h4><strong>Indique a continuación, si los sentimientos experimentados que señaló en la pregunta anterior se acompañan de:</strong></h4>
+                    <h5>Dolor de cabeza o espalda</h5>
+                    <div class="dropdown" id="situacion" name="situacion">
+                        <select class="form-control form-control-xs " class="dropbtn">
+                                             <option value="1"selected>Nunca</option>
+                                             <option value="2">Pocas veces</option>
+                                             <option value="3">Muchas veces</option>
+                                             <option value="4">Siempre</option>
+                        </select>
+                    </div>
+                    <h5>Cansancio, agotamiento o fatiga</h5>
+                    <div class="dropdown" id="situacion" name="situacion">
+                        <select class="form-control form-control-xs " class="dropbtn">
+                                             <option value="1"selected>Nunca</option>
+                                             <option value="2">Pocas veces</option>
+                                             <option value="3">Muchas veces</option>
+                                             <option value="4">Siempre</option>
+                        </select>
+                    </div>
+                    <h5>Pérdida o aumento del apetito</h5>
+                    <div class="dropdown" id="situacion" name="situacion">
+                        <select class="form-control form-control-xs " class="dropbtn">
+                                             <option value="1"selected>Nunca</option>
+                                             <option value="2">Pocas veces</option>
+                                             <option value="3">Muchas veces</option>
+                                             <option value="4">Siempre</option>
+                        </select>
+                    </div>
+                    <h5>Trastornos digestivos</h5>
+                    <div class="dropdown" id="situacion" name="situacion">
+                        <select class="form-control form-control-xs " class="dropbtn">
+                                             <option value="1"selected>Nunca</option>
+                                             <option value="2">Pocas veces</option>
+                                             <option value="3">Muchas veces</option>
+                                             <option value="4">Siempre</option>
+                        </select>
+                    </div>
+                    <h5>Dificultades o cambios en el sueño</h5>
+                    <div class="dropdown" id="situacion" name="situacion">
+                        <select class="form-control form-control-xs " class="dropbtn">
+                                             <option value="1"selected>Nunca</option>
+                                             <option value="2">Pocas veces</option>
+                                             <option value="3">Muchas veces</option>
+                                             <option value="4">Siempre</option>
+                        </select>
+                    </div>
+                    <p>Antes de la emergencia adelantaba algún proceso de atención por psicología o psiquiatría</p>
+                    <div class="dropdown" id="situacion" name="situacion">
+                        <select class="form-control form-control-xs " class="dropbtn">
+                                             <option value="1"selected>No</option>
+                                             <option value="2">Sí</option> 
+                        </select>
+                    </div>
+                    <p>Actualmente recibe o continúa recibiendo alguna atención por psicología y/o psiquiatría</p>
+                    <div class="dropdown" id="situacion" name="situacion">
+                        <select class="form-control form-control-xs " class="dropbtn">
+                                             <option value="1"selected>No</option>
+                                             <option value="2">Sí</option> 
+                        </select>
+                    </div>
+                    <p>Si en la anterior pregunta contestó NO, indique por favor si ¿considera que en estos momentos necesita atención por psicología y/o psiquiatría?</p>
+                    <div class="dropdown" id="situacion" name="situacion">
+                        <select class="form-control form-control-xs " class="dropbtn">
+                                             <option value="1"selected>No</option>
+                                             <option value="2">SI, y actualmente sigo recibiendola</option> 
+                                             <option value="2">SI, pero actualmente no estoy recibiendola</option> 
+                        </select>
+                    </div>
+                    <div class="alert alert-warning alert-dismissible" role="alert">
+                        Enfermedad crónica: Enfermedades de larga duración y por lo general de progresión lenta. como lo son los infartos o accidentes cerebrovasculares, cáncer, diabetes, parkinson, alzheimer, esclerosis múltiple, hipertensión, lumbalgia, etc.
+                    </div>
+                    <p>¿Presenta actualmente alguna condición médica crónica (distinta a salud por psicología y/o psiquiatría)?</p>
+                    <div class="dropdown" id="situacion" name="situacion">
+                        <select class="form-control form-control-xs " class="dropbtn">
+                                             <option value="1"selected>No</option>
+                                             <option value="2">SI, y esta siendo tratada</option> 
+                                             <option value="2">SI, pero no he podido tratarla</option>
+                        </select>
+                    </div>
+                    <p>Actualmente está medicado(a) por alguna condición de salud (distinta a la medicación por psiquiatría, si la tiene)</p>
+                    <div class="dropdown" id="situacion" name="situacion">
+                        <select class="form-control form-control-xs " class="dropbtn">
+                                             <option value="1"selected>No</option>
+                                             <option value="2">SI, y actualmente sigo recibiendola</option> 
+                                             <option value="2">SI, pero actualmente no estoy recibiendola</option>
+                        </select>
+                    </div>
+                    <input type="button" name="previous" class="previous action-button-previous" value="Anterior" />
+                    <input type="button" name="next" class="next action-button" value="Siguiente" />
+                </fieldset>
+                <fieldset>
+                    <h2 class="fs-title">Dinámica Social</h2>
+                    <h4><strong>Por favor lea con atención cada uno de las siguientes afirmaciones y escoja la frecuencia con que mejor se aproximan a su propia vida en estos momentos.</strong></h4>
+                    <h5>Creo que soy bueno(a) en lo que hago.</h5>
+                    <div class="dropdown" id="situacion" name="situacion">
+                        <select class="form-control form-control-xs " class="dropbtn">
+                                             <option value="1"selected>Nunca</option>
+                                             <option value="2">Pocas veces</option>
+                                             <option value="3">Muchas veces</option>
+                                             <option value="4">Siempre</option>
+                        </select>
+                    </div>
+                    <h5>La gente que me conoce cree que soy bueno(a) en lo que hago.</h5>
+                    <div class="dropdown" id="situacion" name="situacion">
+                        <select class="form-control form-control-xs " class="dropbtn">
+                                             <option value="1"selected>Nunca</option>
+                                             <option value="2">Pocas veces</option>
+                                             <option value="3">Muchas veces</option>
+                                             <option value="4">Siempre</option>
+                        </select>
+                    </div>
+                    <h5>Me llevo bien con la gente con la que entro en contacto.</h5>
+                    <div class="dropdown" id="situacion" name="situacion">
+                        <select class="form-control form-control-xs " class="dropbtn">
+                                             <option value="1"selected>Nunca</option>
+                                             <option value="2">Pocas veces</option>
+                                             <option value="3">Muchas veces</option>
+                                             <option value="4">Siempre</option>
+                        </select>
+                    </div>
+                    <h5>Me siento libre para expresar mis ideas y mis opiniones.</h5>
+                    <div class="dropdown" id="situacion" name="situacion">
+                        <select class="form-control form-control-xs " class="dropbtn">
+                                             <option value="1"selected>Nunca</option>
+                                             <option value="2">Pocas veces</option>
+                                             <option value="3">Muchas veces</option>
+                                             <option value="4">Siempre</option>
+                        </select>
+                    </div>
+                    <h5>Me siento libre para decidir cómo vivir mi vida.</h5>
+                    <div class="dropdown" id="situacion" name="situacion">
+                        <select class="form-control form-control-xs " class="dropbtn">
+                                             <option value="1"selected>Nunca</option>
+                                             <option value="2">Pocas veces</option>
+                                             <option value="3">Muchas veces</option>
+                                             <option value="4">Siempre</option>
+                        </select>
+                    </div>
+                    <div class="alert alert-warning alert-dismissible" role="alert">
+                        <strong>Apoyo  emocional:</strong> Demostraciones de afecto, empatía, preocupación, cuidado, confianza, aprecio, elogios, etc. Apoyo económico: Prestar ayuda financiera, pago de bienes o servicios. Apoyo informativo: Dar guía ,
+                        consejo, sugerencias o información valiosa para tomar decisiones o resolver problemas.
+                    </div>
+
+                    <div class="dropdown" id="situacion" name="situacion">
+                        <select class="form-control form-control-xs selectpicker" class="dropbtn">
+                                             <option value="0" selected hidden>Situación actual de residencia</option>
+                                             <option value="1">Estoy viviendo con mi nucleo familiar u otros familiares</option>
+                                             <option value="2">Estoy viviendo en habitación de alojamiento o residencia estudiantil</option>
+                                             <option value="3">Estoy viviendo en una habitación en una residencia familiar o de particulares</option>
+                                             <option value="4">Estoy viviendo en una casa o apartamento compartido con amigos o compañeros</option>
+                                             <option value="5">Estoy viviendo en una casa, apartamento o apartaestudio completamente solo</option>
+                        </select>
+                    </div>
+                    <h4><strong>Usted diría que tiene dificultades relacionadas con:</strong></h4>
+                    <h5>Comunicar a otros sus sentimientos.</h5>
+                    <div class="dropdown" id="situacion" name="situacion">
+                        <select class="form-control form-control-xs " class="dropbtn">
+                                             <option value="1"selected>Nunca</option>
+                                             <option value="2">Pocas veces</option>
+                                             <option value="3">Muchas veces</option>
+                                             <option value="4">Siempre</option>
+                        </select>
+                    </div>
+                    <h5>Las relaciones afectivas con la familia, la pareja y/o los amigos.</h5>
+                    <div class="dropdown" id="situacion" name="situacion">
+                        <select class="form-control form-control-xs " class="dropbtn">
+                                             <option value="1"selected>Nunca</option>
+                                             <option value="2">Pocas veces</option>
+                                             <option value="3">Muchas veces</option>
+                                             <option value="4">Siempre</option>
+                        </select>
+                    </div>
+                    <h5>La adaptación a situaciones nuevas o cambios importantes en su vida.</h5>
+                    <div class="dropdown" id="situacion" name="situacion">
+                        <select class="form-control form-control-xs " class="dropbtn">
+                                             <option value="1"selected>Nunca</option>
+                                             <option value="2">Pocas veces</option>
+                                             <option value="3">Muchas veces</option>
+                                             <option value="4">Siempre</option>
+                        </select>
+                    </div>
+                    <div class="alert alert-warning alert-dismissible" role="alert">
+                        Indique <strong>NO Aplica </strong>en los casos en que <strong>no pertenezca</strong> a dicha población
+                    </div>
+                    <h4><strong>Se ha sentido vulnerado(a) en su integridad y derechos en razón a su:</strong></h4>
+                    <h5>Origen étnico</h5>
+                    <div class="dropdown" id="situacion" name="situacion">
+                        <select class="form-control form-control-xs " class="dropbtn">
+                                             <option value="1"selected>No Aplica</option>
+                                             <option value="2">No</option>
+                                             <option value="3">Sí</option>
+                        </select>
+                    </div>
+                    <h5>Lugar de origen</h5>
+                    <div class="dropdown" id="situacion" name="situacion">
+                        <select class="form-control form-control-xs " class="dropbtn">
+                                             <option value="1"selected>No Aplica</option>
+                                             <option value="2">No</option>
+                                             <option value="3">Sí</option>
+                        </select>
+                    </div>
+                    <h5>Condición de victima del conflicto</h5>
+                    <div class="dropdown" id="situacion" name="situacion">
+                        <select class="form-control form-control-xs " class="dropbtn">
+                                             <option value="1"selected>No Aplica</option>
+                                             <option value="2">No</option>
+                                             <option value="3">Sí</option>
+                        </select>
+                    </div>
+                    <h5>Género</h5>
+                    <div class="dropdown" id="situacion" name="situacion">
+                        <select class="form-control form-control-xs " class="dropbtn">
+                                             <option value="1"selected>No Aplica</option>
+                                             <option value="2">No</option>
+                                             <option value="3">Sí</option>
+                        </select>
+                    </div>
+                    <h5>Orientación sexual</h5>
+                    <div class="dropdown" id="situacion" name="situacion">
+                        <select class="form-control form-control-xs " class="dropbtn">
+                                             <option value="1"selected>No Aplica</option>
+                                             <option value="2">No</option>
+                                             <option value="3">Sí</option>
+                        </select>
+                    </div>
+                    <h5>Otra</h5>
+                    <div class="dropdown" id="situacion" name="situacion">
+                        <select class="form-control form-control-xs " class="dropbtn">
+                                             <option value="1"selected>No Aplica</option>
+                                             <option value="2">No</option>
+                                             <option value="3">Sí</option>
+                        </select>
+                    </div>
+                    <h5>Si en la anterior pregunta seleccionó con SI en la opción OTRA, indique por cual condición ha sido vulnerado(a):</h5>
+                    <input type="text" name="direccion" id="direccion" placeholder="Otra" />
+                    <input type="button" name="previous" class="previous action-button-previous" value="Anterior" />
+                    <input type="button" name="next" class="next action-button" value="Siguiente" />
+                </fieldset>
+                <fieldset>
+                    <h2 class="fs-title">Situación Académica</h2>
+                    <div class="col-md-12"><input type="number" name="direccion" id="s5" placeholder="Avance de carrera" /><span class="pxSpan">%</span></div>
+
+                    <p>Actualmente ha tenido dificultades relacionadas con:</p>
+                    <div id="multiple">
+                        <select class="form-control form-control-xs selectpicker my-select" onchange="d()" multiple>
+                        <option value="0">Los contenidos de las asignaturas que curso</option>
+                        <option value="1">La metodología de las asignaturas que curso</option>
+                        <option value="2">Las evaluaciones o actividades evaluables de las asignaturas que curso</option>
+                      </select>
+                    </div>
+                    <hr>
+                    <input type="text" name="direccion" id="direccion" placeholder="Dirección" />
+                    <input type="text" name="direccion2" id="direccion2" placeholder="Datos adicionales a dirección" />
+                    <div class="dropdown" id="situacion" name="situacion">
+                        <select class="form-control form-control-xs selectpicker" class="dropbtn">
+                                             <option value="0" selected hidden>Situación actual de residencia</option>
+                                             <option value="1">Estoy viviendo con mi nucleo familiar u otros familiares</option>
+                                             <option value="2">Estoy viviendo en habitación de alojamiento o residencia estudiantil</option>
+                                             <option value="3">Estoy viviendo en una habitación en una residencia familiar o de particulares</option>
+                                             <option value="4">Estoy viviendo en una casa o apartamento compartido con amigos o compañeros</option>
+                                             <option value="5">Estoy viviendo en una casa, apartamento o apartaestudio completamente solo</option>
+                        </select>
+                    </div>
+                    <input type="button" name="previous" class="previous action-button-previous" value="Anterior" />
+                    <input type="button" name="next" class="next action-button" value="Siguiente" />
+                </fieldset>
+                <fieldset>
+                    <h2 class="fs-title">Datos Geograficos</h2>
+                    <h3 class="fs-subtitle">Seleccione su ubicación en el mapa</h3>
+                    <!--Google map-->
+                    <div id="mapid"></div>
+
+                    <!--Google Maps-->
+                    <hr/>
+                    <input type="text" name="lat" id='lat' placeholder="Lat" readonly="readonly" />
+                    <input type="text" name="long" id='long' placeholder="Long" readonly="readonly" />
+
+                    <input type="button" name="previous" class="previous action-button-previous" value="Anterior" />
+                    <input type="submit" name="submit" onclick="postToGoogle()" class="submit action-button" value="Enviar" />
+                </fieldset>
+
+            </form>
+
+        </div>
+    </div>
+    <!-- /.MultiStep Form -->
+    <!-- partial -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+    <script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js'></script>
+    <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.19.1/jquery.validate.min.js"></script>
+    <script src="https://momentjs.com/downloads/moment.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.43/js/bootstrap-datetimepicker.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-multiselect/0.9.13/js/bootstrap-multiselect.js"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/js/bootstrap-select.min.js"></script>
+
+    <script src="./script.js"></script>
+
+</body>
+
+</html>

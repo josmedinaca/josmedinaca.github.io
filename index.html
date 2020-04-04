@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - Date Picker- bootstrap 3.3.5</title>
+  <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css'>
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.43/css/bootstrap-datetimepicker.min.css'>
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<h3>Both Date and Time</h3>
+<div class="form-group required">
+  <div class="input-group col-md-3">
+    <input type="text" class="form-control" id="calBothDateAndTime" required>
+    <div class="input-group-addon">
+      <span class="glyphicon glyphicon-calendar"></span>
+    </div>
+  </div>
+</div>
+<h3>Only with Date (No time)
+  <div class="form-group required">
+    <div class="input-group col-md-3">
+      <input type="text" class="form-control onlyDate" name="frmSaveOffice_startdt" id="calOnlyDate" required>
+      <div class="input-group-addon">
+        <span class="glyphicon glyphicon-calendar"></span>
+      </div>
+    </div>
+  </div>
+
+  <pre>
+   $('#datetimepicker').datetimepicker({
+       pickTime: false,
+        minView: 2,
+        format: 'dd/mm/yyyy',
+        autoclose: true,
+    });
+    
+    https://glyphicons.bootstrapcheatsheets.com/
+    https://www.w3schools.com/icons/icons_reference.asp
+    https://www.w3schools.com/icons/bootstrap_icons_glyphicons.asp
+    https://www.iconfinder.com/search/?q=zip
+    https://findicons.com/icon/24980/compressed_file_zip_01
+  </pre>
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+<script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js'></script>
+<script src='https://momentjs.com/downloads/moment.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.43/js/bootstrap-datetimepicker.min.js'></script><script  src="./script.js"></script>
+
+</body>
+</html>
