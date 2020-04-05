@@ -287,6 +287,30 @@ input[type=number] {
     display: none;
 }
 
+#consumov {
+    display: none;
+}
+
+#necesita1 {
+    display: none;
+}
+
+#necesita2 {
+    display: none;
+}
+
+#otracom {
+    display: none;
+}
+
+#deportexx {
+    display: none;
+}
+
+#extaa {
+    display: none;
+}
+
 .progress-bar[role="remaining"] {
     background-color: #888;
 }

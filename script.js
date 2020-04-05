@@ -241,9 +241,32 @@ function showDiv2(divId, element) {
 }
 
 function showDiv3(divId, element) {
+    document.getElementById(divId).style.display = element.value == 2 ? 'block' : 'none';
+}
+
+function showDiv4(divId, element) {
+    document.getElementById(divId).style.display = element.value == 0 ? 'block' : 'none';
+}
+
+function showDiv5(divId, element) {
     document.getElementById(divId).style.display = element.value == 1 ? 'block' : 'none';
 }
 
+function showDiv6(divId, element) {
+    document.getElementById(divId).style.display = element.value == 2 ? 'block' : 'none';
+}
+
+function showDiv7(divId, element) {
+    document.getElementById(divId).style.display = element.value == 3 ? 'block' : 'none';
+}
+
+function showDiv8(divId, element) {
+    document.getElementById(divId).style.display = element.value == 2 ? 'block' : 'none';
+}
+
+function showDiv9(divId, element) {
+    document.getElementById(divId).style.display = element.value == 2 ? 'block' : 'none';
+}
 $('.alert').alert()
 
 // total files
