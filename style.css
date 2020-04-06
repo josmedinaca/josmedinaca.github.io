@@ -311,6 +311,10 @@ input[type=number] {
     display: none;
 }
 
+#apoyoshid {
+    display: none;
+}
+
 .progress-bar[role="remaining"] {
     background-color: #888;
 }

@@ -88,6 +88,7 @@
                         <select name="identType" id="identType" class="form-control form-control-xs " class="dropbtn ">
                                              <option value="" selected hidden>Tipo de identificacion</option>
                                              <option value="1">Cedula de ciudadania</option>
+                                             <option value="0">Cedula de extranjeria</option>
                                              <option value="2">Tarjeta de Identidad</option>
                                              <option value="3">Pasaporte</option>
                         </select>
@@ -312,10 +313,10 @@
 
                     </div>
                     <div class="row">
-                        <div class="col-md-3"><input type="number" name="s5" id="s5" placeholder="Pareja" /><span class="pxSpan">%</span></div>
-                        <div class="col-md-3"><input type="number" name="s6" id="s6" placeholder="Particulares" /><span class="pxSpan">%</span></div>
-                        <div class="col-md-3"><input type="number" name="s7" id="s7" placeholder="Sí mismo" /><span class="pxSpan">%</span></div>
-                        <div class="col-md-3"><input type="number" name="s8" id="s8" placeholder="Otros parientes" /><span class="pxSpan">%</span></div>
+                        <div class="col-md-3"><input type="number" name="s5" id="s55" placeholder="Pareja" /><span class="pxSpan">%</span></div>
+                        <div class="col-md-3"><input type="number" name="s6" id="s66" placeholder="Particulares" /><span class="pxSpan">%</span></div>
+                        <div class="col-md-3"><input type="number" name="s7" id="s77" placeholder="Sí mismo" /><span class="pxSpan">%</span></div>
+                        <div class="col-md-3"><input type="number" name="s8" id="s88" placeholder="Otros parientes" /><span class="pxSpan">%</span></div>
 
                     </div>
                     <p>¿Convive en estos momentos con alguna de las personas que dependen económicamente de usted?</p>
@@ -349,7 +350,7 @@
                     </div>
                     <p>Indique con que servicios cuenta actualmente</p>
                     <div id="servicios">
-                        <select title="Seleccione" class="form-control form-control-xs selectpicker my-select" onchange="d()" multiple>
+                        <select title="Seleccione" class="form-control form-control-xs selectpicker my-select" onchange="servicios()" multiple>
                         <option value="0">Acueducto (Agua)</option>
                         <option value="1">Alcantarillado</option>
                         <option value="2">Electricidad</option>
@@ -359,8 +360,8 @@
                       </select>
                     </div>
                     <p>Indique de que electrodomésticos y utensilios de cocina dispone en donde reside actualmente.</p>
-                    <div id="electrodomésticos">
-                        <select title="Seleccione" class="form-control form-control-xs selectpicker my-select" onchange="d()" multiple>
+                    <div id="electrodo">
+                        <select title="Seleccione" class="form-control form-control-xs selectpicker my-select" onchange="electrod()" multiple>
                         <option value="0">Estufa</option>
                         <option value="1">Nevera o refrigerador</option>
                         <option value="2">Congelador</option>
@@ -372,20 +373,20 @@
                     <p>Para la alimentación mía y de las personas a mi cargo con las que convivo (si aplica), ACTUALMENTE mi gasto mensual aproximado es de:</p>
                     <input type="number" name="gasto" id="gasto" placeholder="Gasto mensual" />
                     <p>Actualmente recibe algún apoyo socioeconómico por parte de:</p>
-                    <div id="multiple">
-                        <select title="Seleccione" class="form-control form-control-xs selectpicker my-select" onchange="d()" multiple>
+                    <div id="apoyosx">
+                        <select title="Seleccione" class="form-control form-control-xs selectpicker my-select" onchange="apoyosxd()" multiple>
                         <option value="0">Bienestar de Sede Bogota</option>
                         <option value="1">Bienestar de Facultad</option>
                         <option value="2">Sede de Presencia Nacional</option>
                         <option value="2">Oficina de Enlace</option>
-                        <option value="3">Iniciativas estudiantiles </option>
+                        <option value="3">Iniciativas estudiantiles</option>
                         <option value="4">Iniciativas docentes</option>
                         <option value="5">Iniciativas de egresados</option>
                       </select>
                     </div>
                     <p>Actualmente tiene adjudicado alguno de los siguientes apoyos socioeconómicos externos gubernamentales o de otras organizaciones (bancos, fundaciones, etc.) distintas a la UN.</p>
                     <div class="dropdown" id="apoyos" name="apoyos">
-                        <select class="form-control form-control-xs " class="dropbtn">
+                        <select class="form-control form-control-xs " onchange="showDiv10('apoyoshid', this)" class="dropbtn">
                                              <option value="0" selected >Ninguno</option>
                                              <option value="1">Ser Pilo Paga</option>
                                              <option value="2">Generación E</option>
@@ -393,7 +394,8 @@
                                              <option value="4">Otra</option>
                         </select>
                     </div>
-                    <input type="text" name="apoyos2" id="apoyos2" placeholder="¿Cuál?" />
+                    <div id="apoyoshid">
+                        <input type="text" name="apoyos2" id="apoyos2" placeholder="¿Cuál?" /></div>
                     <p>¿Cuenta con puntaje SISBEN?</p>
                     <div class="dropdown" id="SISBEN" name="SISBEN">
                         <select class="form-control form-control-xs " onchange="showDiv3('puntajeSISBEN2', this)" class="dropbtn">
@@ -776,8 +778,8 @@
                     <input type="number" name="avance" id="avance" placeholder="Avance de carrera" />
 
                     <p>Actualmente ha tenido dificultades relacionadas con:</p>
-                    <div id="multiple">
-                        <select title="Seleccione" class="form-control form-control-xs selectpicker my-select" onchange="d()" multiple>
+                    <div id="difccs">
+                        <select title="Seleccione" class="form-control form-control-xs selectpicker my-select" onchange="dificcc()" multiple>
                         <option value="0">Los contenidos de las asignaturas que curso</option>
                         <option value="1">La metodología de las asignaturas que curso</option>
                         <option value="2">Las evaluaciones o actividades evaluables de las asignaturas que curso</option>
@@ -910,23 +912,7 @@
                     <hr/>
                     <p>¿Tiene alguna duda, inquietud o situación adicional en la que requiera acompañamiento y que quisiera comentar?</p>
                     <input type="text" name="Comentariosxx" id='Comentariosxx' placeholder="..." />
-                    <div class="modal fade" id="myModal2" tabindex="0" role="dialog" aria-labelledby="myModalLabel">
-                        <div class="modal-dialog" role="document">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                    <h4 class="modal-title" id="myModalLabel">DATOS ENVIADOS</h4>
-                                </div>
-                                <div class="modal-body">
-                                    <p>Formulario enviado con éxito,,,,, faltan cositas, paciencia</p>
 
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-default center-block" onclick="window.location.reload();" data-dismiss="modal">Aceptar</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                     <input type="button" name="previous" class="previous action-button-previous" value="Anterior" />
                     <input type="submit" name="submit" onclick="postToGoogle()" class="submit action-button" value="Enviar" />
                 </fieldset>

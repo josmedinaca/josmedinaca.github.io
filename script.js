@@ -183,40 +183,258 @@ function postToGoogle() {
     var field5 = $("#phone2").val();
     var field6 = $("#ident").val();
     var field7 = $("#identType option:selected").text();
-    var field8 = $("#situacion option:selected").text();
-    var field9 = $("#direccion").val();
-    var field10 = $("#direccion2").val();
-    var field11 = $("#lat").val();
-    var field12 = $("#long").val();
-
-
-
-
+    var field8 = $("#procedencia option:selected").text();
+    var field9 = $("#departamento option:selected").text();
+    var field10 = $("#ciudad").val();
+    var field11 = $("#viajar option:selected").text();
+    var field12 = $("#calOnlyDate").val();
+    var field13 = $("#lat").val();
+    var field14 = $("#long").val();
+    var field15 = $("#direccion").val();
+    var field16 = $("#direccion2").val();
+    var field17 = $("#desplazado option:selected").text();
+    var field18 = $("#fnaturales option:selected").text();
+    var field19 = $("#discapacidad option:selected").text();
+    var field20 = $("#certificada option:selected").text();
+    var field21 = $("#hijos option:selected").text();
+    var field22 = $("#embarazo option:selected").text();
+    var field23 = $("#grupoe option:selected").text();
+    var field24 = $("#s1").val();
+    var field25 = $("#s2").val();
+    var field26 = $("#s3").val();
+    var field27 = $("#s4").val();
+    var field28 = $("#s5").val();
+    var field29 = $("#s6").val();
+    var field30 = $("#s7").val();
+    var field31 = $("#s8").val();
+    var field32 = $("#ingresos").val();
+    var field33 = $("#s11").val();
+    var field34 = $("#s22").val();
+    var field35 = $("#s33").val();
+    var field36 = $("#s44").val();
+    var field37 = $("#s55").val();
+    var field38 = $("#s66").val();
+    var field39 = $("#s77").val();
+    var field40 = $("#s88").val();
+    var field41 = $("#convive option:selected").text();
+    var field42 = $("#situacion option:selected").text();
+    var field43 = $("#dificultades option:selected").text();
+    var field44 = acueducto;
+    var field45 = alcant;
+    var field46 = elect;
+    var field47 = gas;
+    var field48 = comp;
+    var field49 = acces;
+    var field50 = estf;
+    var field51 = nev;
+    var field52 = cong;
+    var field53 = horn;
+    var field54 = licuad;
+    var field55 = ollap;
+    var field56 = $("#gasto").val();
+    var field57 = biebog;
+    var field58 = biefac;
+    var field59 = sedepre;
+    var field60 = ofcenl;
+    var field61 = inicest;
+    var field62 = inicdoc;
+    var field63 = inicegr;
+    var field64 = $("#apoyos option:selected").text();
+    var field65 = $("#apoyos2").val();
+    var field66 = $("#SISBEN option:selected").text();
+    var field67 = $("#puntajeSISBEN").val();
+    var field68 = $("#EPS").val();
+    var field69 = $("#portabilidad option:selected").text();
+    var field70 = $("#consumidor option:selected").text();
+    var field71 = $("#consumo option:selected").text();
+    var field72 = $("#apoyoc option:selected").text();
+    var field73 = $("#durmiendo").val();
+    var field74 = $("#descanso option:selected").text();
+    var field75 = $("#tristeza option:selected").text();
+    var field76 = $("#Aislamiento option:selected").text();
+    var field77 = $("#desesperanza option:selected").text();
+    var field78 = $("#enojo option:selected").text();
+    var field79 = $("#ansiedad option:selected").text();
+    var field80 = $("#deseos option:selected").text();
+    var field81 = $("#suicidas option:selected").text();
+    var field82 = $("#Dolor option:selected").text();
+    var field83 = $("#agotamiento option:selected").text();
+    var field84 = $("#apetito option:selected").text();
+    var field85 = $("#digestivos option:selected").text();
+    var field86 = $("#sueo option:selected").text();
+    var field87 = $("#emergencia option:selected").text();
+    var field88 = $("#recibiendo option:selected").text();
+    var field89 = $("#necesita option:selected").text();
+    var field90 = $("#crnica option:selected").text();
+    var field91 = $("#medicado option:selected").text();
+    var field92 = $("#bueno option:selected").text();
+    var field93 = $("#conoce option:selected").text();
+    var field94 = $("#gente option:selected").text();
+    var field95 = $("#expresar option:selected").text();
+    var field96 = $("#libre option:selected").text();
+    var field97 = $("#sentimientos option:selected").text();
+    var field98 = $("#afectivas option:selected").text();
+    var field99 = $("#vida option:selected").text();
+    var field100 = $("#tnico option:selected").text();
+    var field101 = $("#origens option:selected").text();
+    var field102 = $("#conflictos option:selected").text();
+    var field103 = $("#Gnero option:selected").text();
+    var field104 = $("#sexuals option:selected").text();
+    var field105 = $("#Otraxc option:selected").text();
+    var field106 = $("#otrra").val();
+    var field107 = $("#avance").val();
+    var field108 = contenidos;
+    var field109 = metodologia;
+    var field110 = activida;
+    var field111 = $("#dificultadessss option:selected").text();
+    var field112 = $("#textos option:selected").text();
+    var field113 = $("#tiempo option:selected").text();
+    var field114 = $("#otrosxc option:selected").text();
+    var field115 = $("#operacionesx option:selected").text();
+    var field116 = $("#momentoss option:selected").text();
+    var field117 = $("#deporte option:selected").text();
+    var field118 = $("#principalxxx option:selected").text();
+    var field119 = $("#residesss option:selected").text();
+    var field120 = $("#culturalsss option:selected").text();
+    var field121 = $("#practicabaxx option:selected").text();
+    var field122 = $("#actividadscss option:selected").text();
+    var field123 = $("#Comentariosxx").val();
 
 
     $.ajax({
-        url: "https://docs.google.com/forms/d/e/1FAIpQLSfuebwhfd5LMNlt1eTvs8KGb8XuBJWVsmn-pP4sXZWSqjz6EA/formResponse?",
+        url: "https://docs.google.com/forms/d/e/1FAIpQLSfzvMaSrQ3av-zHwDbgsiuNo01Vvo4Zl6nnwhsx1Y67oG-L9w/formResponse?",
         data: {
-            "entry.2100967329": field1,
-            "entry.1444468289": field2,
-            "entry.1638540513": field3,
-            "entry.2068810262": field4,
-            "entry.1038298063": field5,
-            "entry.2019579785": field6,
-            "entry.2029993123": field7,
-            "entry.1053065399": field8,
-            "entry.1713232368": field9,
-            "entry.130899294": field10,
-            "entry.234973700": field11 + "," + field12
+            "entry.63239375": field1,
+            "entry.1657029345": field2,
+            "entry.2116409393": field3,
+            "entry.1488905014": field4,
+            "entry.625134310": field5,
+            "entry.296721696": field6,
+            "entry.1783679049": field7,
+            "entry.572159507": field8,
+            "entry.949462633": field9,
+            "entry.993142050": field10,
+            "entry.1357354671": field11,
+            "entry.244694180": field12,
+            "entry.1746041750": field13 + "," + field14,
+            "entry.1296630800": field15,
+            "entry.1192925202": field16,
+            "entry.270039355": field17,
+            "entry.1890282427": field18,
+            "entry.1075300217": field19,
+            "entry.1935229610": field20,
+            "entry.939462389": field21,
+            "entry.198443173": field22,
+            "entry.1186600724": field23,
+            "entry.1578912813": field24,
+            "entry.1884854998": field25,
+            "entry.557155323": field26,
+            "entry.397859611": field27,
+            "entry.202719196": field28,
+            "entry.652175737": field29,
+            "entry.1934925109": field30,
+            "entry.2084707201": field31,
+            "entry.33009119": field32,
+            "entry.546445831": field33,
+            "entry.1643167239": field34,
+            "entry.2131812851": field35,
+            "entry.690253575": field36,
+            "entry.1410830964": field37,
+            "entry.835326598": field38,
+            "entry.449338845": field39,
+            "entry.1510232298": field40,
+            "entry.876190699": field41,
+            "entry.1780490293": field42,
+            "entry.1216315286": field43,
+            "entry.1872084796": field44,
+            "entry.1808827953": field45,
+            "entry.1987616593": field46,
+            "entry.182456937": field47,
+            "entry.175054468": field48,
+            "entry.551781470": field49,
+            "entry.1953301116": field50,
+            "entry.1488842576": field51,
+            "entry.235626117": field52,
+            "entry.267851069": field53,
+            "entry.312527539": field54,
+            "entry.734447041": field55,
+            "entry.1736797025": field56,
+            "entry.1132064888": field57,
+            "entry.741842804": field58,
+            "entry.280634950": field59,
+            "entry.641818861": field60,
+            "entry.245314995": field61,
+            "entry.1241573090": field62,
+            "entry.1041653785": field63,
+            "entry.666783339": field64,
+            "entry.1232687743": field65,
+            "entry.1031260405": field66,
+            "entry.2071298946": field67,
+            "entry.1885844296": field68,
+            "entry.1040836054": field69,
+            "entry.736246518": field70,
+            "entry.1690344826": field71,
+            "entry.1216340233": field72,
+            "entry.1583336159": field73,
+            "entry.1470948377": field74,
+            "entry.237743306": field75,
+            "entry.633088828": field76,
+            "entry.370629063": field77,
+            "entry.599395758": field78,
+            "entry.2006398351": field79,
+            "entry.754804040": field80,
+            "entry.1032834224": field81,
+            "entry.2054972484": field82,
+            "entry.2012718046": field83,
+            "entry.459287686": field84,
+            "entry.92958207": field85,
+            "entry.1062334295": field86,
+            "entry.1119522594": field87,
+            "entry.1505427679": field88,
+            "entry.638904233": field89,
+            "entry.848595781": field90,
+            "entry.26211303": field91,
+            "entry.1005258058": field92,
+            "entry.1916481191": field93,
+            "entry.946705736": field94,
+            "entry.560763160": field95,
+            "entry.2140856534": field96,
+            "entry.1940773056": field97,
+            "entry.317011737": field98,
+            "entry.705130837": field99,
+            "entry.701580189": field100,
+            "entry.1361834887": field101,
+            "entry.412699393": field102,
+            "entry.2100127934": field103,
+            "entry.1718266099": field104,
+            "entry.1579842858": field105,
+            "entry.657673320": field106,
+            "entry.887329038": field107,
+            "entry.2073018581": field108,
+            "entry.1269299118": field109,
+            "entry.334425939": field110,
+            "entry.1850576392": field111,
+            "entry.462370468": field112,
+            "entry.1212104280": field113,
+            "entry.1691713046": field114,
+            "entry.128028503": field115,
+            "entry.1558555179": field116,
+            "entry.1556264042": field117,
+            "entry.487711132": field118,
+            "entry.1771198517": field119,
+            "entry.2131863278": field120,
+            "entry.1321957669": field121,
+            "entry.385170939": field122,
+            "entry.811313855": field123
         },
         type: "GET",
         dataType: "jsonp",
         success: function(d) {
-            //alert("Formulario enviado con exito");
+            alert("Formulario enviado con exito");
 
         },
         error: function(x, y, z) {
-            //alert("Formulario enviado con exito");
+            alert("Formulario NO enviado con exito");
 
             console.log("ESO");
 
@@ -266,6 +484,10 @@ function showDiv8(divId, element) {
 
 function showDiv9(divId, element) {
     document.getElementById(divId).style.display = element.value == 2 ? 'block' : 'none';
+}
+
+function showDiv10(divId, element) {
+    document.getElementById(divId).style.display = element.value == 4 ? 'block' : 'none';
 }
 $('.alert').alert()
 
@@ -446,14 +668,163 @@ $("#s8").bind("change paste keyup", function() {
 $(function() {
     $('.my-select').selectpicker();
 });
-var selected;
+var acueducto = "No";
+var alcant = "No";
+var elect = "No";
+var gas = "No";
+var comp = "No";
+var acces = "No";
 
-function d() {
-    selected = $("#multiple option:selected").text();
-    console.log($("#multiple option:selected").text());
+function servicios() {
+    selected = $("#servicios option:selected").text();
+    console.log($("#servicios option:selected").text());
     if (selected.includes("Acueducto (Agua)")) {
-        console.log("YESS");
+        acueducto = "Si";
+    } else {
+        acueducto = "No";
     }
+    if (selected.includes("Alcantarillado")) {
+        alcant = "Si";
+    } else {
+        alcant = "No";
+    }
+    if (selected.includes("Electricidad")) {
+        elect = "Si";
+    } else {
+        elect = "No";
+    }
+    if (selected.includes("Gas natural")) {
+        gas = "Si";
+    } else {
+        gas = "No";
+    }
+    if (selected.includes("Computador")) {
+        comp = "Si";
+    } else {
+        comp = "No";
+    }
+    if (selected.includes("Acceso a internet")) {
+        acces = "Si";
+    } else {
+        acces = "No";
+    }
+}
+
+var estf = "No";
+var nev = "No";
+var cong = "No";
+var horn = "No";
+var licuad = "No";
+var ollap = "No";
+
+function electrod() {
+    selected = $("#electrodo option:selected").text();
+    console.log($("#electrodo option:selected").text());
+    if (selected.includes("Estufa")) {
+        estf = "Si";
+    } else {
+        estf = "No";
+    }
+    if (selected.includes("Nevera o refrigerador")) {
+        nev = "Si";
+    } else {
+        nev = "No";
+    }
+    if (selected.includes("Congelador")) {
+        cong = "Si";
+    } else {
+        cong = "No";
+    }
+    if (selected.includes("Horno microondas")) {
+        horn = "Si";
+    } else {
+        horn = "No";
+    }
+    if (selected.includes("Licuadora")) {
+        licuad = "Si";
+    } else {
+        licuad = "No";
+    }
+    if (selected.includes("Olla a presión")) {
+        ollap = "Si";
+    } else {
+        ollap = "No";
+    }
+    console.log(estf + nev + cong + horn + licuad + ollap);
+}
+
+var biebog = "No";
+var biefac = "No";
+var sedepre = "No";
+var ofcenl = "No";
+var inicest = "No";
+var inicdoc = "No";
+var inicegr = "No";
+
+function apoyosxd() {
+    selected = $("#apoyosx option:selected").text();
+    console.log($("#apoyosx option:selected").text());
+    if (selected.includes("Bienestar de Sede Bogota")) {
+        biebog = "Si";
+    } else {
+        biebog = "No";
+    }
+    if (selected.includes("Bienestar de Facultad")) {
+        biefac = "Si";
+    } else {
+        biefac = "No";
+    }
+    if (selected.includes("Sede de Presencia Nacional")) {
+        sedepre = "Si";
+    } else {
+        sedepre = "No";
+    }
+    if (selected.includes("Oficina de Enlace")) {
+        ofcenl = "Si";
+    } else {
+        ofcenl = "No";
+    }
+    if (selected.includes("Iniciativas estudiantiles")) {
+        inicest = "Si";
+    } else {
+        inicest = "No";
+    }
+    if (selected.includes("Iniciativas docentes")) {
+        inicdoc = "Si";
+    } else {
+        inicdoc = "No";
+    }
+    if (selected.includes("Iniciativas de egresados")) {
+        inicegr = "Si";
+    } else {
+        inicegr = "No";
+    }
+    console.log(biebog + biefac + sedepre + ofcenl + inicest + inicdoc + inicegr);
+}
+
+var contenidos = "No";
+var metodologia = "No";
+var activida = "No";
+
+function dificcc() {
+    selected = $("#difccs option:selected").text();
+    console.log($("#difccs option:selected").text());
+    if (selected.includes("Los contenidos de las asignaturas que curso")) {
+        contenidos = "Si";
+    } else {
+        contenidos = "No";
+    }
+    if (selected.includes("La metodología de las asignaturas que curso")) {
+        metodologia = "Si";
+    } else {
+        metodologia = "No";
+    }
+    if (selected.includes("Las evaluaciones o actividades evaluables de las asignaturas que curso")) {
+        activida = "Si";
+    } else {
+        activida = "No";
+    }
+    console.log(contenidos + metodologia + activida);
 }
 
 $(document).ready(function() {
