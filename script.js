@@ -16,27 +16,27 @@ $(".next").click(function() {
             // The key name on the left side is the name attribute
             // of an input field. Validation rules are defined
             // on the right side
-            // fnames: "required",
-            // lnames: "required",
-            // email: {
-            //     required: true,
-            //     // Specify that email should be validated
-            //     // by the built-in "email" rule
-            //     email: false,
-            //     customEmail: true
-            // },
-            // phone1: {
-            //     required: true,
-            //     digits: true
-            // },
-            // phone2: {
-            //     required: true,
-            //     digits: true
-            // },
-            // ident: "required",
-            // identType: {
-            //     required: true
-            // },
+            fnames: "required",
+            lnames: "required",
+            email: {
+                required: true,
+                // Specify that email should be validated
+                // by the built-in "email" rule
+                email: false,
+                customEmail: true
+            },
+            phone1: {
+                required: true,
+                digits: true
+            },
+            phone2: {
+                required: true,
+                digits: true
+            },
+            ident: "required",
+            identType: {
+                required: true
+            },
             procedencia: "required",
             departamento: "required",
             ciudad: "required",
