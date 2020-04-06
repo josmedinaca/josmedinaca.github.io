@@ -10,50 +10,61 @@ jQuery.validator.addMethod("customDroplist", function(value, element) {
     return this.optional(element) || /^[1-3]{1}$/i.test(value);
 }, "Please enter valid emaildd address!");
 $(".next").click(function() {
-    // $('#msform').validate({
-    //     // Specify validation rules
-    //     rules: {
-    //         // The key name on the left side is the name attribute
-    //         // of an input field. Validation rules are defined
-    //         // on the right side
-    //         fnames: "required",
-    //         lnames: "required",
-    //         email: {
-    //             required: true,
-    //             // Specify that email should be validated
-    //             // by the built-in "email" rule
-    //             email: false,
-    //             customEmail: true
-    //         },
-    //         phone1: {
-    //             required: true,
-    //             digits: true
-    //         },
-    //         phone2: {
-    //             required: true,
-    //             digits: true
-    //         },
-    //         ident: "required",
-    //         identType: {
-    //             required: true
-    //         }
+    $('#msform').validate({
+        // Specify validation rules
+        rules: {
+            // The key name on the left side is the name attribute
+            // of an input field. Validation rules are defined
+            // on the right side
+            // fnames: "required",
+            // lnames: "required",
+            // email: {
+            //     required: true,
+            //     // Specify that email should be validated
+            //     // by the built-in "email" rule
+            //     email: false,
+            //     customEmail: true
+            // },
+            // phone1: {
+            //     required: true,
+            //     digits: true
+            // },
+            // phone2: {
+            //     required: true,
+            //     digits: true
+            // },
+            // ident: "required",
+            // identType: {
+            //     required: true
+            // },
+            procedencia: "required",
+            departamento: "required",
+            ciudad: "required",
+            lat: "required",
+            long: "required",
+            direccion: "required"
+        },
+        // Specify validation error messages
+        messages: {
+            fnames: "Introduce tus nombres",
+            lnames: "Introduce tus apellidos",
+            email: "Introduce tu correo institucional",
+            phone1: "Introduce tu teléfono principal",
+            phone2: "Introduce tu teléfono secundario",
+            ident: "Introduce tu documento de indetificación",
+            identType: "Escoge tu tipo de documento",
+            procedencia: "Escoge tu lugar de procedencia",
+            departamento: "Escoge el departamento donde te encuentras",
+            ciudad: "Escribe la ciudad donde te encuentras",
+            lat: "Ubiquese en el mapa",
+            long: "Ubiquese en el mapa",
+            direccion: "Introduce tu dirección",
+        },
 
-    //     },
-    //     // Specify validation error messages
-    //     messages: {
-    //         fnames: "Introduce tus nombres",
-    //         lnames: "Introduce tus apellidos",
-    //         email: "Introduce tu correo institucional",
-    //         phone1: "Introduce tu teléfono principal",
-    //         phone2: "Introduce tu teléfono secundario",
-    //         ident: "Introduce tu documento de indetificación",
-    //         identType: "Escoge tu tipo de documento"
-    //     },
-
-    // });
-    // if (!$('#msform').valid()) {
-    //     return false;
-    // }
+    });
+    if (!$('#msform').valid()) {
+        return false;
+    }
     if (animating) return false;
     animating = true;
 
@@ -62,7 +73,7 @@ $(".next").click(function() {
 
     //activate next step on progressbar using the index of next_fs
     $("#progressbar li").eq($("fieldset").index(next_fs)).addClass("active");
-
+    $(window).scrollTop(0);
     //show the next fieldset
     next_fs.show();
     //hide the current fieldset with style
@@ -98,10 +109,10 @@ $(".previous").click(function() {
 
     current_fs = $(this).parent();
     previous_fs = $(this).parent().prev();
-
+    $(window).scrollTop(0);
     //de-activate current step on progressbar
     $("#progressbar li").eq($("fieldset").index(current_fs)).removeClass("active");
-
+    $(window).scrollTop(0);
     //show the previous fieldset
     previous_fs.show();
     //hide the current fieldset with style
@@ -434,8 +445,7 @@ function postToGoogle() {
 
         },
         error: function(x, y, z) {
-            alert("Formulario NO enviado con exito");
-
+            document.getElementById("dadaada").innerHTML = "Tiempo en responder el formulario: " + seconds + " segundos.";
             console.log("ESO");
 
         }
@@ -826,7 +836,16 @@ function dificcc() {
     }
     console.log(contenidos + metodologia + activida);
 }
+var seconds = 0;
+
+window.setInterval((function() {
+    var start = Date.now();
+    return function() {
+        seconds = Math.floor((Date.now() - start) / 1000);
+    };
+}()), 1000);
 
 $(document).ready(function() {
     $("#myModal").modal('show');
+
 });

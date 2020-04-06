@@ -115,7 +115,7 @@
                         </select>
                     </div>
                     <p>Departamento donde se encuentra</p>
-                    <div class="departamento" id="departamento" name="situacion">
+                    <div class="dropdown" id="departamento" name="departamento">
                         <select class="form-control form-control-xs " class="dropbtn">
                                              <option value="" selected hidden>Seleccione</option>
                                              <option value="1">Amazonas</option>
@@ -915,6 +915,24 @@
 
                     <input type="button" name="previous" class="previous action-button-previous" value="Anterior" />
                     <input type="submit" name="submit" onclick="postToGoogle()" class="submit action-button" value="Enviar" />
+                    <div class="modal fade" id="myModal2" tabindex="0" role="dialog" aria-labelledby="myModalLabel">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                    <h4 class="modal-title" id="myModalLabel">DATOS ENVIADOS</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <p>Formulario enviado con éxito,,,,, faltan cositas, paciencia</p>
+                                    <p id="dadaada"> </p>
+
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default center-block" onclick="window.location.reload();" data-dismiss="modal">Aceptar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </fieldset>
 
             </form>

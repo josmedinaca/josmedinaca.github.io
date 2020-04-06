@@ -11,10 +11,17 @@
 
 html {
     height: 100%;
-    background: #9fdf9f;
     /* fallback for old browsers */
-    background: -webkit-linear-gradient(to left, #9fdf9f, #29a329);
+    background: -webkit-linear-gradient(to left, rgba(82, 33, 153, 0.5), rgba(0, 181, 216, 0.5));
     /* Chrome 10-25, Safari 5.1-6 */
+    background-image: linear-gradient(to bottom, rgba(82, 33, 153, 0.5), rgba(0, 181, 216, 0.5)), url('d.jpg');
+    /* Full height */
+    height: 100%;
+    /* Center and scale the image nicely */
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
 }
 
 body {
@@ -42,6 +49,7 @@ body {
     margin: 0 10%;
     /*stacking fieldsets above each other*/
     position: relative;
+    border-radius: 15px;
 }
 
 
@@ -199,7 +207,7 @@ body {
 
 #progressbar li.active:before,
 #progressbar li.active:after {
-    background: #00b300;
+    background: #00B5D8;
     color: white;
 }
 
