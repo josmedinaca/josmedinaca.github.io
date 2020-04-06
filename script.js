@@ -560,7 +560,7 @@ function onFileChange() {
 // simulate file change
 
 $("#s1").bind("change paste keyup", function() {
-    if (parseFloat($(this).val()) >= 100) {
+    if (parseFloat($(this).val()) > 100) {
         alert(">100");
         $("#s1").val("");
         s1 = 0;
@@ -577,7 +577,7 @@ $("#s1").bind("change paste keyup", function() {
     onFileChange();
 });
 $("#s2").bind("change paste keyup", function() {
-    if (parseFloat($(this).val()) >= 100) {
+    if (parseFloat($(this).val()) > 100) {
         alert(">100");
         $("#s2").val("");
         s2 = 0;
@@ -591,7 +591,7 @@ $("#s2").bind("change paste keyup", function() {
     onFileChange();
 });
 $("#s3").bind("change paste keyup", function() {
-    if (parseFloat($(this).val()) >= 100) {
+    if (parseFloat($(this).val()) > 100) {
         alert(">100");
         $("#s3").val("");
         s3 = 0;
@@ -605,7 +605,7 @@ $("#s3").bind("change paste keyup", function() {
     onFileChange();
 });
 $("#s4").bind("change paste keyup", function() {
-    if (parseFloat($(this).val()) >= 100) {
+    if (parseFloat($(this).val()) > 100) {
         alert(">100");
         $("#s4").val("");
         s4 = 0;
@@ -619,7 +619,7 @@ $("#s4").bind("change paste keyup", function() {
     onFileChange();
 });
 $("#s5").bind("change paste keyup", function() {
-    if (parseFloat($(this).val()) >= 100) {
+    if (parseFloat($(this).val()) > 100) {
         alert(">100");
         $("#s5").val("");
         s5 = 0;
@@ -633,7 +633,7 @@ $("#s5").bind("change paste keyup", function() {
     onFileChange();
 });
 $("#s6").bind("change paste keyup", function() {
-    if (parseFloat($(this).val()) >= 100) {
+    if (parseFloat($(this).val()) > 100) {
         alert(">100");
         $("#s6").val("");
         s6 = 0;
@@ -647,7 +647,7 @@ $("#s6").bind("change paste keyup", function() {
     onFileChange();
 });
 $("#s7").bind("change paste keyup", function() {
-    if (parseFloat($(this).val()) >= 100) {
+    if (parseFloat($(this).val()) > 100) {
         alert(">100");
         $("#s7").val("");
         s7 = 0;
@@ -661,7 +661,7 @@ $("#s7").bind("change paste keyup", function() {
     onFileChange();
 });
 $("#s8").bind("change paste keyup", function() {
-    if (parseFloat($(this).val()) >= 100) {
+    if (parseFloat($(this).val()) > 100) {
         alert(">100");
         $("#s8").val("");
         s8 = 0;
