@@ -279,6 +279,10 @@ input[type=number] {
     margin-bottom: 12px;
 }
 
+.my-select {
+    margin-bottom: 12px !important;
+}
+
 .input-group .form-control {
     margin: 0px !important;
 }

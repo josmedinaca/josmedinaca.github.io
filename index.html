@@ -76,14 +76,23 @@
                             </div>
                         </div>
                     </div>
-                    <h2 class="fs-title">Datos Personales</h2>
-                    <input type="text" name="fnames" id="fnames" placeholder="Nombres" />
-                    <input type="text" name="lnames" id="lnames" placeholder="Apellidos" />
-                    <input type="email" name="email" id="email" placeholder="Correo" />
-                    <input type="number" name="phone1" id="phone1" placeholder="Telefono 1" />
-                    <input type="number" name="phone2" id="phone2" placeholder="Telefono 2" />
 
-                    <input type="number" name="ident" id="ident" placeholder="Numero de Identificacion" />
+                    <h2 class="fs-title">DATOS DE IDENTIFICACIÓN Y CONTACTO</h2>
+                    <hr>
+                    <p>Nombre(s) completos</p>
+                    <input type="text" name="fnames" id="fnames" placeholder="Nombres" />
+                    <p>Apellido(s) completos</p>
+                    <input type="text" name="lnames" id="lnames" placeholder="Apellidos" />
+                    <p>Correo institucional</p>
+                    <input type="email" name="email" id="email" placeholder="Correo" />
+                    <div class="alert alert-warning alert-dismissible" role="alert">
+                        Si se encuentra fuera de Bogotá agregue el <strong>indicativo</strong> correspondiente a sus números de contacto.
+                    </div>
+                    <p>Numero de contacto <strong>(de preferencia celular)</strong></p>
+                    <input type="number" name="phone1" id="phone1" placeholder="Telefono 1" />
+                    <p>Numero de contacto adicional</p>
+                    <input type="number" name="phone2" id="phone2" placeholder="Telefono 2" />
+                    <p>Tipo de documento de Identificación</p>
                     <div class="dropdown">
                         <select name="identType" id="identType" class="form-control form-control-xs " class="dropbtn ">
                                              <option value="" selected hidden>Tipo de identificacion</option>
@@ -93,7 +102,9 @@
                                              <option value="3">Pasaporte</option>
                         </select>
                     </div>
-                    <br>
+                    <p>Documento de Identificación</p>
+                    <input type="number" name="ident" id="ident" placeholder="Numero de Identificacion" />
+
 
                     <input type="button" name="next" class="next action-button" value="Siguiente" />
 
@@ -102,6 +113,9 @@
                 <fieldset>
 
                     <h2 class="fs-title">Lugar de procedencia y residencia</h2>
+                    <hr>
+
+                    <p>Indique por favor su lugar de procedencia</p>
                     <div class="alert alert-warning alert-dismissible" role="alert">
                         <strong>¡Recuerde!</strong> El Área Metropolitana de Bogotá está conformada por los siguientes municipios: Bojacá, Cajicá, Chía, Cogua, Cota, El Rosal, Facatativá, Funza, Gachancipá, La Calera, Madrid, Mosquera, Nemocón, Soacha,
                         Sibaté, Sopó, Subachoque, Tabio, Tenjo, Tocancipá, Zipacón y Zipaquirá
@@ -114,7 +128,7 @@
                                              <option value="3">Soy de otra región o departamento de Colombia</option>
                         </select>
                     </div>
-                    <p>Departamento donde se encuentra</p>
+                    <p>Indique el departamento en el que se encuentra <strong>actualmente</strong></p>
                     <div class="dropdown" id="departamento" name="departamento">
                         <select class="form-control form-control-xs " class="dropbtn">
                                              <option value="" selected hidden>Seleccione</option>
@@ -179,28 +193,30 @@
                 </fieldset>
                 <fieldset>
                     <h2 class="fs-title">Ubicación</h2>
-                    <h3 class="fs-subtitle">Seleccione su ubicación en el mapa</h3>
+                    <hr>
+                    <p>Seleccione en el mapa la ubicación de su <strong>actual</strong> lugar de residencia</p>
                     </hr>
                     <!--Google map-->
                     <div id="mapid"></div>
 
                     <!--Google Maps-->
                     <hr/>
-                    <input type="text" name="lat" id='lat' placeholder="Lat" readonly="readonly" />
-                    <input type="text" name="long" id='long' placeholder="Long" readonly="readonly" />
-                    <hr/>
                     <img src="Captura.svg" style="width:70%">
                     <hr>
-                    <div class="alert alert-warning alert-dismissible" role="alert">
-                        Solo incluya la vía principal, vía secundaria(generadora) y numero de predio o placa (incluyendo letras y Bis, Este, Sur si aplica) por ejemplo: DIAGONAL 32B BIS A SUR # 6C - 32 ESTE. No incluya complementos como conjunto, barrio, bloque, apartamento
-                        u otros.
-                    </div>
+
                     <p>Indique la dirección donde reside actualmente sin el complemento (utilice de ser posible la que aparece en los recibos de servicios)</p>
+                    <div class="alert alert-warning alert-dismissible" role="alert">
+                        Solo incluya la vía principal, vía secundaria(generadora) y numero de predio o placa (incluyendo letras y Bis, Este, Sur si aplica) por ejemplo: <strong>DIAGONAL 32B BIS A SUR # 6C - 32 ESTE.</strong> No incluya complementos como
+                        conjunto, barrio, bloque, apartamento u otros.
+                        <p>Indique la dirección donde reside <strong>sin el complemento</strong> (utilice de ser posible la que aparece en los recibos de servicios), <strong>solo</strong> incluya los símbolos <strong>#</strong> y <strong>-</strong> .
+                        </p>
+                    </div>
                     <input type="text" name="direccion" id="direccion" placeholder="Dirección" />
+
+                    <p>Indique el complemento de la dirección (si aplica)</p>
                     <div class="alert alert-warning alert-dismissible" role="alert">
                         Incluya aquí cualquier complemento a la dirección como Interior, Torre, Bloque, Conjunto, Apartamento, etc.
                     </div>
-                    <p>Indique el complemento de la dirección (si aplica)</p>
                     <input type="text" name="direccion2" id="direccion2" placeholder="Datos adicionales a dirección" />
                     <p></p>
 
@@ -209,7 +225,8 @@
                 </fieldset>
                 <fieldset>
                     <h2 class="fs-title">Factores agravantes del IVSE</h2>
-                    <div class="alert alert-warning alert-dismissible" role="alert"> A continuación se le preguntará si cuenta con alguno de los factores agravantes del Instrumento de Valoración Socioeconómica (IVSE) que son de carácter sobreviniente
+                    <hr>
+                    <div class="alert alert-warning alert-dismissible" role="alert"> A continuación se le preguntará si cuenta con alguno de los factores agravantes del Instrumento de Valoración Socioeconómica (IVSE)
                         <a href="http://www.legal.unal.edu.co/rlunal/home/doc.jsp?d_i=76384" target="_blank">
                             <p>https://bit.ly/34gRaEY</p>
                         </a>
@@ -246,7 +263,7 @@
                     </div>
 
                     <div class="dropdown" id="certificada" name="certificada">
-                        <p>¿Su condición se encuentra certificada por la EPS?</p>
+                        <p>¿Su condición de discapacidad se encuentra certificada por la EPS?</p>
                         <select class="form-control form-control-xs " class="dropbtn">
                                              <option value="1">SI</option>
                                              <option value="2" selected>NO</option>
@@ -282,29 +299,33 @@
                 </fieldset>
                 <fieldset>
                     <h2 class="fs-title">SITUACIÓN SOCIOECONÓMICA</h2>
+                    <hr>
                     <h5>Indique de quien depende económicamente en la actualidad y en que porcentaje aproximadamente (la suma debe dar cercana a 100%)</h5>
 
                     <div class="row">
-                        <div class="col-md-3"><input type="number" name="s1" id="s1" placeholder="Papá" /> <span class="pxSpan">%</span></div>
-                        <div class="col-md-3"><input type="number" name="s2" id="s2" placeholder="Mamá" /><span class="pxSpan">%</span></div>
-                        <div class="col-md-3"><input type="number" name="s3" id="s3" placeholder="Hermanos" /><span class="pxSpan">%</span></div>
-                        <div class="col-md-3"><input type="number" name="s4" id="s4" placeholder="Abuelos" /><span class="pxSpan">%</span></div>
+                        <div class="col-md-6"><input type="number" name="s1" id="s1" placeholder="Papá" /> <span class="pxSpan">%</span></div>
+                        <div class="col-md-6"><input type="number" name="s8" id="s8" placeholder="Otros parientes" /><span class="pxSpan">%</span></div>
 
                     </div>
                     <div class="row">
-                        <div class="col-md-3"><input type="number" name="s5" id="s5" placeholder="Pareja" /><span class="pxSpan">%</span></div>
-                        <div class="col-md-3"><input type="number" name="s6" id="s6" placeholder="Particulares" /><span class="pxSpan">%</span></div>
-                        <div class="col-md-3"><input type="number" name="s7" id="s7" placeholder="Sí mismo" /><span class="pxSpan">%</span></div>
-                        <div class="col-md-3"><input type="number" name="s8" id="s8" placeholder="Otros parientes" /><span class="pxSpan">%</span></div>
+                        <div class="col-md-6"><input type="number" name="s2" id="s2" placeholder="Mamá" /><span class="pxSpan">%</span></div>
+                        <div class="col-md-6"><input type="number" name="s5" id="s5" placeholder="Pareja" /><span class="pxSpan">%</span></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6"><input type="number" name="s3" id="s3" placeholder="Hermanos" /><span class="pxSpan">%</span></div>
+                        <div class="col-md-6"><input type="number" name="s6" id="s6" placeholder="Particulares" /><span class="pxSpan">%</span></div>
 
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6"><input type="number" name="s4" id="s4" placeholder="Abuelos" /><span class="pxSpan">%</span></div>
+                        <div class="col-md-6"><input type="number" name="s7" id="s7" placeholder="Sí mismo" /><span class="pxSpan">%</span></div>
                     </div>
 
                     <div class="progress">
                         <div class="progress-bar" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">0%</div>
                     </div>
-                    <p>¿A cuanto ascienden ACTUALMENTE los ingresos mensuales propios y/o que recibe de las personas de quienes depende económicamente?</p>
-                    <input type="number" name="ingresos" id="ingresos" placeholder="Ingresos mensuales" />
-                    <p>¿Alguna persona depende económicamente de usted? Indique quienes y en que porcentaje aproximadamente (esta suma NO necesariamente debe dar aproximadamente el 100%)</p>
+
+                    <p>¿Alguna persona depende económicamente de usted? Indique en qué porcentaje aproximadamente según el caso. Si no tiene ningún dependiente deje todas las casillas vacías o con cero y continúe a la siguiente pregunta</p>
                     <div class="row">
                         <div class="col-md-3"><input type="number" name="s11" id="s11" placeholder="Papá" /> <span class="pxSpan">%</span></div>
                         <div class="col-md-3"><input type="number" name="s22" id="s22" placeholder="Mamá" /><span class="pxSpan">%</span></div>
@@ -348,6 +369,11 @@
                                              <option value="3">Ninguna</option>
                         </select>
                     </div>
+                    <p>¿A cuánto ascienden <strong>ACTUALMENTE</strong> los ingresos mensuales <strong>propios y/o que recibe de las personas de quienes depende económicamente</strong>?
+                    </p>
+                    <input type="number" name="ingresos" id="ingresos" placeholder="Ingresos mensuales" />
+                    <p>Para la <strong>alimentación mía y de las personas a mi cargo con las que convivo </strong>(si aplica), <strong>ACTUALMENTE</strong> mi gasto mensual aproximado es de:</p>
+                    <input type="number" name="gasto" id="gasto" placeholder="Gasto mensual" />
                     <p>Indique con que servicios cuenta actualmente</p>
                     <div id="servicios">
                         <select title="Seleccione" class="form-control form-control-xs selectpicker my-select" onchange="servicios()" multiple>
@@ -370,8 +396,7 @@
                         <option value="5">Olla a presión</option>
                       </select>
                     </div>
-                    <p>Para la alimentación mía y de las personas a mi cargo con las que convivo (si aplica), ACTUALMENTE mi gasto mensual aproximado es de:</p>
-                    <input type="number" name="gasto" id="gasto" placeholder="Gasto mensual" />
+
                     <p>Actualmente recibe algún apoyo socioeconómico por parte de:</p>
                     <div id="apoyosx">
                         <select title="Seleccione" class="form-control form-control-xs selectpicker my-select" onchange="apoyosxd()" multiple>
@@ -472,7 +497,7 @@
                                              <option value="2">No</option>
                         </select>
                     </div>
-                    <h4><strong>Durante el último mes ha experimentado:</strong></h4>
+                    <h2 class="fs-title"><strong>Durante el último mes ha experimentado:</strong></h2>
                     <h5>Tristeza</h5>
                     <div class="dropdown" id="tristeza" name="tristeza">
                         <select class="form-control form-control-xs " class="dropbtn">
@@ -536,7 +561,7 @@
                                              <option value="4">Siempre</option>
                         </select>
                     </div>
-                    <h4><strong>Indique a continuación, si los sentimientos experimentados que señaló en la pregunta anterior se acompañan de:</strong></h4>
+                    <h2 class="fs-title"><strong>Indique a continuación, si los sentimientos experimentados que señaló en la pregunta anterior se acompañan de:</strong></h2>
                     <h5>Dolor de cabeza o espalda</h5>
                     <div class="dropdown" id="Dolor" name="Dolor">
                         <select class="form-control form-control-xs " class="dropbtn">
@@ -634,7 +659,7 @@
                 </fieldset>
                 <fieldset>
                     <h2 class="fs-title">Dinámica Social</h2>
-                    <h4><strong>Por favor lea con atención cada uno de las siguientes afirmaciones y escoja la frecuencia con que mejor se aproximan a su propia vida en estos momentos.</strong></h4>
+                    <h2 class="fs-title"><strong>Por favor lea con atención cada uno de las siguientes afirmaciones y escoja la frecuencia con que mejor se aproximan a su propia vida en estos momentos.</strong></h2>
                     <h5>Creo que soy bueno(a) en lo que hago.</h5>
                     <div class="dropdown" id="bueno" name="bueno">
                         <select class="form-control form-control-xs " class="dropbtn">
@@ -686,7 +711,7 @@
                     </div>
 
 
-                    <h4><strong>Usted diría que tiene dificultades relacionadas con:</strong></h4>
+                    <h2 class="fs-title"><strong>Usted diría que tiene dificultades relacionadas con:</strong></h2>
                     <h5>Comunicar a otros sus sentimientos.</h5>
                     <div class="dropdown" id="sentimientos" name="sentimientos">
                         <select class="form-control form-control-xs " class="dropbtn">
@@ -717,7 +742,7 @@
                     <div class="alert alert-warning alert-dismissible" role="alert">
                         Indique <strong>NO Aplica </strong>en los casos en que <strong>no pertenezca</strong> a dicha población
                     </div>
-                    <h4><strong>Se ha sentido vulnerado(a) en su integridad y derechos en razón a su:</strong></h4>
+                    <h2 class="fs-title"><strong>Se ha sentido vulnerado(a) en su integridad y derechos en razón a su:</strong></h2>
                     <h5>Origen étnico</h5>
                     <div class="dropdown" id="tnico" name="tnico">
                         <select class="form-control form-control-xs " class="dropbtn">
@@ -785,7 +810,7 @@
                         <option value="2">Las evaluaciones o actividades evaluables de las asignaturas que curso</option>
                       </select>
                     </div>
-                    <h4><strong>Adicionalmente, usted diría que en la actualidad tiene dificultades relacionadas con:</strong></h4>
+                    <h2 class="fs-title"><strong>Adicionalmente, usted diría que en la actualidad tiene dificultades relacionadas con:</strong></h2>
                     <h5>La atención/concentración que se requiere para hacer trabajos y tareas académicas.</h5>
                     <div class="dropdown" id="dificultadessss" name="dificultadessss">
                         <select class="form-control form-control-xs " class="dropbtn">

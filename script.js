@@ -6,9 +6,7 @@ var animating; //flag to prevent quick multi-click glitches
 jQuery.validator.addMethod("customEmail", function(value, element) {
     return this.optional(element) || /^[a-zA-Z0-9._-]+@[unal.edu.co]{11}$/i.test(value);
 }, "Please enter valid emaildd address!");
-jQuery.validator.addMethod("customDroplist", function(value, element) {
-    return this.optional(element) || /^[1-3]{1}$/i.test(value);
-}, "Please enter valid emaildd address!");
+
 $(".next").click(function() {
     $('#msform').validate({
         // Specify validation rules
@@ -16,33 +14,33 @@ $(".next").click(function() {
             // The key name on the left side is the name attribute
             // of an input field. Validation rules are defined
             // on the right side
-            fnames: "required",
-            lnames: "required",
-            email: {
-                required: true,
-                // Specify that email should be validated
-                // by the built-in "email" rule
-                email: false,
-                customEmail: true
-            },
-            phone1: {
-                required: true,
-                digits: true
-            },
-            phone2: {
-                required: true,
-                digits: true
-            },
-            ident: "required",
-            identType: {
-                required: true
-            },
-            procedencia: "required",
-            departamento: "required",
-            ciudad: "required",
-            lat: "required",
-            long: "required",
-            direccion: "required"
+            // fnames: "required",
+            // lnames: "required",
+            // email: {
+            //     required: true,
+            //     // Specify that email should be validated
+            //     // by the built-in "email" rule
+            //     email: false,
+            //     customEmail: true
+            // },
+            // phone1: {
+            //     required: true,
+            //     digits: true
+            // },
+            // phone2: {
+            //     required: true,
+            //     digits: true
+            // },
+            // ident: "required",
+            // identType: {
+            //     required: true
+            // },
+            // procedencia: "required",
+            // departamento: "required",
+            // ciudad: "required",
+            // lat: "required",
+            // long: "required",
+            // direccion: "required"
         },
         // Specify validation error messages
         messages: {
