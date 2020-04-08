@@ -90,7 +90,7 @@ $(".next").click(function() {
             });
             next_fs.css({ 'left': left, 'opacity': opacity });
         },
-        duration: 800,
+        duration: 400,
         complete: function() {
             current_fs.hide();
             animating = false;
@@ -126,7 +126,7 @@ $(".previous").click(function() {
             current_fs.css({ 'left': left });
             previous_fs.css({ 'transform': 'scale(' + scale + ')', 'opacity': opacity });
         },
-        duration: 800,
+        duration: 400,
         complete: function() {
             current_fs.hide();
             animating = false;
