@@ -877,13 +877,14 @@
                                 <span class="input-group-addon">%</span>
                             </div>
                         </div>
-                    </div>
-                    <p>Actualmente ha tenido dificultades relacionadas con:</p>
+                    </div><br>
+                    <p>Frente a las asignaturas que cursa actualmente, ha tenido dificultades relacionadas con:</p>
                     <div id="difccs">
-                        <select title="Seleccione" class="form-control form-control-xs selectpicker my-select" onchange="dificcc()" multiple>
-                        <option value="0">Los contenidos de las asignaturas que curso</option>
-                        <option value="1">La metodología de las asignaturas que curso</option>
-                        <option value="2">Las evaluaciones o actividades evaluables de las asignaturas que curso</option>
+                        <select title="Seleccione" class="form-control form-control-xs selectpicker my-select3" onchange="dificcc()" multiple>
+                        <option value="0">Los contenidos</option>
+                        <option value="1">La metodología</option>
+                        <option value="2">Actividades evaluables</option>
+                        <option value="3">Ninguna</option>
                       </select>
                     </div>
                     <h2 class="fs-title"><strong>Adicionalmente, usted diría que en la actualidad tiene dificultades relacionadas con:</strong></h2>
@@ -945,11 +946,11 @@
                 <fieldset>
                     <h2 class="fs-title">Actividades Recreativas</h2>
                     <hr>
+
+                    <p>¿Antes de la emergencia sanitaria practicaba con regularidad algún deporte o actividad física?</p>
                     <div class="alert alert-warning alert-dismissible" role="alert">
                         <strong>Actividad física:</strong> Trotar, caminar, gimnasio, etc.
                     </div>
-                    <p>¿Antes de la emergencia sanitaria practicaba con regularidad algún deporte o actividad física?</p>
-
                     <div class="dropdown" id="deporte" name="deporte">
                         <select class="form-control form-control-xs " onchange="showDiv8('deportexx', this)" class="dropbtn">
                             <option value="0" selected hidden >Seleccione</option>
@@ -979,27 +980,31 @@
                                              <option value="1">Sí</option>
                         </select>
                     </div>
+
+                    <p>¿Antes de la emergencia sanitaria realizaba con regularidad alguna actividad artística o cultural?</p>
                     <div class="alert alert-warning alert-dismissible" role="alert">
                         <strong>Actividad artística o cultural:</strong> Cantar, pintar, bailar, escribir cuentos o poesía, tocar algún instrumento,hacer videos o producciones de radio o televisión, fotografía,artes gráficas, artesanías o manualidades,
                         etc.
                     </div>
-                    <p>¿Antes de la emergencia sanitaria realizaba con regularidad alguna actividad artística o cultural?</p>
                     <div class="dropdown" id="culturalsss" name="culturalsss">
-                        <select class="form-control form-control-xs " class="dropbtn">
-                                             <option value="0" selected >No</option>
-                                             <option value="1">Sí</option>
+                        <select class="form-control form-control-xs " onchange="showDiv22('validadordeportes', this)" class="dropbtn">
+                                            <option value="" selected hidden>Seleccione</option>
+                                             <option value="0" >Sí</option>
+                                             <option value="1">No</option>
                         </select>
                     </div>
-                    <p>Si en la pregunta anterior respondió NO, indique por favor la principal razón por la que no practicaba ninguna actividad artística o cultural</p>
-                    <div class="dropdown" id="practicabaxx" name="practicabaxx">
-                        <select class="form-control form-control-xs " class="dropbtn">
-                                             <option value="0" selected >Falta de tiempo</option>
-                                             <option value="1">No le interesa</option>
-                                             <option value="1">Pereza</option>
-                                             <option value="1">No ha tenido la oportunidad</option>
-                                             <option value="1">No tiene este tipo de habilidades artísticas</option>
-                                             <option value="1">Factores económicos</option>
+                    <div id="validadordeportes">
+                        <p>Indique por favor la principal razón por la que no practicaba ninguna actividad artística o cultural</p>
+                        <div class="dropdown" id="practicabaxx" name="practicabaxx">
+                            <select class="form-control form-control-xs " class="dropbtn">
+                             <option value="0" selected >Falta de tiempo</option>
+                             <option value="1">No le interesa</option>
+                             <option value="1">Pereza</option>
+                             <option value="1">No ha tenido la oportunidad</option>
+                             <option value="1">No tiene este tipo de habilidades artísticas</option>
+                             <option value="1">Factores económicos</option>
                         </select>
+                        </div>
                     </div>
                     <p>¿Actualmente realiza alguna actividad artística o cultural en donde reside?</p>
                     <div class="dropdown" id="actividadscss" name="actividadscss">
@@ -1010,13 +1015,24 @@
                     </div>
 
                     <hr/>
-                    <h2 class="fs-title">Comentarios Finales</h2>
-                    <hr/>
-                    <p>¿Tiene alguna duda, inquietud o situación adicional en la que requiera acompañamiento y que quisiera comentar?</p>
-                    <input type="text" name="Comentariosxx" id='Comentariosxx' placeholder="..." />
+
+                    <input type="button" name="previous" class="previous action-button-previous" value="Anterior" />
+                    <input type="button" name="next" class="next action-button" value="Siguiente" />
+
+                </fieldset>
+
+                <fieldset>
+                    <!-- Modal -->
+
+
+                    <h2 class="fs-title">COMENTARIOS FINALES</h2>
+                    <hr>
+                    <textarea class="form-control" rows="5" name="Comentariosxx" id='Comentariosxx' placeholder="..."></textarea>
+
 
                     <input type="button" name="previous" class="previous action-button-previous" value="Anterior" />
                     <input type="submit" name="submit" onclick="postToGoogle()" class="submit action-button" value="Enviar" />
+
                     <div class="modal fade" id="myModal2" tabindex="0" role="dialog" aria-labelledby="myModalLabel">
                         <div class="modal-dialog" role="document">
                             <div class="modal-content">
@@ -1025,12 +1041,18 @@
                                     <h4 class="modal-title" id="myModalLabel">DATOS ENVIADOS</h4>
                                 </div>
                                 <div class="modal-body">
-                                    <p>Formulario enviado con éxito,,,,, faltan cositas, paciencia</p>
-                                    <p id="dadaada"> </p>
+                                    <p><strong>¡SUS RESPUESTAS FUERON ENVIADAS EXITOSAMENTE!</strong></p>
+                                    <p>Desde la Dirección de Bienestar de la Sede Bogotá agradecemos enormemente el tiempo dedicado a diligenciar este formulario así como la información suministrada.</p>
+                                    <p>Nuevamente le solicitamos de forma respetuosa que
+                                        <strong>si conoce estudiantes que no tengan los medios para diligenciar el formulario, se comunique con ellos y les asista en el diligenciamiento.</strong> De no ser posible lo anterior le agradecemos informarnos
+                                        en el siguiente enlace los datos de contacto del estudiante para poder asistirle.</p>
+                                    <a href="https://forms.gle/Txv9Sa5FuypGep2t8">
+                                        <p>https://forms.gle/Txv9Sa5FuypGep2t8</p>
+                                    </a>
 
                                 </div>
                                 <div class="modal-footer">
-                                    <button type="button" class="btn btn-default center-block" onclick="window.location.reload();" data-dismiss="modal">Aceptar</button>
+                                    <button type="button" class="btn btn-default center-block" onclick="location.href = 'http://medicina.bogota.unal.edu.co/coronavirus';" data-dismiss="modal">Aceptar</button>
                                 </div>
                             </div>
                         </div>

@@ -340,8 +340,16 @@ input[type=number] {
     display: none;
 }
 
+#validadordeportes {
+    display: none;
+}
+
 .progress-bar[role="remaining"] {
     background-color: #888;
+}
+
+textarea {
+    resize: none;
 }
 
 .input-group-addon {

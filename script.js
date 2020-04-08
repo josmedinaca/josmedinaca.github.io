@@ -504,6 +504,10 @@ function showDiv11(divId, element) {
     document.getElementById(divId).style.display = element.value == 1 ? 'block' : 'none';
 }
 
+function showDiv22(divId, element) {
+    document.getElementById(divId).style.display = element.value == 1 ? 'block' : 'none';
+}
+
 
 function showDiv12(divId, element) {
     var control1 = $("#tristeza option:selected").val();
@@ -834,10 +838,17 @@ function apoyosxd() {
 var contenidos = "No";
 var metodologia = "No";
 var activida = "No";
+var nna = "No";
 
 function dificcc() {
     selected = $("#difccs option:selected").text();
     console.log($("#difccs option:selected").text());
+    if (selected.includes("Ninguna")) {
+        $('.my-select3').selectpicker('deselectAll');
+        nna = "Si";
+    } else {
+        nna = "No";
+    }
     if (selected.includes("Los contenidos de las asignaturas que curso")) {
         contenidos = "Si";
     } else {
@@ -848,7 +859,7 @@ function dificcc() {
     } else {
         metodologia = "No";
     }
-    if (selected.includes("Las evaluaciones o actividades evaluables de las asignaturas que curso")) {
+    if (selected.includes("Actividades evaluables")) {
         activida = "Si";
     } else {
         activida = "No";
