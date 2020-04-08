@@ -51,8 +51,8 @@
                                 </div>
                                 <div class="modal-body">
                                     <p>Estimado(a) estudiante</p>
-                                    <p>Esta encuesta tiene como objetivo evaluar sus actuales condiciones y nivel de vulnerabilidad así como identificar POSIBLES estrategias para mitigar dichas vulnerabilidades durante el periodo de cuarentena obligatorio
-                                        dispuesto por el Gobierno Nacional por cuenta de la emergencia sanitaria del COVID-19. Antes de continuar tenga en cuenta las siguientes consideraciones:</p>
+                                    <p>Esta encuesta tiene como objetivo evaluar sus actuales condiciones y nivel de vulnerabilidad así como identificar POSIBLES estrategias para mitigar dichas vulnerabilidades durante la emergencia sanitaria del COVID-19.
+                                        Antes de continuar tenga en cuenta las siguientes consideraciones:</p>
                                     <p>1. Dada la gravedad de la actual coyuntura la encuesta tiene una extensión de 60 preguntas y dura aproximadamente 15 minutos en ser contestada. Lo anterior, con el fin de tener un conocimiento detallado de múltiples
                                         condiciones relevantes.</p>
                                     <p> 2. Responder la encuesta no implica de ninguna manera o de forma automática la obtención de cualquier tipo de apoyo. El diligenciamiento de esta encuesta no es obligatorio pero hacerlo facilitará la toma de decisiones
@@ -300,7 +300,7 @@
                 <fieldset>
                     <h2 class="fs-title">SITUACIÓN SOCIOECONÓMICA</h2>
                     <hr>
-                    <h5>Indique de quien depende económicamente en la actualidad y en que porcentaje aproximadamente (la suma debe dar cercana a 100%)</h5>
+                    <h5>Indique de quien depende económicamente en la actualidad y en que porcentaje aproximadamente (la suma debe dar 100%)</h5>
 
                     <div class="row">
                         <div class="col-md-6"><input type="number" name="s1" id="s1" placeholder="Papá" /> <span class="pxSpan">%</span></div>
@@ -413,7 +413,7 @@
                         <option value="5">Iniciativas de egresados</option>
                       </select>
                     </div>
-                    <p>Actualmente tiene adjudicado alguno de los siguientes apoyos socioeconómicos externos gubernamentales o de otras organizaciones (bancos, fundaciones, etc.) distintas a la UN.</p>
+                    <p>¿Actualmente tiene adjudicado alguno de los siguientes apoyos socioeconómicos externos gubernamentales?</p>
                     <div class="dropdown" id="apoyos" name="apoyos">
                         <select class="form-control form-control-xs " onchange="showDiv10('apoyoshid', this)" class="dropbtn">
                                              <option value="" selected >Ninguno</option>
@@ -448,13 +448,14 @@
 
 
                     <div id="puntajeSISBEN2" name="puntajeSISBEN2">
+
+                        <p>Indique su puntaje SISBEN</p>
                         <div class="alert alert-warning alert-dismissible" role="alert">
                             Si no está seguro puede consultar su puntaje SISBEN acá:
                             <a href="https://wssisbenconsulta.sisben.gov.co/dnp_sisbenconsulta/dnp_sisben_consulta.aspx" target="_blank">
                                 <p>https://bit.ly/2JDjsQr</p>
                             </a>
                         </div>
-                        <p>Indique su puntaje SISBEN</p>
                         <input type="number" name="puntajeSISBEN" id="puntajeSISBEN" placeholder="Puntaje" />
                     </div>
 
@@ -468,11 +469,11 @@
                     <br/>
                     <p>Indique por favor la EPS en la que se encuentra afiliado. Si no tiene EPS coloque <strong>NO TENGO</strong></p>
                     <input type="text" name="EPS" id="EPS" placeholder="EPS" />
+
+                    <p>¿Realizó la portabilidad de EPS a su actual lugar de residencia?</p>
                     <div class="alert alert-warning alert-dismissible" role="alert">
                         <strong>Portabilidad: </strong>Trámite por el cual usted traslada la cobertura en salud de su EPS de su lugar de procedencia al lugar donde se encuentra viviendo actualmente de forma temporal
                     </div>
-                    <p>¿Realizó la portabilidad de EPS a su actual lugar de residencia?</p>
-
                     <div class="dropdown" id="portabilidad" name="portabilidad">
                         <select class="form-control form-control-xs " class="dropbtn">
                                              <option value="0" selected >Sí</option>
@@ -1046,7 +1047,7 @@
                                     <p>Nuevamente le solicitamos de forma respetuosa que
                                         <strong>si conoce estudiantes que no tengan los medios para diligenciar el formulario, se comunique con ellos y les asista en el diligenciamiento.</strong> De no ser posible lo anterior le agradecemos informarnos
                                         en el siguiente enlace los datos de contacto del estudiante para poder asistirle.</p>
-                                    <a href="https://forms.gle/Txv9Sa5FuypGep2t8">
+                                    <a href="https://forms.gle/Txv9Sa5FuypGep2t8" target="_blank">
                                         <p>https://forms.gle/Txv9Sa5FuypGep2t8</p>
                                     </a>
 
