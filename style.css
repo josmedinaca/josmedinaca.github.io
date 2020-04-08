@@ -259,14 +259,15 @@ input[type=number] {
 
 /* Dropdown Button */
 
-.dropbtn {
+
+/* .dropbtn {
     color: #ff4d4d;
     padding: 16px;
     font-size: 16px;
     font-family: montserrat;
     border: none;
     cursor: pointer;
-}
+} */
 
 .error {
     color: #ff4d4d;
@@ -324,6 +325,18 @@ input[type=number] {
 }
 
 #apoyoshid {
+    display: none;
+}
+
+#apodohid {
+    display: none;
+}
+
+#sintomas {
+    display: none;
+}
+
+#otracronc {
     display: none;
 }
 

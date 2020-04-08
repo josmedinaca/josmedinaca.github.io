@@ -79,7 +79,7 @@ $(".next").click(function() {
         step: function(now, mx) {
             //as the opacity of current_fs reduces to 0 - stored in "now"
             //1. scale current_fs down to 80%
-            scale = 1 - (1 - now) * 0.2;
+            scale = 1;
             //2. bring next_fs from the right(50%)
             left = (now * 50) + "%";
             //3. increase opacity of next_fs to 1 as it moves in
@@ -118,7 +118,7 @@ $(".previous").click(function() {
         step: function(now, mx) {
             //as the opacity of current_fs reduces to 0 - stored in "now"
             //1. scale previous_fs from 80% to 100%
-            scale = 0.8 + (1 - now) * 0.2;
+            scale = 1;
             //2. take current_fs to the right(50%) - from 0%
             left = ((1 - now) * 50) + "%";
             //3. increase opacity of previous_fs to 1 as it moves in
@@ -474,12 +474,14 @@ function showDiv4(divId, element) {
     document.getElementById(divId).style.display = element.value == 0 ? 'block' : 'none';
 }
 
-function showDiv5(divId, element) {
-    document.getElementById(divId).style.display = element.value == 1 ? 'block' : 'none';
-}
 
 function showDiv6(divId, element) {
-    document.getElementById(divId).style.display = element.value == 2 ? 'block' : 'none';
+    var control1 = $("#emergencia option:selected").val();
+    var control2 = $("#recibiendo option:selected").val();
+    total = parseInt(control1 + control2);
+    console.log(total);
+    document.getElementById(divId).style.display = total != 0 ? 'block' : 'none';
+    //mi solucion, un funcion que sume todos los select si != 0, mostrarlo
 }
 
 function showDiv7(divId, element) {
@@ -496,6 +498,25 @@ function showDiv9(divId, element) {
 
 function showDiv10(divId, element) {
     document.getElementById(divId).style.display = element.value == 4 ? 'block' : 'none';
+}
+
+function showDiv11(divId, element) {
+    document.getElementById(divId).style.display = element.value == 1 ? 'block' : 'none';
+}
+
+
+function showDiv12(divId, element) {
+    var control1 = $("#tristeza option:selected").val();
+    var control2 = $("#Aislamiento option:selected").val();
+    var control3 = $("#desesperanza option:selected").val();
+    var control4 = $("#enojo option:selected").val();
+    var control5 = $("#ansiedad option:selected").val();
+    var control6 = $("#deseos option:selected").val();
+    var control7 = $("#suicidas option:selected").val();
+    total = parseInt(control1 + control2 + control3 + control4 + control5 + control6 + control7);
+    console.log(total);
+    document.getElementById(divId).style.display = total != 0 ? 'block' : 'none';
+    //mi solucion, un funcion que sume todos los select si != 0, mostrarlo
 }
 $('.alert').alert()
 
@@ -521,7 +542,7 @@ function onFileChange() {
 
 
     // apply percentage
-    if (percentage >= 100) {
+    if (percentage > 100) {
         $("#s1").val("");
         $("#s2").val("");
         $("#s3").val("");
@@ -835,7 +856,121 @@ function dificcc() {
     console.log(contenidos + metodologia + activida);
 }
 var seconds = 0;
+var EPOC = "No";
+var Asma = "No";
+var Hiper = "No";
+var Diabetes = "No";
+var Cncer = "No";
+var fermeda = "No";
+var lter = "No";
+var Otra = "No";
+var Ninguna = "No";
 
+function crnicax(divId, element) {
+    selected = $("#crnica option:selected").text();
+    console.log($("#crnica option:selected").text());
+    if (selected.includes("Ninguna")) {
+        $('.my-select1').selectpicker('deselectAll');
+        Ninguna = "Si";
+    } else {
+        Ninguna = "No";
+    }
+    if (selected.includes("Otra")) {
+        document.getElementById(divId).style.display = 'block';
+    } else {
+        document.getElementById(divId).style.display = 'none';
+    }
+    if (selected.includes("EPOC- Enfermedad Pulmonar Obstructiva Crónica")) {
+        EPOC = "Si";
+    } else {
+        EPOC = "No";
+    }
+    if (selected.includes("Asma")) {
+        Asma = "Si";
+    } else {
+        Asma = "No";
+    }
+    if (selected.includes("Hipertensión arterial")) {
+        Hiper = "Si";
+    } else {
+        Hiper = "No";
+    }
+    if (selected.includes("Diabetes")) {
+        Diabetes = "Si";
+    } else {
+        Diabetes = "No";
+    }
+    if (selected.includes("Cáncer")) {
+        Cncer = "Si";
+    } else {
+        Cncer = "No";
+    }
+    if (selected.includes("Enfermedades autoinmunes")) {
+        fermeda = "Si";
+    } else {
+        fermeda = "No";
+    }
+    if (selected.includes("Alteraciones inmunológicas")) {
+        lter = "Si";
+    } else {
+        lter = "No";
+    }
+}
+var Familia = "No";
+var Amigos = "No";
+var Universidad = "No";
+var Docentes = "No";
+var Administrativos = "No";
+var Vecinos = "No";
+var Organizaciones = "No";
+var Ninguno = "No";
+
+function apoyosper() {
+    selected = $("#apoyospersonalll option:selected").text();
+    console.log($("#apoyospersonalll option:selected").text());
+    if (selected.includes("Ninguno")) {
+        $('.my-select2').selectpicker('deselectAll');
+        Ninguno = "Si";
+    } else {
+        Ninguno = "No";
+    }
+    if (selected.includes("Familia")) {
+        Familia = "Si";
+    } else {
+        Familia = "No";
+    }
+    if (selected.includes("Amigos y/o pareja")) {
+        Amigos = "Si";
+    } else {
+        Amigos = "No";
+    }
+    if (selected.includes("Compañeros de Universidad")) {
+        Universidad = "Si";
+    } else {
+        Universidad = "No";
+    }
+    if (selected.includes("Docentes")) {
+        Docentes = "Si";
+    } else {
+        Docentes = "No";
+    }
+    if (selected.includes("Administrativos")) {
+        Administrativos = "Si";
+    } else {
+        Administrativos = "No";
+    }
+    if (selected.includes("Vecinos autoinmunes")) {
+        Vecinos = "Si";
+    } else {
+        Vecinos = "No";
+    }
+    if (selected.includes("Organizaciones")) {
+        Organizaciones = "Si";
+    } else {
+        Organizaciones = "No";
+    }
+
+}
 window.setInterval((function() {
     var start = Date.now();
     return function() {

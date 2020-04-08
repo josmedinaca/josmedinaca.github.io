@@ -327,18 +327,22 @@
 
                     <p>¿Alguna persona depende económicamente de usted? Indique en qué porcentaje aproximadamente según el caso. Si no tiene ningún dependiente deje todas las casillas vacías o con cero y continúe a la siguiente pregunta</p>
                     <div class="row">
-                        <div class="col-md-3"><input type="number" name="s11" id="s11" placeholder="Papá" /> <span class="pxSpan">%</span></div>
-                        <div class="col-md-3"><input type="number" name="s22" id="s22" placeholder="Mamá" /><span class="pxSpan">%</span></div>
-                        <div class="col-md-3"><input type="number" name="s33" id="s33" placeholder="Hermanos" /><span class="pxSpan">%</span></div>
-                        <div class="col-md-3"><input type="number" name="s44" id="s44" placeholder="Abuelos" /><span class="pxSpan">%</span></div>
+                        <div class="col-md-6"><input type="number" name="s11" id="s11" placeholder="Papá" /> <span class="pxSpan">%</span></div>
+                        <div class="col-md-6"><input type="number" name="s44" id="s44" placeholder="Abuelos" /><span class="pxSpan">%</span></div>
 
                     </div>
                     <div class="row">
-                        <div class="col-md-3"><input type="number" name="s5" id="s55" placeholder="Pareja" /><span class="pxSpan">%</span></div>
-                        <div class="col-md-3"><input type="number" name="s6" id="s66" placeholder="Particulares" /><span class="pxSpan">%</span></div>
-                        <div class="col-md-3"><input type="number" name="s7" id="s77" placeholder="Sí mismo" /><span class="pxSpan">%</span></div>
-                        <div class="col-md-3"><input type="number" name="s8" id="s88" placeholder="Otros parientes" /><span class="pxSpan">%</span></div>
+                        <div class="col-md-6"><input type="number" name="s22" id="s22" placeholder="Mamá" /><span class="pxSpan">%</span></div>
+                        <div class="col-md-6"><input type="number" name="s55" id="s55" placeholder="Pareja" /><span class="pxSpan">%</span></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6"><input type="number" name="s33" id="s33" placeholder="Hermanos" /><span class="pxSpan">%</span></div>
+                        <div class="col-md-6"><input type="number" name="s44" id="s44" placeholder="CAMB_HIJOS" /><span class="pxSpan">%</span></div>
 
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6"><input type="number" name="s88" id="s88" placeholder="CAMB_OTROS PARIENTES" /><span class="pxSpan">%</span></div>
+                        <div class="col-md-6"><input type="number" name="s77" id="s77" placeholder="CAMB_OTRAS" /><span class="pxSpan">%</span></div>
                     </div>
                     <p>¿Convive en estos momentos con alguna de las personas que dependen económicamente de usted?</p>
                     <div class="dropdown" id="convive" name="convive">
@@ -412,19 +416,32 @@
                     <p>Actualmente tiene adjudicado alguno de los siguientes apoyos socioeconómicos externos gubernamentales o de otras organizaciones (bancos, fundaciones, etc.) distintas a la UN.</p>
                     <div class="dropdown" id="apoyos" name="apoyos">
                         <select class="form-control form-control-xs " onchange="showDiv10('apoyoshid', this)" class="dropbtn">
-                                             <option value="0" selected >Ninguno</option>
+                                             <option value="" selected >Ninguno</option>
                                              <option value="1">Ser Pilo Paga</option>
                                              <option value="2">Generación E</option>
                                              <option value="3">Jóvenes en Acción</option>
-                                             <option value="4">Otra</option>
+                                             <option value="4">Crédito ICETEX</option>
                         </select>
+                    </div>
+                    <p>¿Actualmente recibe algún beneficio socioeconómico estudiantil externo de organizaciones, fundaciones, bancos, etc.?</p>
+                    <div class="dropdown" id="apoyos" name="apoyos">
+                        <select class="form-control form-control-xs " onchange="showDiv11('apodohid', this)" class="dropbtn">
+                                             <option value="" selected hidden>Seleccione</option>
+                                             <option value="1">Sí</option>
+                                             <option value="2">No</option>
+                        </select>
+                    </div>
+                    <div id="apodohid">
+                        <p>Indique por favor el nombre de la organización, fundación, banco, etc. de la que recibe apoyo</p>
+                        <input type="number" name="nombreOrg" id="nombreOrg" placeholder="Nombre" />
                     </div>
                     <div id="apoyoshid">
                         <input type="text" name="apoyos2" id="apoyos2" placeholder="¿Cuál?" /></div>
                     <p>¿Cuenta con puntaje SISBEN?</p>
                     <div class="dropdown" id="SISBEN" name="SISBEN">
                         <select class="form-control form-control-xs " onchange="showDiv3('puntajeSISBEN2', this)" class="dropbtn">
-                                             <option value="1" selected >No</option>
+                                            <option value="" selected hidden >Seleccione</option>
+                                             <option value="1"  >No</option>
                                              <option value="2">Si</option>
                         </select>
                     </div>
@@ -447,11 +464,12 @@
                 </fieldset>
                 <fieldset>
                     <h2 class="fs-title">Salud</h2>
+                    <hr/>
                     <br/>
                     <p>Indique por favor la EPS en la que se encuentra afiliado. Si no tiene EPS coloque <strong>NO TENGO</strong></p>
                     <input type="text" name="EPS" id="EPS" placeholder="EPS" />
                     <div class="alert alert-warning alert-dismissible" role="alert">
-                        Portabilidad es el trámite por el cual usted hace el traslado de la cobertura en salud de la EPS que recibe habitualmente en su lugar de procedencia al lugar de residencia en el que se encuentra viviendo actualmente de forma temporal
+                        <strong>Portabilidad: </strong>Trámite por el cual usted traslada la cobertura en salud de su EPS de su lugar de procedencia al lugar donde se encuentra viviendo actualmente de forma temporal
                     </div>
                     <p>¿Realizó la portabilidad de EPS a su actual lugar de residencia?</p>
 
@@ -462,7 +480,7 @@
                                              <option value="2">No aplica (Me encuentro en mi lugar de procedencia)</option>
                         </select>
                     </div>
-                    <p>¿Es usted consumidor habitual (consumo de dos o más veces al mes) de sustancias como cigarrillo, alcohol, éxtasis (pepas), bazuco, cocaína (perico), hongos y/o alucinógenos (LCD), inhalantes (solventes), marihuana, heroína, energizantes,
+                    <p>¿Es usted consumidor habitual (consumo de dos o más veces al mes) de sustancias como cigarrillo, alcohol, éxtasis (pepas), bazuco, cocaína (perico), hongos y/o alucinógenos (LSD), inhalantes (solventes), marihuana, heroína, energizantes,
                         entre otros?</p>
                     <div class="dropdown" id="consumidor" name="consumidor">
                         <select class="form-control form-control-xs " onchange="showDiv4('consumov', this)" class="dropbtn">
@@ -500,152 +518,184 @@
                     <h2 class="fs-title"><strong>Durante el último mes ha experimentado:</strong></h2>
                     <h5>Tristeza</h5>
                     <div class="dropdown" id="tristeza" name="tristeza">
-                        <select class="form-control form-control-xs " class="dropbtn">
-                                             <option value="1"selected>Nunca</option>
-                                             <option value="2">Pocas veces</option>
-                                             <option value="3">Muchas veces</option>
-                                             <option value="4">Siempre</option>
+                        <select class="form-control form-control-xs " onchange="showDiv12('sintomas', this)" class="dropbtn">
+                                            <option value=""selected hidden>Seleccione</option>
+                                             <option value="0">Nunca</option>
+                                             <option value="0">Pocas veces</option>
+                                             <option value="1">Muchas veces</option>
+                                             <option value="1">Siempre</option>
                         </select>
                     </div>
                     <h5>Aislamiento mayor al habitual</h5>
                     <div class="dropdown" id="Aislamiento" name="Aislamiento">
-                        <select class="form-control form-control-xs " class="dropbtn">
-                                             <option value="1"selected>Nunca</option>
-                                             <option value="2">Pocas veces</option>
-                                             <option value="3">Muchas veces</option>
-                                             <option value="4">Siempre</option>
+                        <select class="form-control form-control-xs " onchange="showDiv12('sintomas', this)" class="dropbtn">
+                            <option value=""selected hidden>Seleccione</option>
+                            <option value="0">Nunca</option>
+                            <option value="0">Pocas veces</option>
+                            <option value="1">Muchas veces</option>
+                            <option value="1">Siempre</option>
                         </select>
                     </div>
                     <h5>Poco interés por hacer cosas o desesperanza</h5>
                     <div class="dropdown" id="desesperanza" name="desesperanza">
-                        <select class="form-control form-control-xs " class="dropbtn">
-                                             <option value="1"selected>Nunca</option>
-                                             <option value="2">Pocas veces</option>
-                                             <option value="3">Muchas veces</option>
-                                             <option value="4">Siempre</option>
+                        <select class="form-control form-control-xs " onchange="showDiv12('sintomas', this)" class="dropbtn">
+                            <option value=""selected hidden>Seleccione</option>
+                            <option value="0">Nunca</option>
+                            <option value="0">Pocas veces</option>
+                            <option value="1">Muchas veces</option>
+                            <option value="1">Siempre</option>
                         </select>
                     </div>
                     <h5>Irritabilidad, mal genio o enojo</h5>
                     <div class="dropdown" id="enojo" name="enojo">
-                        <select class="form-control form-control-xs " class="dropbtn">
-                                             <option value="1"selected>Nunca</option>
-                                             <option value="2">Pocas veces</option>
-                                             <option value="3">Muchas veces</option>
-                                             <option value="4">Siempre</option>
+                        <select class="form-control form-control-xs " onchange="showDiv12('sintomas', this)" class="dropbtn">
+                            <option value=""selected hidden>Seleccione</option>
+                            <option value="0">Nunca</option>
+                            <option value="0">Pocas veces</option>
+                            <option value="1">Muchas veces</option>
+                            <option value="1">Siempre</option>
                         </select>
                     </div>
                     <h5>Angustia o ansiedad</h5>
                     <div class="dropdown" id="ansiedad" name="ansiedad">
-                        <select class="form-control form-control-xs " class="dropbtn">
-                                             <option value="1"selected>Nunca</option>
-                                             <option value="2">Pocas veces</option>
-                                             <option value="3">Muchas veces</option>
-                                             <option value="4">Siempre</option>
+                        <select class="form-control form-control-xs " onchange="showDiv12('sintomas', this)" class="dropbtn">
+                            <option value=""selected hidden>Seleccione</option>
+                            <option value="0">Nunca</option>
+                            <option value="0">Pocas veces</option>
+                            <option value="1">Muchas veces</option>
+                            <option value="1">Siempre</option>
                         </select>
                     </div>
                     <h5>Autoagresión, deseos de hacerse daño</h5>
                     <div class="dropdown" id="deseos" name="deseos">
-                        <select class="form-control form-control-xs " class="dropbtn">
-                                             <option value="1"selected>Nunca</option>
-                                             <option value="2">Pocas veces</option>
-                                             <option value="3">Muchas veces</option>
-                                             <option value="4">Siempre</option>
+                        <select class="form-control form-control-xs " onchange="showDiv12('sintomas', this)" class="dropbtn">
+                            <option value=""selected hidden>Seleccione</option>
+                            <option value="0">Nunca</option>
+                            <option value="0">Pocas veces</option>
+                            <option value="1">Muchas veces</option>
+                            <option value="1">Siempre</option>
                         </select>
                     </div>
                     <h5>Ideas suicidas</h5>
                     <div class="dropdown" id="suicidas" name="suicidas">
-                        <select class="form-control form-control-xs " class="dropbtn">
+                        <select class="form-control form-control-xs " onchange="showDiv12('sintomas', this)" class="dropbtn">
+                            <option value=""selected hidden>Seleccione</option>
+                            <option value="0">Nunca</option>
+                            <option value="0">Pocas veces</option>
+                            <option value="1">Muchas veces</option>
+                            <option value="1">Siempre</option>
+                        </select>
+                    </div>
+                    <div id="sintomas">
+                        <h2 class="fs-title">Indique a continuación, si los sentimientos experimentados <em><u>Muchas veces</u></em> o <em><u>Siempre</u></em> que señaló en la pregunta anterior se acompañan de:</h2>
+                        <h5>Dolor de cabeza o espalda</h5>
+                        <div class="dropdown" id="Dolor" name="Dolor">
+                            <select class="form-control form-control-xs " class="dropbtn">
                                              <option value="1"selected>Nunca</option>
                                              <option value="2">Pocas veces</option>
                                              <option value="3">Muchas veces</option>
                                              <option value="4">Siempre</option>
                         </select>
-                    </div>
-                    <h2 class="fs-title"><strong>Indique a continuación, si los sentimientos experimentados que señaló en la pregunta anterior se acompañan de:</strong></h2>
-                    <h5>Dolor de cabeza o espalda</h5>
-                    <div class="dropdown" id="Dolor" name="Dolor">
-                        <select class="form-control form-control-xs " class="dropbtn">
-                                             <option value="1"selected>Nunca</option>
-                                             <option value="2">Pocas veces</option>
-                                             <option value="3">Muchas veces</option>
-                                             <option value="4">Siempre</option>
-                        </select>
-                    </div>
-                    <h5>Cansancio, agotamiento o fatiga</h5>
-                    <div class="dropdown" id="agotamiento" name="agotamiento">
-                        <select class="form-control form-control-xs " class="dropbtn">
-                                             <option value="1"selected>Nunca</option>
-                                             <option value="2">Pocas veces</option>
-                                             <option value="3">Muchas veces</option>
-                                             <option value="4">Siempre</option>
-                        </select>
-                    </div>
-                    <h5>Pérdida o aumento del apetito</h5>
-                    <div class="dropdown" id="apetito" name="apetito">
-                        <select class="form-control form-control-xs " class="dropbtn">
-                                             <option value="1"selected>Nunca</option>
-                                             <option value="2">Pocas veces</option>
-                                             <option value="3">Muchas veces</option>
-                                             <option value="4">Siempre</option>
-                        </select>
-                    </div>
-                    <h5>Trastornos digestivos</h5>
-                    <div class="dropdown" id="digestivos" name="digestivos">
-                        <select class="form-control form-control-xs " class="dropbtn">
-                                             <option value="1"selected>Nunca</option>
-                                             <option value="2">Pocas veces</option>
-                                             <option value="3">Muchas veces</option>
-                                             <option value="4">Siempre</option>
-                        </select>
-                    </div>
-                    <h5>Dificultades o cambios en el sueño</h5>
-                    <div class="dropdown" id="sueo" name="sueo">
-                        <select class="form-control form-control-xs " class="dropbtn">
-                                             <option value="1"selected>Nunca</option>
-                                             <option value="2">Pocas veces</option>
-                                             <option value="3">Muchas veces</option>
-                                             <option value="4">Siempre</option>
-                        </select>
-                    </div>
-                    <p>Antes de la emergencia adelantaba algún proceso de atención por psicología o psiquiatría</p>
-                    <div class="dropdown" id="emergencia" name="emergencia">
-                        <select class="form-control form-control-xs " onchange="showDiv6('necesita1', this)" class="dropbtn">
-                                             <option value="1"selected>No</option>
-                                             <option value="2">Sí</option> 
-                        </select>
-                    </div>
-                    <div id="necesita1">
-                        <p>Actualmente recibe o continúa recibiendo alguna atención por psicología y/o psiquiatría</p>
-                        <div class="dropdown" id="recibiendo" name="recibiendo">
-                            <select class="form-control form-control-xs " onchange="showDiv5('necesita2', this)" class="dropbtn">
-                                <option value="0" selected hidden>Seleccione</option>
-                                                 <option value="1">No</option>
-                                                 <option value="2" >Sí</option> 
-                            </select>
                         </div>
+                        <h5>Cansancio, agotamiento o fatiga</h5>
+                        <div class="dropdown" id="agotamiento" name="agotamiento">
+                            <select class="form-control form-control-xs " class="dropbtn">
+                                             <option value="1"selected>Nunca</option>
+                                             <option value="2">Pocas veces</option>
+                                             <option value="3">Muchas veces</option>
+                                             <option value="4">Siempre</option>
+                        </select>
+                        </div>
+                        <h5>Pérdida o aumento del apetito</h5>
+                        <div class="dropdown" id="apetito" name="apetito">
+                            <select class="form-control form-control-xs " class="dropbtn">
+                                             <option value="1"selected>Nunca</option>
+                                             <option value="2">Pocas veces</option>
+                                             <option value="3">Muchas veces</option>
+                                             <option value="4">Siempre</option>
+                        </select>
+                        </div>
+                        <h5>Trastornos digestivos</h5>
+                        <div class="dropdown" id="digestivos" name="digestivos">
+                            <select class="form-control form-control-xs " class="dropbtn">
+                                             <option value="1"selected>Nunca</option>
+                                             <option value="2">Pocas veces</option>
+                                             <option value="3">Muchas veces</option>
+                                             <option value="4">Siempre</option>
+                        </select>
+                        </div>
+                        <h5>Dificultades o cambios en el sueño</h5>
+                        <div class="dropdown" id="sueo" name="sueo">
+                            <select class="form-control form-control-xs " class="dropbtn">
+                                             <option value="1"selected>Nunca</option>
+                                             <option value="2">Pocas veces</option>
+                                             <option value="3">Muchas veces</option>
+                                             <option value="4">Siempre</option>
+                        </select>
+                        </div>
+                    </div>
+                    <hr>
+                    <p>¿Alguna vez adelantó un proceso o fue atendido(a) por psicología y/o psiquiatría?</p>
+                    <div class="dropdown" id="emergencia" name="emergencia">
+                        <select class="form-control form-control-xs " onchange="showDiv6('necesita2', this)" class="dropbtn">
+                                            <option value="" selected hidden>Seleccione</option>
+                                            <option value="1">Sí</option>
+                                            <option value="0" >No</option>
+                        </select>
+                    </div>
+                    <p>¿Actualmente adelanta un proceso de atención por psicología y/o psiquiatría?</p>
+                    <div class="dropdown" id="recibiendo" name="recibiendo">
+                        <select class="form-control form-control-xs " onchange="showDiv6('necesita2', this)" class="dropbtn">
+                                <option value="" selected hidden>Seleccione</option>
+                                                 <option value="1">Sí</option>
+                                                 <option value="0" >No</option> 
+                            </select>
                     </div>
 
+
                     <div id="necesita2">
-                        <p>Indique por favor si ¿considera que en estos momentos necesita atención por psicología y/o psiquiatría?</p>
+                        <p>¿Se encuentra actualmente medicado(a) por psiquiatría?</p>
                         <div class="dropdown" id="necesita" name="necesita">
                             <select class="form-control form-control-xs " class="dropbtn">
-                                                 <option value="1"selected>No</option>
-                                                 <option value="2">SI, y actualmente sigo recibiendola</option> 
-                                                 <option value="2">SI, pero actualmente no estoy recibiendola</option> 
+                                                 <option value="" selected hidden>Seleccione</option>
+                                                 <option value="2">SI, y continuó recibiendo mi medicación</option> 
+                                                 <option value="3">SI, pero no estoy recibiendo mi medicación</option> 
+                                                 <option value="4">No</option>
                             </select>
                         </div>
                     </div>
+                    <p>¿Considera que en estos momentos necesita atención por psicología y/o psiquiatría?</p>
+                    <div class="dropdown" id="atenciónssssx" name="atenciónssssx">
+                        <select class="form-control form-control-xs " class="dropbtn">
+                                             <option value="" selected hidden>Seleccione</option>
+                                             <option value="1">Sí</option>
+                                             <option value="2">No</option>
+                        </select></div>
                     <div class="alert alert-warning alert-dismissible" role="alert">
-                        Enfermedad crónica: Enfermedades de larga duración y por lo general de progresión lenta. como lo son los infartos o accidentes cerebrovasculares, cáncer, diabetes, parkinson, alzheimer, esclerosis múltiple, hipertensión, lumbalgia, etc.
+                        <strong>Enfermedad crónica:</strong> Enfermedades de larga duración (usualmente de 3 meses en adelante), por lo general de progresión lenta, que no responden completamente a tratamientos y suelen presentar periodos de remisión
+                        (ausencia de signos y síntomas comunes) y recaída persistiendo por largos periodos de tiempo.
                     </div>
                     <p>¿Presenta actualmente alguna condición médica crónica (distinta a salud por psicología y/o psiquiatría)?</p>
-                    <div class="dropdown" id="crnica" name="crnica">
-                        <select class="form-control form-control-xs " class="dropbtn">
-                                             <option value="1"selected>No</option>
-                                             <option value="2">SI, y esta siendo tratada</option> 
-                                             <option value="2">SI, pero no he podido tratarla</option>
-                        </select>
+                    <div id="crnica" name="crnica">
+                        <select title="Seleccione" class="form-control form-control-xs selectpicker my-select1" onchange="crnicax('otracronc',this)" multiple>
+                        <option value="0">EPOC- Enfermedad Pulmonar Obstructiva Crónica</option>
+                        <option value="1">Asma</option>
+                        <option value="2">Hipertensión arterial</option>
+                        <option value="3">Diabetes</option>
+                        <option value="4">Cáncer</option>
+                        <option value="5">Enfermedades autoinmunes</option>
+                        <option value="6">Alteraciones inmunológicas</option>
+                        <option value="7">Otra</option>
+                        <option value="8">Ninguna</option>
+                      </select>
+                    </div><br>
+
+                    <div id="otracronc">
+                        <p>Indique por favor su enfermedad crónica
+                        </p>
+                        <input type="text" name="otracroncxx" id="otracroncxx" placeholder="Otra" />
                     </div>
+
                     <p>Actualmente está medicado(a) por alguna condición de salud (distinta a la medicación por psiquiatría, si la tiene)</p>
                     <div class="dropdown" id="medicado" name="medicado">
                         <select class="form-control form-control-xs " class="dropbtn">
@@ -654,11 +704,13 @@
                                              <option value="2">SI, pero actualmente no estoy recibiendola</option>
                         </select>
                     </div>
+
                     <input type="button" name="previous" class="previous action-button-previous" value="Anterior" />
                     <input type="button" name="next" class="next action-button" value="Siguiente" />
                 </fieldset>
                 <fieldset>
                     <h2 class="fs-title">Dinámica Social</h2>
+                    <hr>
                     <h2 class="fs-title"><strong>Por favor lea con atención cada uno de las siguientes afirmaciones y escoja la frecuencia con que mejor se aproximan a su propia vida en estos momentos.</strong></h2>
                     <h5>Creo que soy bueno(a) en lo que hago.</h5>
                     <div class="dropdown" id="bueno" name="bueno">
@@ -706,11 +758,23 @@
                         </select>
                     </div>
                     <div class="alert alert-warning alert-dismissible" role="alert">
-                        <strong>Apoyo  emocional:</strong> Demostraciones de afecto, empatía, preocupación, cuidado, confianza, aprecio, elogios, etc. Apoyo económico: Prestar ayuda financiera, pago de bienes o servicios. Apoyo informativo: Dar guía ,
-                        consejo, sugerencias o información valiosa para tomar decisiones o resolver problemas.
+                        <strong>Apoyo emocional: </strong>Demostraciones de afecto, empatía, preocupación, cuidado, confianza, aprecio, elogios, etc.
                     </div>
 
-
+                    <p>Indique para cada caso si actualmente recibe algún tipo de apoyo emocional.
+                    </p>
+                    <div id="apoyospersonalll" name="apoyospersonalll">
+                        <select title="Seleccione" class="form-control form-control-xs selectpicker my-select2" onchange="apoyosper()" multiple>
+                        <option value="0">Familia</option>
+                        <option value="1">Amigos y/o pareja</option>
+                        <option value="2">Compañeros de Universidad</option>
+                        <option value="3">Docentes</option>
+                        <option value="4">Administrativos</option>
+                        <option value="5">Vecinos autoinmunes</option>
+                        <option value="6">Organizaciones</option>
+                        <option value="7">Ninguno</option>
+                      </select>
+                    </div>
                     <h2 class="fs-title"><strong>Usted diría que tiene dificultades relacionadas con:</strong></h2>
                     <h5>Comunicar a otros sus sentimientos.</h5>
                     <div class="dropdown" id="sentimientos" name="sentimientos">
@@ -739,10 +803,11 @@
                                              <option value="4">Siempre</option>
                         </select>
                     </div>
+
+                    <h2 class="fs-title"><strong>Se ha sentido vulnerado(a) en su integridad y derechos en razón a su:</strong></h2>
                     <div class="alert alert-warning alert-dismissible" role="alert">
                         Indique <strong>NO Aplica </strong>en los casos en que <strong>no pertenezca</strong> a dicha población
                     </div>
-                    <h2 class="fs-title"><strong>Se ha sentido vulnerado(a) en su integridad y derechos en razón a su:</strong></h2>
                     <h5>Origen étnico</h5>
                     <div class="dropdown" id="tnico" name="tnico">
                         <select class="form-control form-control-xs " class="dropbtn">
@@ -786,7 +851,7 @@
                     <h5>Otra</h5>
                     <div class="dropdown" id="Otraxc" name="Otraxc">
                         <select class="form-control form-control-xs " onchange="showDiv7('otracom', this)" class="dropbtn">
-                                             <option value="1"selected>No Aplica</option>
+                                             <option value=""selected>Seleccione</option>
                                              <option value="2">No</option>
                                              <option value="3">Sí</option>
                         </select>
@@ -800,8 +865,19 @@
                 </fieldset>
                 <fieldset>
                     <h2 class="fs-title">Situación Académica</h2>
-                    <input type="number" name="avance" id="avance" placeholder="Avance de carrera" />
+                    <hr>
+                    <p>Indique por favor su porcentaje de avance de carrera actual
+                    </p>
 
+
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="input-group">
+                                <input type="number" name="avance" id="avance" placeholder="Avance de carrera" class="form-control">
+                                <span class="input-group-addon">%</span>
+                            </div>
+                        </div>
+                    </div>
                     <p>Actualmente ha tenido dificultades relacionadas con:</p>
                     <div id="difccs">
                         <select title="Seleccione" class="form-control form-control-xs selectpicker my-select" onchange="dificcc()" multiple>
@@ -868,6 +944,7 @@
                 </fieldset>
                 <fieldset>
                     <h2 class="fs-title">Actividades Recreativas</h2>
+                    <hr>
                     <div class="alert alert-warning alert-dismissible" role="alert">
                         <strong>Actividad física:</strong> Trotar, caminar, gimnasio, etc.
                     </div>
