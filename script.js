@@ -1029,6 +1029,7 @@ function crnicax(divId, element) {
     console.log($("#crnica option:selected").text());
     if (selected.includes("Ninguna")) {
         $('.my-select1').selectpicker('deselectAll');
+        $('.my-select1').selectpicker('val', 'Ninguna');
         Ninguna = "Si";
     } else {
         Ninguna = "No";
@@ -1210,6 +1211,15 @@ $('#gasto').change(function() {
 });
 $("#calOnlyDate").datetimepicker({
     minDate: new Date(),
-    maxDate: '2020-05-31',
+    maxDate: '2020-06-01',
     format: 'DD/MM/YYYY'
+});
+
+
+$(document).keypress(function(event) {
+    var keycode = (event.keyCode ? event.keyCode : event.which);
+    if (keycode == '13') {
+        event.preventDefault();
+        return false;
+    }
 });
