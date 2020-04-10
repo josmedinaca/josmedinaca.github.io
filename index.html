@@ -66,8 +66,12 @@
                                     <p>6. Al diligenciar este formulario, usted acepta que sus datos personales sean tratados únicamente para el propósito anteriormente descrito. </p>
                                     <p>7. El formulario se limitará a una sola respuesta por estudiante activo.</p>
 
-                                    <p><strong>NOTA:</strong> Si conoce algún estudiante que probablemente no tenga posibilidad de diligenciar este formulario agradecemos se comunique con la persona telefónicamente y la asista en el diligenciamiento del
-                                        formulario o nos indique por correo electrónico algún numero de contacto para poder asistirle.</p>
+                                    <p>
+                                        <div class="alert alert-warning alert-dismissible" role="alert">
+                                            <strong>NOTA:</strong> Si conoce algún estudiante que probablemente no tenga posibilidad de diligenciar este formulario agradecemos se comunique con la persona telefónicamente y la asista en el diligenciamiento
+                                            del formulario o nos indique por correo electrónico algún numero de contacto para poder asistirle.
+                                        </div>
+                                    </p>
 
                                 </div>
                                 <div class="modal-footer">
@@ -85,17 +89,18 @@
                     <input type="text" name="lnames" id="lnames" placeholder="Apellidos" />
                     <p>Correo institucional</p>
                     <input type="email" name="email" id="email" placeholder="Correo" />
+
+                    <p>Numero de contacto <strong>(de preferencia celular)</strong></p>
                     <div class="alert alert-warning alert-dismissible" role="alert">
                         Si se encuentra fuera de Bogotá agregue el <strong>indicativo</strong> correspondiente a sus números de telefono fijo.
                     </div>
-                    <p>Numero de contacto <strong>(de preferencia celular)</strong></p>
                     <input type="number" name="phone1" id="phone1" placeholder="Telefono 1" />
                     <p>Numero de contacto adicional</p>
                     <input type="number" name="phone2" id="phone2" placeholder="Telefono 2" />
                     <p>Tipo de documento de Identificación</p>
                     <div class="dropdown">
                         <select name="identType" id="identType" class="form-control form-control-xs " class="dropbtn ">
-                                             <option value="" selected hidden>Tipo de identificacion</option>
+                                             <option value="" selected hidden>Seleccione</option>
                                              <option value="1">Cedula de ciudadania</option>
                                              <option value="0">Cedula de extranjeria</option>
                                              <option value="2">Tarjeta de Identidad</option>
@@ -122,7 +127,7 @@
                     </div>
                     <div class="dropdown">
                         <select name="procedencia" id="procedencia" class="form-control form-control-xs " class="dropbtn ">
-                                             <option value="" selected hidden>Lugar de procedencia</option>
+                                             <option value="" selected hidden>Seleccione</option>
                                              <option value="1">Bogotá D.C</option>
                                              <option value="2">Municipio del Área Metropolitana de Bogotá</option>
                                              <option value="3">Soy de otra región o departamento de Colombia</option>
@@ -194,7 +199,7 @@
                     <input type="button" name="next" class="next action-button" value="Siguiente" />
                 </fieldset>
                 <fieldset>
-                    <h2 class="fs-title">Ubicación</h2>
+                    <h2 class="fs-title">UBICACIÓN DEL LUGAR DE RESIDENCIA ACTUAL</h2>
                     <hr>
                     <p>Seleccione en el mapa la ubicación de su <strong>actual</strong> lugar de residencia</p>
                     </hr>
@@ -234,7 +239,7 @@
                             <p>https://bit.ly/34gRaEY</p>
                         </a>
                     </div>
-                    <p>¿Es víctima de desplazamiento forzado?</p>
+                    <p>¿Es víctima del conflicto armado?</p>
                     <div class="dropdown" id="desplazado" name="desplazado">
                         <select class="form-control form-control-xs " class="dropbtn">
                                              <option value ="" selected hidden>Seleccione</option>
@@ -256,6 +261,10 @@
                         </select>
                     </div>
                     <p>¿Se reconoce usted como persona en situación de discapacidad? ¿De qué tipo?</p>
+                    <div class="alert alert-warning alert-dismissible" role="alert">
+                        <strong>Discapacidad:</strong> situaciones de orden físico, sensorial, mental o intelectual, las cuales afectan significativamente el nivel de desarrollo, las posibilidades funcionales, la comunicación, la interacción social y
+                        el aprendizaje.
+                    </div>
                     <div class="dropdown" id="discapacidad" name="discapacidad">
                         <select class="form-control form-control-xs " onchange="showDiv2('certificada', this)" class="dropbtn">
                             <option value ="" selected hidden>Seleccione</option>
@@ -300,6 +309,9 @@
                         </select>
                     </div>
                     <p>¿Pertenece a algún grupo étnico?</p>
+                    <div class="alert alert-warning alert-dismissible" role="alert">
+                        <strong>Grupos étnicos:</strong> Comunidades indígenas, ROM, Raizales, Palenqueros, Negros o Afrodescendientes
+                    </div>
                     <div class="dropdown" id="grupoe" name="grupoe">
                         <select class="form-control form-control-xs " class="dropbtn">
                             <option value ="" selected hidden>Seleccione</option>
@@ -312,7 +324,7 @@
                     <input type="button" name="next" class="next action-button" value="Siguiente" />
                 </fieldset>
                 <fieldset>
-                    <h2 class="fs-title">SITUACIÓN SOCIOECONÓMICA</h2>
+                    <h2 class="fs-title">ASPECTOS SOCIOECONÓMICOS</h2>
                     <hr>
                     <h5>Indique de quien depende económicamente en la actualidad y en que porcentaje aproximadamente (la suma debe dar 100%)</h5>
 
@@ -367,17 +379,7 @@
                                              <option value="2" >No aplica (no tengo dependientes económicos)</option>
                         </select>
                     </div>
-                    <p>Indique cual de las siguientes situaciones se ajusta mejor a su situación actual de residencia</p>
-                    <div class="dropdown" id="situacion" name="situacion">
-                        <select class="form-control form-control-xs " class="dropbtn">
-                            <option value="" selected hidden>Seleccione</option>
-                                             <option value="1" >Estoy viviendo con mi nucleo familiar u otros familiares</option>
-                                             <option value="2">Estoy viviendo en habitación de alojamiento o residencia estudiantil</option>
-                                             <option value="3">Estoy viviendo en una habitación en una residencia familiar o de particulares</option>
-                                             <option value="4">Estoy viviendo en una casa o apartamento compartido con amigos o compañeros</option>
-                                             <option value="5">Estoy viviendo en una casa, apartamento o apartaestudio completamente solo</option>
-                        </select>
-                    </div>
+
                     <p>Actualmente presenta alguna de las siguientes dificultades respecto a su alojamiento o lugar donde reside</p>
                     <div class="dropdown" id="dificultades" name="dificultades">
                         <select class="form-control form-control-xs " class="dropbtn">
@@ -390,9 +392,26 @@
                     </div>
                     <p>¿A cuánto ascienden <strong>ACTUALMENTE</strong> los ingresos mensuales <strong>propios y/o que recibe de las personas de quienes depende económicamente</strong>?
                     </p>
-                    <input type="number" name="ingresos" id="ingresos" placeholder="Ingresos mensuales" />
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="input-group">
+                                <span class="input-group-addon">$</span>
+                                <input type="number" name="ingresos" id="ingresos" placeholder="Ingresos mensuales" class="form-control">
+
+                            </div>
+                        </div>
+                    </div><br>
                     <p>Para la <strong>alimentación mía y de las personas a mi cargo con las que convivo </strong>(si aplica), <strong>ACTUALMENTE</strong> mi gasto mensual aproximado es de:</p>
-                    <input type="number" name="gasto" id="gasto" placeholder="Gasto mensual" />
+
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="input-group">
+                                <span class="input-group-addon">$</span>
+                                <input type="number" name="gasto" id="gasto" placeholder="Gasto mensual" class="form-control">
+
+                            </div>
+                        </div>
+                    </div><br>
                     <p>Indique con que servicios cuenta actualmente</p>
                     <div id="servicios">
                         <select title="Seleccione" class="form-control form-control-xs selectpicker my-select" onchange="servicios()" multiple>
@@ -478,7 +497,7 @@
                     <input type="button" name="next" class="next action-button" value="Siguiente" />
                 </fieldset>
                 <fieldset>
-                    <h2 class="fs-title">Salud</h2>
+                    <h2 class="fs-title">ASPECTOS DE SALUD</h2>
                     <hr/>
                     <br/>
                     <p>Indique por favor la EPS en la que se encuentra afiliado. Si no tiene EPS coloque <strong>NO TENGO</strong></p>
@@ -535,7 +554,7 @@
                                              <option value="2">No</option>
                         </select>
                     </div>
-                    <h2 class="fs-title"><strong>Durante el último mes ha experimentado:</strong></h2>
+                    <h2 class="fs-title2"><strong>Durante el último mes ha experimentado:</strong></h2>
                     <h5>Tristeza</h5>
                     <div class="dropdown" id="tristeza" name="tristeza">
                         <select class="form-control form-control-xs " onchange="showDiv12('sintomas', this)" class="dropbtn">
@@ -696,11 +715,12 @@
                                              <option value="1">Sí</option>
                                              <option value="2">No</option>
                         </select></div>
+
+                    <p>¿Presenta actualmente alguna condición médica crónica (distinta a salud por psicología y/o psiquiatría)?</p>
                     <div class="alert alert-warning alert-dismissible" role="alert">
                         <strong>Enfermedad crónica:</strong> Enfermedades de larga duración (usualmente de 3 meses en adelante), por lo general de progresión lenta, que no responden completamente a tratamientos y suelen presentar periodos de remisión
                         (ausencia de signos y síntomas comunes) y recaída persistiendo por largos periodos de tiempo.
                     </div>
-                    <p>¿Presenta actualmente alguna condición médica crónica (distinta a salud por psicología y/o psiquiatría)?</p>
                     <div id="crnica" name="crnica">
                         <select title="Seleccione" class="form-control form-control-xs selectpicker my-select1" onchange="crnicax('otracronc',this)" multiple>
                         <option value="0">EPOC- Enfermedad Pulmonar Obstructiva Crónica</option>
@@ -735,7 +755,7 @@
                     <input type="button" name="next" class="next action-button" value="Siguiente" />
                 </fieldset>
                 <fieldset>
-                    <h2 class="fs-title">Dinámica Social</h2>
+                    <h2 class="fs-title">ASPECTOS DE DINÁMICA PERSONAL Y SOCIAL</h2>
                     <hr>
                     <h2 class="fs-title"><strong>Por favor lea con atención cada uno de las siguientes afirmaciones y escoja la frecuencia con que mejor se aproximan a su propia vida en estos momentos.</strong></h2>
                     <h5>Creo que soy bueno(a) en lo que hago.</h5>
@@ -788,11 +808,22 @@
                                              <option value="4">Siempre</option>
                         </select>
                     </div>
-                    <div class="alert alert-warning alert-dismissible" role="alert">
-                        <strong>Apoyo emocional: </strong>Demostraciones de afecto, empatía, preocupación, cuidado, confianza, aprecio, elogios, etc.
+                    <p>Indique cuál de las siguientes afirmaciones se ajusta mejor a su situación donde se encuentra residiendo <strong>actualmente</strong></p>
+                    <div class="dropdown" id="situacion" name="situacion">
+                        <select class="form-control form-control-xs " class="dropbtn">
+                            <option value="" selected hidden>Seleccione</option>
+                                             <option value="1" >Estoy viviendo con mi nucleo familiar u otros familiares</option>
+                                             <option value="2">Estoy viviendo en habitación de alojamiento o residencia estudiantil</option>
+                                             <option value="3">Estoy viviendo en una habitación en una residencia familiar o de particulares</option>
+                                             <option value="4">Estoy viviendo en una casa o apartamento compartido con amigos o compañeros</option>
+                                             <option value="5">Estoy viviendo en una casa, apartamento o apartaestudio completamente solo</option>
+                        </select>
                     </div>
 
                     <p>Indique para cada caso si actualmente recibe algún tipo de apoyo emocional.
+                        <div class="alert alert-warning alert-dismissible" role="alert">
+                            <strong>Apoyo emocional: </strong>Demostraciones de afecto, empatía, preocupación, cuidado, confianza, aprecio, elogios, etc.
+                        </div>
                     </p>
                     <div id="apoyospersonalll" name="apoyospersonalll">
                         <select title="Seleccione" class="form-control form-control-xs selectpicker my-select2" onchange="apoyosper()" multiple>
@@ -806,7 +837,7 @@
                         <option value="7">Ninguno</option>
                       </select>
                     </div>
-                    <h2 class="fs-title"><strong>Usted diría que tiene dificultades relacionadas con:</strong></h2>
+                    <h2 class="fs-title2"><strong>Usted diría que tiene dificultades relacionadas con:</strong></h2>
                     <h5>Comunicar a otros sus sentimientos.</h5>
                     <div class="dropdown" id="sentimientos" name="sentimientos">
                         <select class="form-control form-control-xs " class="dropbtn">
@@ -838,7 +869,7 @@
                         </select>
                     </div>
 
-                    <h2 class="fs-title"><strong>Se ha sentido vulnerado(a) en su integridad y derechos en razón a su:</strong></h2>
+                    <h2 class="fs-title2"><strong>Se ha sentido vulnerado(a) en su integridad y derechos en razón a su:</strong></h2>
                     <div class="alert alert-warning alert-dismissible" role="alert">
                         Indique <strong>NO Aplica </strong>en los casos en que <strong>no pertenezca</strong> a dicha población
                     </div>
@@ -904,7 +935,7 @@
                     <input type="button" name="next" class="next action-button" value="Siguiente" />
                 </fieldset>
                 <fieldset>
-                    <h2 class="fs-title">Situación Académica</h2>
+                    <h2 class="fs-title">ASPECTOS ACADÉMICOS</h2>
                     <hr>
                     <p>Indique por favor su porcentaje de avance de carrera actual
                     </p>
@@ -927,7 +958,7 @@
                         <option value="3">Ninguna</option>
                       </select>
                     </div>
-                    <h2 class="fs-title"><strong>Adicionalmente, usted diría que en la actualidad tiene dificultades relacionadas con:</strong></h2>
+                    <h2 class="fs-title2"><strong>Adicionalmente, usted diría que en la actualidad tiene dificultades relacionadas con:</strong></h2>
                     <h5>La atención/concentración que se requiere para hacer trabajos y tareas académicas.</h5>
                     <div class="dropdown" id="dificultadessss" name="dificultadessss">
                         <select class="form-control form-control-xs " class="dropbtn">
@@ -991,7 +1022,7 @@
                     <input type="button" name="next" class="next action-button" value="Siguiente" />
                 </fieldset>
                 <fieldset>
-                    <h2 class="fs-title">Actividades Recreativas</h2>
+                    <h2 class="fs-title">ASPECTOS DEPORTIVOS Y CULTURALES</h2>
                     <hr>
 
                     <p>¿Antes de la emergencia sanitaria practicaba con regularidad algún deporte o actividad física?</p>
@@ -1077,6 +1108,7 @@
 
                     <h2 class="fs-title">COMENTARIOS FINALES</h2>
                     <hr>
+                    <p>¿Tiene alguna duda, inquietud o situación adicional en la que requiera acompañamiento y que quisiera comentar?</p>
                     <textarea class="form-control" rows="5" name="Comentariosxx" id='Comentariosxx' placeholder="..."></textarea>
 
 

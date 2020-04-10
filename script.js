@@ -191,23 +191,23 @@ function postToGoogle() {
     var field4 = $("#phone1").val();
     var field5 = $("#phone2").val();
     var field6 = $("#ident").val();
-    var field7 = $("#identType option:selected").text();
-    var field8 = $("#procedencia option:selected").text();
-    var field9 = $("#departamento option:selected").text();
+    var field7 = $("#identType option:selected").text() == "Seleccione" ? '' : $("#identType option:selected").text();
+    var field8 = $("#procedencia option:selected").text() == "Seleccione" ? '' : $("#procedencia option:selected").text();
+    var field9 = $("#departamento option:selected").text() == "Seleccione" ? '' : $("#departamento option:selected").text();
     var field10 = $("#ciudad").val();
-    var field11 = $("#viajar option:selected").text();
+    var field11 = $("#viajar option:selected").text() == "Seleccione" ? '' : $("#viajar option:selected").text();
     var field12 = $("#calOnlyDate").val();
     var field13 = lat;
     var field14 = long;
     var field15 = $("#direccion").val();
     var field16 = $("#direccion2").val();
-    var field17 = $("#desplazado option:selected").text();
-    var field18 = $("#fnaturales option:selected").text();
-    var field19 = $("#discapacidad option:selected").text();
-    var field20 = $("#certificada option:selected").text();
-    var field21 = $("#hijos option:selected").text();
-    var field22 = $("#embarazo option:selected").text();
-    var field23 = $("#grupoe option:selected").text();
+    var field17 = $("#desplazado option:selected").text() == "Seleccione" ? '' : $("#desplazado option:selected").text();
+    var field18 = $("#fnaturales option:selected").text() == "Seleccione" ? '' : $("#fnaturales option:selected").text();
+    var field19 = $("#discapacidad option:selected").text() == "Seleccione" ? '' : $("#discapacidad option:selected").text();
+    var field20 = $("#certificada option:selected").text() == "Seleccione" ? '' : $("#certificada option:selected").text();
+    var field21 = $("#hijos option:selected").text() == "Seleccione" ? '' : $("#hijos option:selected").text();
+    var field22 = $("#embarazo option:selected").text() == "Seleccione" ? '' : $("#embarazo option:selected").text();
+    var field23 = $("#grupoe option:selected").text() == "Seleccione" ? '' : $("#grupoe option:selected").text();
     var field24 = s1;
     var field25 = s2;
     var field26 = s3;
@@ -216,7 +216,7 @@ function postToGoogle() {
     var field29 = s6;
     var field30 = s7;
     var field31 = s8;
-    var field32 = $("#ingresos").val();
+    var field32 = ingresos;
     var field33 = s11;
     var field34 = s22;
     var field35 = s33;
@@ -225,9 +225,9 @@ function postToGoogle() {
     var field38 = s66;
     var field39 = s77;
     var field40 = s88;
-    var field41 = $("#convive option:selected").text();
-    var field42 = $("#situacion option:selected").text();
-    var field43 = $("#dificultades option:selected").text();
+    var field41 = $("#convive option:selected").text() == "Seleccione" ? '' : $("#convive option:selected").text();
+    var field42 = $("#situacion option:selected").text() == "Seleccione" ? '' : $("#situacion option:selected").text();
+    var field43 = $("#dificultades option:selected").text() == "Seleccione" ? '' : $("#dificultades option:selected").text();
     var field44 = acueducto;
     var field45 = alcant;
     var field46 = elect;
@@ -240,7 +240,7 @@ function postToGoogle() {
     var field53 = horn;
     var field54 = licuad;
     var field55 = ollap;
-    var field56 = $("#gasto").val();
+    var field56 = gasto;
     var field57 = biebog;
     var field58 = biefac;
     var field59 = sedepre;
@@ -248,34 +248,34 @@ function postToGoogle() {
     var field61 = inicest;
     var field62 = inicdoc;
     var field63 = inicegr;
-    var field64 = $("#apoyos option:selected").text();
-    var field65 = $("#apoyos2 option:selected").text();
+    var field64 = $("#apoyos option:selected").text() == "Seleccione" ? '' : $("#apoyos option:selected").text();
+    var field65 = $("#apoyos2 option:selected").text() == "Seleccione" ? '' : $("#apoyos2 option:selected").text();
     var field652 = $("#nombreOrg").val();
-    var field66 = $("#SISBEN option:selected").text();
+    var field66 = $("#SISBEN option:selected").text() == "Seleccione" ? '' : $("#SISBEN option:selected").text();
     var field67 = puntSISB;
     var field68 = $("#EPS").val();
-    var field69 = $("#portabilidad option:selected").text();
-    var field70 = $("#consumidor option:selected").text();
-    var field71 = $("#consumo option:selected").text();
-    var field72 = $("#apoyoc option:selected").text();
+    var field69 = $("#portabilidad option:selected").text() == "Seleccione" ? '' : $("#portabilidad option:selected").text();
+    var field70 = $("#consumidor option:selected").text() == "Seleccione" ? '' : $("#consumidor option:selected").text();
+    var field71 = $("#consumo option:selected").text() == "Seleccione" ? '' : $("#consumo option:selected").text();
+    var field72 = $("#apoyoc option:selected").text() == "Seleccione" ? '' : $("#apoyoc option:selected").text();
     var field73 = durmiendo;
-    var field74 = $("#descanso option:selected").text();
-    var field75 = $("#tristeza option:selected").text();
-    var field76 = $("#Aislamiento option:selected").text();
-    var field77 = $("#desesperanza option:selected").text();
-    var field78 = $("#enojo option:selected").text();
-    var field79 = $("#ansiedad option:selected").text();
-    var field80 = $("#deseos option:selected").text();
-    var field81 = $("#suicidas option:selected").text();
-    var field82 = $("#Dolor option:selected").text();
-    var field83 = $("#agotamiento option:selected").text();
-    var field84 = $("#apetito option:selected").text();
-    var field85 = $("#digestivos option:selected").text();
-    var field86 = $("#sueo option:selected").text();
-    var field87 = $("#emergencia option:selected").text();
-    var field88 = $("#recibiendo option:selected").text();
-    var field89 = $("#necesita option:selected").text();
-    var field899 = $("#atenciónssssx option:selected").text();
+    var field74 = $("#descanso option:selected").text() == "Seleccione" ? '' : $("#descanso option:selected").text();
+    var field75 = $("#tristeza option:selected").text() == "Seleccione" ? '' : $("#tristeza option:selected").text();
+    var field76 = $("#Aislamiento option:selected").text() == "Seleccione" ? '' : $("#Aislamiento option:selected").text();
+    var field77 = $("#desesperanza option:selected").text() == "Seleccione" ? '' : $("#desesperanza option:selected").text();
+    var field78 = $("#enojo option:selected").text() == "Seleccione" ? '' : $("#enojo option:selected").text();
+    var field79 = $("#ansiedad option:selected").text() == "Seleccione" ? '' : $("#ansiedad option:selected").text();
+    var field80 = $("#deseos option:selected").text() == "Seleccione" ? '' : $("#deseos option:selected").text();
+    var field81 = $("#suicidas option:selected").text() == "Seleccione" ? '' : $("#suicidas option:selected").text();
+    var field82 = $("#Dolor option:selected").text() == "Seleccione" ? '' : $("#Dolor option:selected").text();
+    var field83 = $("#agotamiento option:selected").text() == "Seleccione" ? '' : $("#agotamiento option:selected").text();
+    var field84 = $("#apetito option:selected").text() == "Seleccione" ? '' : $("#apetito option:selected").text();
+    var field85 = $("#digestivos option:selected").text() == "Seleccione" ? '' : $("#digestivos option:selected").text();
+    var field86 = $("#sueo option:selected").text() == "Seleccione" ? '' : $("#sueo option:selected").text();
+    var field87 = $("#emergencia option:selected").text() == "Seleccione" ? '' : $("#emergencia option:selected").text();
+    var field88 = $("#recibiendo option:selected").text() == "Seleccione" ? '' : $("#recibiendo option:selected").text();
+    var field89 = $("#necesita option:selected").text() == "Seleccione" ? '' : $("#necesita option:selected").text();
+    var field899 = $("#atenciónssssx option:selected").text() == "Seleccione" ? '' : $("#atenciónssssx option:selected").text();
     var field90 = EPOC;
     var field901 = Asma;
     var field902 = Hiper;
@@ -286,12 +286,12 @@ function postToGoogle() {
     var field907 = Otra;
     var field9071 = $("#otracroncxx").val();
     var field908 = Ninguna;
-    var field91 = $("#medicado option:selected").text();
-    var field92 = $("#bueno option:selected").text();
-    var field93 = $("#conoce option:selected").text();
-    var field94 = $("#gente option:selected").text();
-    var field95 = $("#expresar option:selected").text();
-    var field96 = $("#libre option:selected").text();
+    var field91 = $("#medicado option:selected").text() == "Seleccione" ? '' : $("#medicado option:selected").text();
+    var field92 = $("#bueno option:selected").text() == "Seleccione" ? '' : $("#bueno option:selected").text();
+    var field93 = $("#conoce option:selected").text() == "Seleccione" ? '' : $("#conoce option:selected").text();
+    var field94 = $("#gente option:selected").text() == "Seleccione" ? '' : $("#gente option:selected").text();
+    var field95 = $("#expresar option:selected").text() == "Seleccione" ? '' : $("#expresar option:selected").text();
+    var field96 = $("#libre option:selected").text() == "Seleccione" ? '' : $("#libre option:selected").text();
     var field961 = Familia;
     var field962 = Amigos;
     var field963 = Universidad;
@@ -300,32 +300,32 @@ function postToGoogle() {
     var field966 = Vecinos;
     var field967 = Organizaciones;
     var field968 = Ninguno;
-    var field97 = $("#sentimientos option:selected").text();
-    var field98 = $("#afectivas option:selected").text();
-    var field99 = $("#vida option:selected").text();
-    var field100 = $("#tnico option:selected").text();
-    var field101 = $("#origens option:selected").text();
-    var field102 = $("#conflictos option:selected").text();
-    var field103 = $("#Gnero option:selected").text();
-    var field104 = $("#sexuals option:selected").text();
-    var field105 = $("#Otraxc option:selected").text();
+    var field97 = $("#sentimientos option:selected").text() == "Seleccione" ? '' : $("#sentimientos option:selected").text();
+    var field98 = $("#afectivas option:selected").text() == "Seleccione" ? '' : $("#afectivas option:selected").text();
+    var field99 = $("#vida option:selected").text() == "Seleccione" ? '' : $("#vida option:selected").text();
+    var field100 = $("#tnico option:selected").text() == "Seleccione" ? '' : $("#tnico option:selected").text();
+    var field101 = $("#origens option:selected").text() == "Seleccione" ? '' : $("#origens option:selected").text();
+    var field102 = $("#conflictos option:selected").text() == "Seleccione" ? '' : $("#conflictos option:selected").text();
+    var field103 = $("#Gnero option:selected").text() == "Seleccione" ? '' : $("#Gnero option:selected").text();
+    var field104 = $("#sexuals option:selected").text() == "Seleccione" ? '' : $("#sexuals option:selected").text();
+    var field105 = $("#Otraxc option:selected").text() == "Seleccione" ? '' : $("#Otraxc option:selected").text();
     var field106 = $("#otrra").val();
     var field107 = avance;
     var field108 = contenidos;
     var field109 = metodologia;
     var field110 = activida;
-    var field111 = $("#dificultadessss option:selected").text();
-    var field112 = $("#textos option:selected").text();
-    var field113 = $("#tiempo option:selected").text();
-    var field114 = $("#otrosxc option:selected").text();
-    var field115 = $("#operacionesx option:selected").text();
-    var field116 = $("#momentoss option:selected").text();
-    var field117 = $("#deporte option:selected").text();
-    var field118 = $("#principalxxx option:selected").text();
-    var field119 = $("#residesss option:selected").text();
-    var field120 = $("#culturalsss option:selected").text();
-    var field121 = $("#practicabaxx option:selected").text();
-    var field122 = $("#actividadscss option:selected").text();
+    var field111 = $("#dificultadessss option:selected").text() == "Seleccione" ? '' : $("#dificultadessss option:selected").text();
+    var field112 = $("#textos option:selected").text() == "Seleccione" ? '' : $("#textos option:selected").text();
+    var field113 = $("#tiempo option:selected").text() == "Seleccione" ? '' : $("#tiempo option:selected").text();
+    var field114 = $("#otrosxc option:selected").text() == "Seleccione" ? '' : $("#otrosxc option:selected").text();
+    var field115 = $("#operacionesx option:selected").text() == "Seleccione" ? '' : $("#operacionesx option:selected").text();
+    var field116 = $("#momentoss option:selected").text() == "Seleccione" ? '' : $("#momentoss option:selected").text();
+    var field117 = $("#deporte option:selected").text() == "Seleccione" ? '' : $("#deporte option:selected").text();
+    var field118 = $("#principalxxx option:selected").text() == "Seleccione" ? '' : $("#principalxxx option:selected").text();
+    var field119 = $("#residesss option:selected").text() == "Seleccione" ? '' : $("#residesss option:selected").text();
+    var field120 = $("#culturalsss option:selected").text() == "Seleccione" ? '' : $("#culturalsss option:selected").text();
+    var field121 = $("#practicabaxx option:selected").text() == "Seleccione" ? '' : $("#practicabaxx option:selected").text();
+    var field122 = $("#actividadscss option:selected").text() == "Seleccione" ? '' : $("#actividadscss option:selected").text();
     var field123 = $("#Comentariosxx").val();
 
 
@@ -730,54 +730,7 @@ $("#s8").bind("change paste keyup", function() {
     }
     onFileChange();
 });
-$('#s1').change(function() {
-    if (($(this).val() == "")) {
-        $("#s1").val("0");
-        s1 = 0;
-    }
-});
-$('#s2').change(function() {
-    if (($(this).val() == "")) {
-        $("#s2").val("0");
-        s2 = 0;
-    }
-});
-$('#s3').change(function() {
-    if (($(this).val() == "")) {
-        $("#s3").val("0");
-        s3 = 0;
-    }
-});
-$('#s4').change(function() {
-    if (($(this).val() == "")) {
-        $("#s4").val("0");
-        s4 = 0;
-    }
-});
-$('#s5').change(function() {
-    if (($(this).val() == "")) {
-        $("#s5").val("0");
-        s5 = 0;
-    }
-});
-$('#s6').change(function() {
-    if (($(this).val() == "")) {
-        $("#s6").val("0");
-        s6 = 0;
-    }
-});
-$('#s7').change(function() {
-    if (($(this).val() == "")) {
-        $("#s7").val("0");
-        s7 = 0;
-    }
-});
-$('#s8').change(function() {
-    if (($(this).val() == "")) {
-        $("#s8").val("0");
-        s8 = 0;
-    }
-});
+
 var s11 = 0;
 var s22 = 0;
 var s33 = 0;
@@ -889,54 +842,6 @@ $("#s88").bind("change paste keyup", function() {
         } else {
             s88 = $(this).val();
         }
-    }
-});
-$('#s11').change(function() {
-    if (($(this).val() == "")) {
-        $("#s11").val("0");
-        s11 = 0;
-    }
-});
-$('#s22').change(function() {
-    if (($(this).val() == "")) {
-        $("#s22").val("0");
-        s22 = 0;
-    }
-});
-$('#s33').change(function() {
-    if (($(this).val() == "")) {
-        $("#s33").val("0");
-        s33 = 0;
-    }
-});
-$('#s44').change(function() {
-    if (($(this).val() == "")) {
-        $("#s44").val("0");
-        s44 = 0;
-    }
-});
-$('#s55').change(function() {
-    if (($(this).val() == "")) {
-        $("#s55").val("0");
-        s55 = 0;
-    }
-});
-$('#s66').change(function() {
-    if (($(this).val() == "")) {
-        $("#s66").val("0");
-        s66 = 0;
-    }
-});
-$('#s77').change(function() {
-    if (($(this).val() == "")) {
-        $("#s77").val("0");
-        s77 = 0;
-    }
-});
-$('#s88').change(function() {
-    if (($(this).val() == "")) {
-        $("#s88").val("0");
-        s88 = 0;
     }
 });
 
@@ -1283,6 +1188,24 @@ $('#avance').change(function() {
         avance = 0;
     } else {
         avance = $(this).val();
+    }
+});
+var ingresos = "";
+$('#ingresos').change(function() {
+    if ($(this).val().includes(".") || $(this).val().includes(",") || $(this).val().includes("-") || $(this).val().includes("$")) {
+        alert("Solo introduzca valores enteros");
+        $("#ingresos").val("");
+    } else {
+        ingresos = $(this).val();
+    }
+});
+var gasto = "";
+$('#gasto').change(function() {
+    if ($(this).val().includes(".") || $(this).val().includes(",") || $(this).val().includes("-") || $(this).val().includes("$")) {
+        alert("Solo introduzca valores enteros");
+        $("#gasto").val("");
+    } else {
+        gasto = $(this).val();
     }
 });
 $("#calOnlyDate").datetimepicker({
