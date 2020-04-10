@@ -234,12 +234,14 @@ function postToGoogle() {
     var field47 = gas;
     var field48 = comp;
     var field49 = acces;
+    var field491 = ningun_servicio;
     var field50 = estf;
     var field51 = nev;
     var field52 = cong;
     var field53 = horn;
     var field54 = licuad;
     var field55 = ollap;
+    var field551 = ningun_electrodo;
     var field56 = gasto;
     var field57 = biebog;
     var field58 = biefac;
@@ -248,6 +250,7 @@ function postToGoogle() {
     var field61 = inicest;
     var field62 = inicdoc;
     var field63 = inicegr;
+    var field631 = ningun_apoyo;
     var field64 = $("#apoyos option:selected").text() == "Seleccione" ? '' : $("#apoyos option:selected").text();
     var field65 = $("#apoyos2 option:selected").text() == "Seleccione" ? '' : $("#apoyos2 option:selected").text();
     var field652 = $("#nombreOrg").val();
@@ -380,12 +383,14 @@ function postToGoogle() {
             "entry.182456937": field47,
             "entry.175054468": field48,
             "entry.551781470": field49,
+            "entry.280712791": field491,
             "entry.1953301116": field50,
             "entry.1488842576": field51,
             "entry.235626117": field52,
             "entry.267851069": field53,
             "entry.312527539": field54,
             "entry.734447041": field55,
+            "entry.234291241": field551,
             "entry.1736797025": field56,
             "entry.1132064888": field57,
             "entry.741842804": field58,
@@ -394,6 +399,7 @@ function postToGoogle() {
             "entry.245314995": field61,
             "entry.1241573090": field62,
             "entry.1041653785": field63,
+            "entry.1039855794": field631,
             "entry.666783339": field64,
             "entry.1232687743": field65,
             "entry.1240816135": field652,
@@ -493,18 +499,31 @@ function postToGoogle() {
 
 function showDiv(divId, element) {
     document.getElementById(divId).style.display = element.value == 2 ? 'block' : 'none';
+    if (element.value != 2) {
+        document.getElementById('calOnlyDate').value = "";
+    }
 }
 
 function showDiv2(divId, element) {
     document.getElementById(divId).style.display = element.value != 1 ? 'block' : 'none';
+    if (element.value == 1) {
+        document.getElementById('txtd').value = "";
+    }
 }
 
 function showDiv3(divId, element) {
     document.getElementById(divId).style.display = element.value == 1 ? 'block' : 'none';
+    if (element.value != 1) {
+        document.getElementById('puntajeSISBEN').value = "";
+    }
 }
 
 function showDiv4(divId, element) {
     document.getElementById(divId).style.display = element.value == 0 ? 'block' : 'none';
+    if (element.value != 0) {
+        document.getElementById('consumoxxx').value = "";
+        document.getElementById('consumooo').value = "";
+    }
 }
 
 
@@ -512,17 +531,26 @@ function showDiv6(divId, element) {
     var control1 = $("#emergencia option:selected").val();
     var control2 = $("#recibiendo option:selected").val();
     total = parseInt(control1 + control2);
-    console.log(total);
+
     document.getElementById(divId).style.display = total != 0 ? 'block' : 'none';
+    if (total == 0) {
+        document.getElementById('nenene').value = "";
+    }
     //mi solucion, un funcion que sume todos los select si != 0, mostrarlo
 }
 
 function showDiv7(divId, element) {
     document.getElementById(divId).style.display = element.value == 3 ? 'block' : 'none';
+    if (element.value != 3) {
+        document.getElementById('otrra').value = "";
+    }
 }
 
 function showDiv8(divId, element) {
     document.getElementById(divId).style.display = element.value == 2 ? 'block' : 'none';
+    if (element.value != 2) {
+        document.getElementById('dsds').value = "";
+    }
 }
 
 function showDiv9(divId, element) {
@@ -535,10 +563,16 @@ function showDiv10(divId, element) {
 
 function showDiv11(divId, element) {
     document.getElementById(divId).style.display = element.value == 1 ? 'block' : 'none';
+    if (element.value != 1) {
+        document.getElementById('nombreOrg').value = "";
+    }
 }
 
 function showDiv22(divId, element) {
     document.getElementById(divId).style.display = element.value == 1 ? 'block' : 'none';
+    if (element.value != 1) {
+        document.getElementById('depdo').value = "";
+    }
 }
 
 
@@ -553,6 +587,13 @@ function showDiv12(divId, element) {
     total = parseInt(control1 + control2 + control3 + control4 + control5 + control6 + control7);
     console.log(total);
     document.getElementById(divId).style.display = total != 0 ? 'block' : 'none';
+    if (element.value != 1) {
+        document.getElementById('dolor1').value = "";
+        document.getElementById('dolor2').value = "";
+        document.getElementById('dolor3').value = "";
+        document.getElementById('dolor4').value = "";
+        document.getElementById('dolor5').value = "";
+    }
     //mi solucion, un funcion que sume todos los select si != 0, mostrarlo
 }
 $('.alert').alert()
@@ -854,10 +895,18 @@ var elect = "No";
 var gas = "No";
 var comp = "No";
 var acces = "No";
+var ningun_servicio = "No";
 
 function servicios() {
     selected = $("#servicios option:selected").text();
     console.log($("#servicios option:selected").text());
+    if (selected.includes("Ninguno")) {
+        $('.my-select2').selectpicker('deselectAll');
+        $('.my-select2').selectpicker({ title: 'Ninguno' }).selectpicker('toggle').selectpicker('render');
+        ningun_servicio = "Si";
+    } else {
+        ningun_servicio = "No";
+    }
     if (selected.includes("Acueducto (Agua)")) {
         acueducto = "Si";
     } else {
@@ -896,10 +945,18 @@ var cong = "No";
 var horn = "No";
 var licuad = "No";
 var ollap = "No";
+var ningun_electrodo = "No";
 
 function electrod() {
     selected = $("#electrodo option:selected").text();
     console.log($("#electrodo option:selected").text());
+    if (selected.includes("Ninguno")) {
+        $('.my-select3').selectpicker('deselectAll');
+        $('.my-select3').selectpicker({ title: 'Ninguno' }).selectpicker('toggle').selectpicker('render');
+        ningun_electrodo = "Si";
+    } else {
+        ningun_electrodo = "No";
+    }
     if (selected.includes("Estufa")) {
         estf = "Si";
     } else {
@@ -940,10 +997,18 @@ var ofcenl = "No";
 var inicest = "No";
 var inicdoc = "No";
 var inicegr = "No";
+var ningun_apoyo = "No";
 
 function apoyosxd() {
     selected = $("#apoyosx option:selected").text();
     console.log($("#apoyosx option:selected").text());
+    if (selected.includes("Ninguno")) {
+        $('.my-select5').selectpicker('deselectAll');
+        $('.my-select5').selectpicker({ title: 'Ninguno' }).selectpicker('toggle').selectpicker('render');
+        ningun_apoyo = "Si";
+    } else {
+        ningun_apoyo = "No";
+    }
     if (selected.includes("Bienestar de Sede Bogota")) {
         biebog = "Si";
     } else {
@@ -992,6 +1057,7 @@ function dificcc() {
     console.log($("#difccs option:selected").text());
     if (selected.includes("Ninguna")) {
         $('.my-select3').selectpicker('deselectAll');
+        $('.my-select3').selectpicker({ title: 'Ninguna' }).selectpicker('toggle').selectpicker('render');
         nna = "Si";
     } else {
         nna = "No";
@@ -1029,7 +1095,7 @@ function crnicax(divId, element) {
     console.log($("#crnica option:selected").text());
     if (selected.includes("Ninguna")) {
         $('.my-select1').selectpicker('deselectAll');
-        $('.my-select1').selectpicker('val', 'Ninguna');
+        $('.my-select1').selectpicker({ title: 'Ninguna' }).selectpicker('toggle').selectpicker('render');
         Ninguna = "Si";
     } else {
         Ninguna = "No";
@@ -1091,6 +1157,7 @@ function apoyosper() {
     console.log($("#apoyospersonalll option:selected").text());
     if (selected.includes("Ninguno")) {
         $('.my-select2').selectpicker('deselectAll');
+        $('.my-select2').selectpicker({ title: 'Ninguno' }).selectpicker('toggle').selectpicker('render');
         Ninguno = "Si";
     } else {
         Ninguno = "No";
