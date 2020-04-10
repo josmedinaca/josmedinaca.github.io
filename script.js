@@ -27,10 +27,6 @@ $(".next").click(function() {
             //     required: true,
             //     digits: true
             // },
-            // phone2: {
-            //     required: true,
-            //     digits: true
-            // },
             // ident: "required",
             // identType: {
             //     required: true
@@ -40,7 +36,8 @@ $(".next").click(function() {
             // ciudad: "required",
             // lat: "required",
             // long: "required",
-            // direccion: "required"
+            // direccion: "required",
+
         },
         // Specify validation error messages
         messages: {
@@ -157,12 +154,15 @@ mymap.on('zoomend', function(e) {
     console.log(e.target.getZoom());
 
 })
-
+var lat = 4.634771;
+var long = -74.081599;
 mymap.on('click', function(ev) {
     var coordinates = mymap.mouseEventToLatLng(ev.originalEvent);
     console.log(coordinates.lat + ', ' + coordinates.lng);
     document.getElementById('lat').value = coordinates.lat;
     document.getElementById('long').value = coordinates.lng;
+    lat = coordinates.lat;
+    long = coordinates.lng;
 });
 theMarker = new L.marker([4.634771, -74.081599]).addTo(mymap);
 
@@ -197,8 +197,8 @@ function postToGoogle() {
     var field10 = $("#ciudad").val();
     var field11 = $("#viajar option:selected").text();
     var field12 = $("#calOnlyDate").val();
-    var field13 = $("#lat").val();
-    var field14 = $("#long").val();
+    var field13 = lat;
+    var field14 = long;
     var field15 = $("#direccion").val();
     var field16 = $("#direccion2").val();
     var field17 = $("#desplazado option:selected").text();
@@ -208,23 +208,23 @@ function postToGoogle() {
     var field21 = $("#hijos option:selected").text();
     var field22 = $("#embarazo option:selected").text();
     var field23 = $("#grupoe option:selected").text();
-    var field24 = $("#s1").val();
-    var field25 = $("#s2").val();
-    var field26 = $("#s3").val();
-    var field27 = $("#s4").val();
-    var field28 = $("#s5").val();
-    var field29 = $("#s6").val();
-    var field30 = $("#s7").val();
-    var field31 = $("#s8").val();
+    var field24 = s1;
+    var field25 = s2;
+    var field26 = s3;
+    var field27 = s4;
+    var field28 = s5;
+    var field29 = s6;
+    var field30 = s7;
+    var field31 = s8;
     var field32 = $("#ingresos").val();
-    var field33 = $("#s11").val();
-    var field34 = $("#s22").val();
-    var field35 = $("#s33").val();
-    var field36 = $("#s44").val();
-    var field37 = $("#s55").val();
-    var field38 = $("#s66").val();
-    var field39 = $("#s77").val();
-    var field40 = $("#s88").val();
+    var field33 = s11;
+    var field34 = s22;
+    var field35 = s33;
+    var field36 = s44;
+    var field37 = s55;
+    var field38 = s66;
+    var field39 = s77;
+    var field40 = s88;
     var field41 = $("#convive option:selected").text();
     var field42 = $("#situacion option:selected").text();
     var field43 = $("#dificultades option:selected").text();
@@ -249,15 +249,16 @@ function postToGoogle() {
     var field62 = inicdoc;
     var field63 = inicegr;
     var field64 = $("#apoyos option:selected").text();
-    var field65 = $("#apoyos2").val();
+    var field65 = $("#apoyos2 option:selected").text();
+    var field652 = $("#nombreOrg").val();
     var field66 = $("#SISBEN option:selected").text();
-    var field67 = $("#puntajeSISBEN").val();
+    var field67 = puntSISB;
     var field68 = $("#EPS").val();
     var field69 = $("#portabilidad option:selected").text();
     var field70 = $("#consumidor option:selected").text();
     var field71 = $("#consumo option:selected").text();
     var field72 = $("#apoyoc option:selected").text();
-    var field73 = $("#durmiendo").val();
+    var field73 = durmiendo;
     var field74 = $("#descanso option:selected").text();
     var field75 = $("#tristeza option:selected").text();
     var field76 = $("#Aislamiento option:selected").text();
@@ -274,13 +275,31 @@ function postToGoogle() {
     var field87 = $("#emergencia option:selected").text();
     var field88 = $("#recibiendo option:selected").text();
     var field89 = $("#necesita option:selected").text();
-    var field90 = $("#crnica option:selected").text();
+    var field899 = $("#atenciónssssx option:selected").text();
+    var field90 = EPOC;
+    var field901 = Asma;
+    var field902 = Hiper;
+    var field903 = Diabetes;
+    var field904 = Cncer;
+    var field905 = fermeda;
+    var field906 = lter;
+    var field907 = Otra;
+    var field9071 = $("#otracroncxx").val();
+    var field908 = Ninguna;
     var field91 = $("#medicado option:selected").text();
     var field92 = $("#bueno option:selected").text();
     var field93 = $("#conoce option:selected").text();
     var field94 = $("#gente option:selected").text();
     var field95 = $("#expresar option:selected").text();
     var field96 = $("#libre option:selected").text();
+    var field961 = Familia;
+    var field962 = Amigos;
+    var field963 = Universidad;
+    var field964 = Docentes;
+    var field965 = Administrativos;
+    var field966 = Vecinos;
+    var field967 = Organizaciones;
+    var field968 = Ninguno;
     var field97 = $("#sentimientos option:selected").text();
     var field98 = $("#afectivas option:selected").text();
     var field99 = $("#vida option:selected").text();
@@ -291,7 +310,7 @@ function postToGoogle() {
     var field104 = $("#sexuals option:selected").text();
     var field105 = $("#Otraxc option:selected").text();
     var field106 = $("#otrra").val();
-    var field107 = $("#avance").val();
+    var field107 = avance;
     var field108 = contenidos;
     var field109 = metodologia;
     var field110 = activida;
@@ -377,6 +396,7 @@ function postToGoogle() {
             "entry.1041653785": field63,
             "entry.666783339": field64,
             "entry.1232687743": field65,
+            "entry.1240816135": field652,
             "entry.1031260405": field66,
             "entry.2071298946": field67,
             "entry.1885844296": field68,
@@ -401,13 +421,31 @@ function postToGoogle() {
             "entry.1119522594": field87,
             "entry.1505427679": field88,
             "entry.638904233": field89,
+            "entry.1049260498": field899,
             "entry.848595781": field90,
+            "entry.973541792": field901,
+            "entry.1838340259": field902,
+            "entry.791358865": field903,
+            "entry.1929832113": field904,
+            "entry.891379331": field905,
+            "entry.310545802": field906,
+            "entry.1618015468": field907,
+            "entry.1611815189": field9071,
+            "entry.17735485": field908,
             "entry.26211303": field91,
             "entry.1005258058": field92,
             "entry.1916481191": field93,
             "entry.946705736": field94,
             "entry.560763160": field95,
             "entry.2140856534": field96,
+            "entry.1967738068": field961,
+            "entry.1677701240": field962,
+            "entry.128622296": field963,
+            "entry.880475679": field964,
+            "entry.1620525830": field965,
+            "entry.382780459": field966,
+            "entry.722534779": field967,
+            "entry.1602932697": field968,
             "entry.1940773056": field97,
             "entry.317011737": field98,
             "entry.705130837": field99,
@@ -443,7 +481,7 @@ function postToGoogle() {
 
         },
         error: function(x, y, z) {
-            document.getElementById("dadaada").innerHTML = "Tiempo en responder el formulario: " + seconds + " segundos.";
+            //document.getElementById("dadaada").innerHTML = "Tiempo en responder el formulario: " + seconds + " segundos.";
             console.log("ESO");
 
         }
@@ -451,12 +489,7 @@ function postToGoogle() {
     $("#myModal2").modal('show');
     return false;
 }
-$(document).ready(function() {
 
-    $('#calBothDateAndTime').datetimepicker({});
-    $('#calOnlyDate').datetimepicker({ format: 'DD/MM/YYYY' });
-
-});
 
 function showDiv(divId, element) {
     document.getElementById(divId).style.display = element.value == 2 ? 'block' : 'none';
@@ -467,7 +500,7 @@ function showDiv2(divId, element) {
 }
 
 function showDiv3(divId, element) {
-    document.getElementById(divId).style.display = element.value == 2 ? 'block' : 'none';
+    document.getElementById(divId).style.display = element.value == 1 ? 'block' : 'none';
 }
 
 function showDiv4(divId, element) {
@@ -697,6 +730,215 @@ $("#s8").bind("change paste keyup", function() {
     }
     onFileChange();
 });
+$('#s1').change(function() {
+    if (($(this).val() == "")) {
+        $("#s1").val("0");
+        s1 = 0;
+    }
+});
+$('#s2').change(function() {
+    if (($(this).val() == "")) {
+        $("#s2").val("0");
+        s2 = 0;
+    }
+});
+$('#s3').change(function() {
+    if (($(this).val() == "")) {
+        $("#s3").val("0");
+        s3 = 0;
+    }
+});
+$('#s4').change(function() {
+    if (($(this).val() == "")) {
+        $("#s4").val("0");
+        s4 = 0;
+    }
+});
+$('#s5').change(function() {
+    if (($(this).val() == "")) {
+        $("#s5").val("0");
+        s5 = 0;
+    }
+});
+$('#s6').change(function() {
+    if (($(this).val() == "")) {
+        $("#s6").val("0");
+        s6 = 0;
+    }
+});
+$('#s7').change(function() {
+    if (($(this).val() == "")) {
+        $("#s7").val("0");
+        s7 = 0;
+    }
+});
+$('#s8').change(function() {
+    if (($(this).val() == "")) {
+        $("#s8").val("0");
+        s8 = 0;
+    }
+});
+var s11 = 0;
+var s22 = 0;
+var s33 = 0;
+var s44 = 0;
+var s55 = 0;
+var s66 = 0;
+var s77 = 0;
+var s88 = 0;
+$("#s11").bind("change paste keyup", function() {
+    if (parseFloat($(this).val()) > 100) {
+        alert(">100");
+        $("#s11").val("");
+        s11 = 0;
+    } else {
+        if ($(this).val() == "") {
+            s11 = 0;
+        } else {
+            s11 = $(this).val();
+        }
+    }
+
+});
+$("#s22").bind("change paste keyup", function() {
+    if (parseFloat($(this).val()) > 100) {
+        alert(">100");
+        $("#s22").val("");
+        s22 = 0;
+    } else {
+        if ($(this).val() == "") {
+            s22 = 0;
+        } else {
+            s22 = $(this).val();
+        }
+    }
+});
+$("#s33").bind("change paste keyup", function() {
+    if (parseFloat($(this).val()) > 100) {
+        alert(">100");
+        $("#s33").val("");
+        s33 = 0;
+    } else {
+        if ($(this).val() == "") {
+            s33 = 0;
+        } else {
+            s33 = $(this).val();
+        }
+    }
+});
+$("#s44").bind("change paste keyup", function() {
+    if (parseFloat($(this).val()) > 100) {
+        alert(">100");
+        $("#s44").val("");
+        s44 = 0;
+    } else {
+        if ($(this).val() == "") {
+            s44 = 0;
+        } else {
+            s44 = $(this).val();
+        }
+    }
+});
+$("#s55").bind("change paste keyup", function() {
+    if (parseFloat($(this).val()) > 100) {
+        alert(">100");
+        $("#s55").val("");
+        s55 = 0;
+    } else {
+        if ($(this).val() == "") {
+            s55 = 0;
+        } else {
+            s55 = $(this).val();
+        }
+    }
+});
+$("#s66").bind("change paste keyup", function() {
+    if (parseFloat($(this).val()) > 100) {
+        alert(">100");
+        $("#s66").val("");
+        s66 = 0;
+    } else {
+        if ($(this).val() == "") {
+            s66 = 0;
+        } else {
+            s66 = $(this).val();
+        }
+    }
+});
+$("#s77").bind("change paste keyup", function() {
+    if (parseFloat($(this).val()) > 100) {
+        alert(">100");
+        $("#s77").val("");
+        s77 = 0;
+    } else {
+        if ($(this).val() == "") {
+            s77 = 0;
+        } else {
+            s77 = $(this).val();
+        }
+    }
+});
+$("#s88").bind("change paste keyup", function() {
+    if (parseFloat($(this).val()) > 100) {
+        alert(">100");
+        $("#s8").val("");
+        s88 = 0;
+    } else {
+        if ($(this).val() == "") {
+            s88 = 0;
+        } else {
+            s88 = $(this).val();
+        }
+    }
+});
+$('#s11').change(function() {
+    if (($(this).val() == "")) {
+        $("#s11").val("0");
+        s11 = 0;
+    }
+});
+$('#s22').change(function() {
+    if (($(this).val() == "")) {
+        $("#s22").val("0");
+        s22 = 0;
+    }
+});
+$('#s33').change(function() {
+    if (($(this).val() == "")) {
+        $("#s33").val("0");
+        s33 = 0;
+    }
+});
+$('#s44').change(function() {
+    if (($(this).val() == "")) {
+        $("#s44").val("0");
+        s44 = 0;
+    }
+});
+$('#s55').change(function() {
+    if (($(this).val() == "")) {
+        $("#s55").val("0");
+        s55 = 0;
+    }
+});
+$('#s66').change(function() {
+    if (($(this).val() == "")) {
+        $("#s66").val("0");
+        s66 = 0;
+    }
+});
+$('#s77').change(function() {
+    if (($(this).val() == "")) {
+        $("#s77").val("0");
+        s77 = 0;
+    }
+});
+$('#s88').change(function() {
+    if (($(this).val() == "")) {
+        $("#s88").val("0");
+        s88 = 0;
+    }
+});
 
 $(function() {
     $('.my-select').selectpicker();
@@ -888,8 +1130,10 @@ function crnicax(divId, element) {
     }
     if (selected.includes("Otra")) {
         document.getElementById(divId).style.display = 'block';
+        Otra = "Si";
     } else {
         document.getElementById(divId).style.display = 'none';
+        Otra = "No";
     }
     if (selected.includes("EPOC- Enfermedad Pulmonar Obstructiva Crónica")) {
         EPOC = "Si";
@@ -992,4 +1236,57 @@ window.setInterval((function() {
 $(document).ready(function() {
     $("#myModal").modal('show');
 
+});
+$(document).on("wheel", "input[type=number]", function(e) {
+    $(this).blur();
+});
+$('#direccion').change(function() {
+    if (!($(this).val().includes("#") || $(this).val().includes("-"))) {
+        alert("Su dirección debe contener los carácteres # y/o -");
+        $("#direccion").val("");
+        s8 = 0;
+    }
+});
+var durmiendo = 0;
+$('#durmiendo').change(function() {
+    if (!(parseInt($(this).val()) >= 0 && parseInt($(this).val()) <= 24)) {
+        alert("Debe introducir un valor entre 0 y 24");
+        $("#durmiendo").val("");
+        durmiendo = 0;
+    } else if ($(this).val().includes(".") || $(this).val().includes(",") || $(this).val().includes("-")) {
+        alert("Solo debe ingresar numeros enteros positivos");
+        $("#durmiendo").val("");
+        durmiendo = 0;
+    } else {
+        durmiendo = $(this).val();
+    }
+});
+var puntSISB = "";
+$('#puntajeSISBEN').change(function() {
+    if (!(parseInt($(this).val()) >= 0 && parseInt($(this).val()) <= 100)) {
+        alert("El valor debe estar entre 0 y 100");
+        $("#puntajeSISBEN").val("");
+        puntSISB = "";
+    } else {
+        puntSISB = $(this).val();
+    }
+});
+var avance = "";
+$('#avance').change(function() {
+    if (!(parseInt($(this).val()) >= 0 && parseInt($(this).val()) < 100)) {
+        alert("El valor debe estar entre 0 y menor que 100");
+        $("#avance").val("");
+        avance = 0;
+    } else if ($(this).val().includes("%")) {
+        alert("No incluya el simbolo %");
+        $("#avance").val("");
+        avance = 0;
+    } else {
+        avance = $(this).val();
+    }
+});
+$("#calOnlyDate").datetimepicker({
+    minDate: new Date(),
+    maxDate: '2020-05-31',
+    format: 'DD/MM/YYYY'
 });
