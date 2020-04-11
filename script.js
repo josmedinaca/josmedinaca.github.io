@@ -14,33 +14,33 @@ $(".next").click(function() {
             // The key name on the left side is the name attribute
             // of an input field.Validation rules are defined
             // on the right side
-            // fnames: "required",
-            // lnames: "required",
-            // email: {
-            //     required: true,
-            //     // Specify that email should be validated
-            //     // by the built-in "email" rule
-            //     email: false,
-            //     customEmail: true
-            // },
-            // phone1: {
-            //     required: true,
-            //     digits: true
-            // },
-            // ident: "required",
-            // identType: {
-            //     required: true
-            // },
-            // procedencia: "required",
-            // departamento: "required",
-            // ciudad: "required",
-            // direccion: "required",
-            // desplazado: "required",
-            // fnaturales: "required",
-            // discapacidad: "required",
-            // hijos: "required",
-            // embarazo: "required",
-            // grupoe: "required",
+            fnames: "required",
+            lnames: "required",
+            email: {
+                required: true,
+                // Specify that email should be validated
+                // by the built-in "email" rule
+                email: false,
+                customEmail: true
+            },
+            phone1: {
+                required: true,
+                digits: true
+            },
+            ident: "required",
+            identType: {
+                required: true
+            },
+            procedencia: "required",
+            departamento: "required",
+            ciudad: "required",
+            direccion: "required",
+            desplazado: "required",
+            fnaturales: "required",
+            discapacidad: "required",
+            hijos: "required",
+            embarazo: "required",
+            grupoe: "required",
             convive: "required",
             apoyos: "required",
             apoyos2: "required",
@@ -593,7 +593,9 @@ function postToGoogle() {
 
         }
     });
-    $("#myModal2").modal('show');
+    $("#myModal2").modal({
+        backdrop: 'static'
+    });
     return false;
 }
 
