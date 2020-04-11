@@ -430,6 +430,7 @@ function postToGoogle() {
     var field121 = $("#practicabaxx option:selected").text() == "Seleccione" ? '' : $("#practicabaxx option:selected").text();
     var field122 = $("#actividadscss option:selected").text() == "Seleccione" ? '' : $("#actividadscss option:selected").text();
     var field123 = $("#Comentariosxx").val();
+    var field124 = seconds;
 
 
     $.ajax({
@@ -579,7 +580,8 @@ function postToGoogle() {
             "entry.2131863278": field120,
             "entry.1321957669": field121,
             "entry.385170939": field122,
-            "entry.811313855": field123
+            "entry.811313855": field123,
+            "entry.1651726137": field124
         },
         type: "GET",
         dataType: "jsonp",
