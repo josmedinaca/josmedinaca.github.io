@@ -12,7 +12,7 @@ $(".next").click(function() {
         // Specify validation rules
         rules: {
             // The key name on the left side is the name attribute
-            // of an input field. Validation rules are defined
+            // of an input field.Validation rules are defined
             // on the right side
             // fnames: "required",
             // lnames: "required",
@@ -34,10 +34,59 @@ $(".next").click(function() {
             // procedencia: "required",
             // departamento: "required",
             // ciudad: "required",
-            // lat: "required",
-            // long: "required",
             // direccion: "required",
-
+            // desplazado: "required",
+            // fnaturales: "required",
+            // discapacidad: "required",
+            // hijos: "required",
+            // embarazo: "required",
+            // grupoe: "required",
+            convive: "required",
+            apoyos: "required",
+            apoyos2: "required",
+            SISBEN: "required",
+            EPS: "required",
+            portabilidad: "required",
+            consumidor: "required",
+            durmiendo: "required",
+            descanso: "required",
+            tristeza: "required",
+            Aislamiento: "required",
+            desesperanza: "required",
+            enojo: "required",
+            ansiedad: "required",
+            deseos: "required",
+            suicidas: "required",
+            emergencia: "required",
+            recibiendo: "required",
+            atenciónssssx: "required",
+            medicado: "required",
+            bueno: "required",
+            conoce: "required",
+            gente: "required",
+            expresar: "required",
+            libre: "required",
+            situacion: "required",
+            sentimientos: "required",
+            afectivas: "required",
+            vida: "required",
+            tnico: "required",
+            origens: "required",
+            conflictos: "required",
+            Gnero: "required",
+            sexuals: "required",
+            discpx: "required",
+            Otraxc: "required",
+            dificultadessss: "required",
+            textos: "required",
+            tiempo: "required",
+            otrosxc: "required",
+            operacionesx: "required",
+            momentoss: "required",
+            deporte: "required",
+            residesss: "required",
+            culturalsss: "required",
+            actividadscss: "required",
         },
         // Specify validation error messages
         messages: {
@@ -46,14 +95,64 @@ $(".next").click(function() {
             email: "Introduce tu correo institucional",
             phone1: "Introduce tu teléfono principal",
             phone2: "Introduce tu teléfono secundario",
-            ident: "Introduce tu documento de indetificación",
+            ident: "Introduce tu documento de identificación",
             identType: "Escoge tu tipo de documento",
             procedencia: "Escoge tu lugar de procedencia",
             departamento: "Escoge el departamento donde te encuentras",
             ciudad: "Escribe la ciudad donde te encuentras",
-            lat: "Ubiquese en el mapa",
-            long: "Ubiquese en el mapa",
             direccion: "Introduce tu dirección",
+            desplazado: "Seleccione una opción",
+            fnaturales: "Seleccione una opción",
+            discapacidad: "Seleccione una opción",
+            hijos: "Seleccione una opción",
+            embarazo: "Seleccione una opción",
+            grupoe: "Seleccione una opción",
+            convive: "Seleccione una opción",
+            apoyos: "Seleccione una opción",
+            apoyos2: "Seleccione una opción",
+            SISBEN: "Seleccione una opción",
+            EPS: "Seleccione una opción",
+            portabilidad: "Indique por favor la EPS",
+            consumidor: "Seleccione una opción",
+            durmiendo: "Indique por favor las horas",
+            descanso: "Seleccione una opción",
+            tristeza: "Seleccione una opción",
+            Aislamiento: "Seleccione una opción",
+            desesperanza: "Seleccione una opción",
+            enojo: "Seleccione una opción",
+            ansiedad: "Seleccione una opción",
+            deseos: "Seleccione una opción",
+            suicidas: "Seleccione una opción",
+            emergencia: "Seleccione una opción",
+            recibiendo: "Seleccione una opción",
+            atenciónssssx: "Seleccione una opción",
+            medicado: "Seleccione una opción",
+            bueno: "Seleccione una opción",
+            conoce: "Seleccione una opción",
+            gente: "Seleccione una opción",
+            expresar: "Seleccione una opción",
+            libre: "Seleccione una opción",
+            situacion: "Seleccione una opción",
+            sentimientos: "Seleccione una opción",
+            afectivas: "Seleccione una opción",
+            vida: "Seleccione una opción",
+            tnico: "Seleccione una opción",
+            origens: "Seleccione una opción",
+            conflictos: "Seleccione una opción",
+            Gnero: "Seleccione una opción",
+            sexuals: "Seleccione una opción",
+            discpx: "Seleccione una opción",
+            Otraxc: "Seleccione una opción",
+            dificultadessss: "Seleccione una opción",
+            textos: "Seleccione una opción",
+            tiempo: "Seleccione una opción",
+            otrosxc: "Seleccione una opción",
+            operacionesx: "Seleccione una opción",
+            momentoss: "Seleccione una opción",
+            deporte: "Seleccione una opción",
+            residesss: "Seleccione una opción",
+            culturalsss: "Seleccione una opción",
+            actividadscss: "Seleccione una opción",
         },
 
     });
@@ -311,6 +410,7 @@ function postToGoogle() {
     var field102 = $("#conflictos option:selected").text() == "Seleccione" ? '' : $("#conflictos option:selected").text();
     var field103 = $("#Gnero option:selected").text() == "Seleccione" ? '' : $("#Gnero option:selected").text();
     var field104 = $("#sexuals option:selected").text() == "Seleccione" ? '' : $("#sexuals option:selected").text();
+    var field1041 = $("#discpx option:selected").text() == "Seleccione" ? '' : $("#discpx option:selected").text();
     var field105 = $("#Otraxc option:selected").text() == "Seleccione" ? '' : $("#Otraxc option:selected").text();
     var field106 = $("#otrra").val();
     var field107 = avance;
@@ -460,6 +560,7 @@ function postToGoogle() {
             "entry.412699393": field102,
             "entry.2100127934": field103,
             "entry.1718266099": field104,
+            "entry.1811904872": field1041,
             "entry.1579842858": field105,
             "entry.657673320": field106,
             "entry.887329038": field107,
@@ -885,6 +986,8 @@ $("#s88").bind("change paste keyup", function() {
         }
     }
 });
+var ttl = parseFloat(s11) + parseFloat(s22) + parseFloat(s33) + parseFloat(s44) + parseFloat(s55) +
+    parseFloat(s66) + parseFloat(s77) + parseFloat(s88);
 
 $(function() {
     $('.my-select').selectpicker();
@@ -1056,8 +1159,8 @@ function dificcc() {
     selected = $("#difccs option:selected").text();
     console.log($("#difccs option:selected").text());
     if (selected.includes("Ninguna")) {
-        $('.my-select3').selectpicker('deselectAll');
-        $('.my-select3').selectpicker({ title: 'Ninguna' }).selectpicker('toggle').selectpicker('render');
+        $('.my-select33').selectpicker('deselectAll');
+        $('.my-select33').selectpicker({ title: 'Ninguna' }).selectpicker('toggle').selectpicker('render');
         nna = "Si";
     } else {
         nna = "No";
@@ -1103,6 +1206,7 @@ function crnicax(divId, element) {
     if (selected.includes("Otra")) {
         document.getElementById(divId).style.display = 'block';
         Otra = "Si";
+        document.getElementById('otracroncxx').value = "";
     } else {
         document.getElementById(divId).style.display = 'none';
         Otra = "No";
@@ -1156,8 +1260,8 @@ function apoyosper() {
     selected = $("#apoyospersonalll option:selected").text();
     console.log($("#apoyospersonalll option:selected").text());
     if (selected.includes("Ninguno")) {
-        $('.my-select2').selectpicker('deselectAll');
-        $('.my-select2').selectpicker({ title: 'Ninguno' }).selectpicker('toggle').selectpicker('render');
+        $('.my-select22').selectpicker('deselectAll');
+        $('.my-select22').selectpicker({ title: 'Ninguno' }).selectpicker('toggle').selectpicker('render');
         Ninguno = "Si";
     } else {
         Ninguno = "No";
@@ -1214,8 +1318,8 @@ $(document).on("wheel", "input[type=number]", function(e) {
     $(this).blur();
 });
 $('#direccion').change(function() {
-    if (!($(this).val().includes("#") || $(this).val().includes("-"))) {
-        alert("Su dirección debe contener los carácteres # y/o -");
+    if (!($(this).val().includes("#") && $(this).val().includes("-"))) {
+        alert("Su dirección debe contener los carácteres # y -");
         $("#direccion").val("");
         s8 = 0;
     }
