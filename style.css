@@ -168,7 +168,7 @@ body {
     color: white;
     text-transform: uppercase;
     font-size: 9px;
-    width: 11%;
+    width: 20%;
     float: left;
     position: relative;
     letter-spacing: 1px;
@@ -216,7 +216,7 @@ body {
 
 #progressbar li.active:before,
 #progressbar li.active:after {
-    background: #00B5D8;
+    background: #618220;
     color: white;
 }
 

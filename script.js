@@ -6,7 +6,7 @@ var animating; //flag to prevent quick multi-click glitches
 jQuery.validator.addMethod("customEmail", function(value, element) {
     return this.optional(element) || /^[a-zA-Z0-9._-]+@[unal.edu.co]{11}$/i.test(value);
 }, "Please enter valid emaildd address!");
-
+var aux_next = 1;
 $(".next").click(function() {
     $('#msform').validate({
         // Specify validation rules
@@ -14,79 +14,82 @@ $(".next").click(function() {
             // The key name on the left side is the name attribute
             // of an input field.Validation rules are defined
             // on the right side
-            fnames: "required",
-            lnames: "required",
-            email: {
-                required: true,
-                // Specify that email should be validated
-                // by the built-in "email" rule
-                email: false,
-                customEmail: true
-            },
-            phone1: {
-                required: true,
-                digits: true
-            },
-            ident: "required",
-            identType: {
-                required: true
-            },
-            procedencia: "required",
-            departamento: "required",
-            ciudad: "required",
-            direccion: "required",
-            desplazado: "required",
-            fnaturales: "required",
-            discapacidad: "required",
-            hijos: "required",
-            embarazo: "required",
-            grupoe: "required",
-            convive: "required",
-            apoyos: "required",
-            apoyos2: "required",
-            SISBEN: "required",
-            EPS: "required",
-            portabilidad: "required",
-            consumidor: "required",
-            durmiendo: "required",
-            descanso: "required",
-            tristeza: "required",
-            Aislamiento: "required",
-            desesperanza: "required",
-            enojo: "required",
-            ansiedad: "required",
-            deseos: "required",
-            suicidas: "required",
-            emergencia: "required",
-            recibiendo: "required",
-            atenciónssssx: "required",
-            medicado: "required",
-            bueno: "required",
-            conoce: "required",
-            gente: "required",
-            expresar: "required",
-            libre: "required",
-            situacion: "required",
-            sentimientos: "required",
-            afectivas: "required",
-            vida: "required",
-            tnico: "required",
-            origens: "required",
-            conflictos: "required",
-            Gnero: "required",
-            sexuals: "required",
-            discpx: "required",
-            Otraxc: "required",
-            dificultadessss: "required",
-            textos: "required",
-            tiempo: "required",
-            otrosxc: "required",
-            operacionesx: "required",
-            momentoss: "required",
-            deporte: "required",
-            residesss: "required",
-            culturalsss: "required",
-            actividadscss: "required",
+            // fnames: "required",
+            // lnames: "required",
+            // email: {
+            //     required: true,
+            //     // Specify that email should be validated
+            //     // by the built-in "email" rule
+            //     email: false,
+            //     customEmail: true
+            // },
+            // phone1: {
+            //     required: true,
+            //     digits: true
+            // },
+            // ident: "required",
+            // identType: {
+            //     required: true
+            // },
+            // procedencia: "required",
+            // departamento: "required",
+            // ciudad: "required",
+            // direccion: "required",
+            // desplazado: "required",
+            // fnaturales: "required",
+            // discapacidad: "required",
+            // hijos: "required",
+            // embarazo: "required",
+            // grupoe: "required",
+            // convive: "required",
+            // apoyos: "required",
+            // apoyos2: "required",
+            // SISBEN: "required",
+            // EPS: "required",
+            // portabilidad: "required",
+            // consumidor: "required",
+            // durmiendo: "required",
+            // descanso: "required",
+            // tristeza: "required",
+            // Aislamiento: "required",
+            // desesperanza: "required",
+            // enojo: "required",
+            // ansiedad: "required",
+            // deseos: "required",
+            // suicidas: "required",
+            // emergencia: "required",
+            // recibiendo: "required",
+            // atenciónssssx: "required",
+            // medicado: "required",
+            // bueno: "required",
+            // conoce: "required",
+            // gente: "required",
+            // expresar: "required",
+            // libre: "required",
+            // situacion: "required",
+            // sentimientos: "required",
+            // afectivas: "required",
+            // vida: "required",
+            // tnico: "required",
+            // origens: "required",
+            // conflictos: "required",
+            // Gnero: "required",
+            // sexuals: "required",
+            // discpx: "required",
+            // Otraxc: "required",
+            // dificultadessss: "required",
+            // textos: "required",
+            // tiempo: "required",
+            // otrosxc: "required",
+            // operacionesx: "required",
+            // momentoss: "required",
+            // deporte: "required",
+            // residesss: "required",
+            // culturalsss: "required",
+            // actividadscss: "required",
+            ingresos: "required",
+            gasto: "required",
+            avance: "required",
         },
         // Specify validation error messages
         messages: {
@@ -153,6 +156,9 @@ $(".next").click(function() {
             residesss: "Seleccione una opción",
             culturalsss: "Seleccione una opción",
             actividadscss: "Seleccione una opción",
+            ingresos: "Debe introducir un valor",
+            gasto: "Debe introducir un valor",
+            avance: "Debe introducir un valor",
         },
 
     });
@@ -164,9 +170,21 @@ $(".next").click(function() {
 
     current_fs = $(this).parent();
     next_fs = $(this).parent().next();
-
+    aux_next += 1;
+    //console.log(aux_next);
     //activate next step on progressbar using the index of next_fs
-    $("#progressbar li").eq($("fieldset").index(next_fs)).addClass("active");
+    if (aux_next == 3) {
+        ($("#3")).addClass("active");
+    }
+    if (aux_next == 5) {
+        ($("#5")).addClass("active");
+    }
+    if (aux_next == 7) {
+        ($("#7")).addClass("active");
+    }
+    if (aux_next == 9) {
+        ($("#9")).addClass("active");
+    }
     $(window).scrollTop(0);
     //show the next fieldset
     next_fs.show();
@@ -205,7 +223,22 @@ $(".previous").click(function() {
     previous_fs = $(this).parent().prev();
     $(window).scrollTop(0);
     //de-activate current step on progressbar
-    $("#progressbar li").eq($("fieldset").index(current_fs)).removeClass("active");
+    aux_next -= 1;
+    //console.log("para atrás" + aux_next);
+    //activate next step on progressbar using the index of next_fs
+    if (aux_next == 2) {
+        ($("#3")).removeClass("active");
+    }
+    if (aux_next == 4) {
+        ($("#5")).removeClass("active");
+    }
+    if (aux_next == 6) {
+        ($("#7")).removeClass("active");
+    }
+    if (aux_next == 8) {
+        ($("#9")).removeClass("active");
+    }
+    // $("#progressbar li").eq($("fieldset").index(current_fs)).removeClass("active");
     $(window).scrollTop(0);
     //show the previous fieldset
     previous_fs.show();
@@ -250,14 +283,14 @@ newMarkerGroup = new L.LayerGroup();
 mymap.on('click', addMarker);
 mymap.on('zoomend', function(e) {
 
-    console.log(e.target.getZoom());
+    //console.log(e.target.getZoom());
 
 })
 var lat = 4.634771;
 var long = -74.081599;
 mymap.on('click', function(ev) {
     var coordinates = mymap.mouseEventToLatLng(ev.originalEvent);
-    console.log(coordinates.lat + ', ' + coordinates.lng);
+    // console.log(coordinates.lat + ', ' + coordinates.lng);
     document.getElementById('lat').value = coordinates.lat;
     document.getElementById('long').value = coordinates.lng;
     lat = coordinates.lat;
@@ -278,12 +311,9 @@ function addMarker(e) {
     theMarker = new L.marker(e.latlng).addTo(mymap);
 }
 
-function TEST() {
-    console.log("TTT");
-}
 
 function postToGoogle() {
-    console.log("Im in");
+    //console.log("Im in");
     var field1 = $("#fnames").val();
     var field2 = $("#lnames").val();
     var field3 = $("#email").val();
@@ -591,7 +621,7 @@ function postToGoogle() {
         },
         error: function(x, y, z) {
             //document.getElementById("dadaada").innerHTML = "Tiempo en responder el formulario: " + seconds + " segundos.";
-            console.log("ESO");
+            //console.log("ESO");
 
         }
     });
@@ -690,7 +720,7 @@ function showDiv12(divId, element) {
     var control6 = $("#deseos option:selected").val();
     var control7 = $("#suicidas option:selected").val();
     total = parseInt(control1 + control2 + control3 + control4 + control5 + control6 + control7);
-    console.log(total);
+    //console.log(total);
     document.getElementById(divId).style.display = total != 0 ? 'block' : 'none';
     if (element.value != 1) {
         document.getElementById('dolor1').value = "";
@@ -1006,7 +1036,7 @@ var ningun_servicio = "No";
 
 function servicios() {
     selected = $("#servicios option:selected").text();
-    console.log($("#servicios option:selected").text());
+    // console.log($("#servicios option:selected").text());
     if (selected.includes("Ninguno")) {
         $('.my-select2').selectpicker('deselectAll');
         $('.my-select2').selectpicker({ title: 'Ninguno' }).selectpicker('toggle').selectpicker('render');
@@ -1056,7 +1086,7 @@ var ningun_electrodo = "No";
 
 function electrod() {
     selected = $("#electrodo option:selected").text();
-    console.log($("#electrodo option:selected").text());
+    // console.log($("#electrodo option:selected").text());
     if (selected.includes("Ninguno")) {
         $('.my-select3').selectpicker('deselectAll');
         $('.my-select3').selectpicker({ title: 'Ninguno' }).selectpicker('toggle').selectpicker('render');
@@ -1094,7 +1124,7 @@ function electrod() {
     } else {
         ollap = "No";
     }
-    console.log(estf + nev + cong + horn + licuad + ollap);
+    // console.log(estf + nev + cong + horn + licuad + ollap);
 }
 
 var biebog = "No";
@@ -1108,7 +1138,7 @@ var ningun_apoyo = "No";
 
 function apoyosxd() {
     selected = $("#apoyosx option:selected").text();
-    console.log($("#apoyosx option:selected").text());
+    // console.log($("#apoyosx option:selected").text());
     if (selected.includes("Ninguno")) {
         $('.my-select5').selectpicker('deselectAll');
         $('.my-select5').selectpicker({ title: 'Ninguno' }).selectpicker('toggle').selectpicker('render');
@@ -1151,7 +1181,7 @@ function apoyosxd() {
     } else {
         inicegr = "No";
     }
-    console.log(biebog + biefac + sedepre + ofcenl + inicest + inicdoc + inicegr);
+    // console.log(biebog + biefac + sedepre + ofcenl + inicest + inicdoc + inicegr);
 }
 
 var contenidos = "No";
@@ -1161,7 +1191,7 @@ var nna = "No";
 
 function dificcc() {
     selected = $("#difccs option:selected").text();
-    console.log($("#difccs option:selected").text());
+    //  console.log($("#difccs option:selected").text());
     if (selected.includes("Ninguna")) {
         $('.my-select33').selectpicker('deselectAll');
         $('.my-select33').selectpicker({ title: 'Ninguna' }).selectpicker('toggle').selectpicker('render');
@@ -1184,7 +1214,7 @@ function dificcc() {
     } else {
         activida = "No";
     }
-    console.log(contenidos + metodologia + activida);
+    // console.log(contenidos + metodologia + activida);
 }
 var seconds = 0;
 var EPOC = "No";
@@ -1199,7 +1229,7 @@ var Ninguna = "No";
 
 function crnicax(divId, element) {
     selected = $("#crnica option:selected").text();
-    console.log($("#crnica option:selected").text());
+    // console.log($("#crnica option:selected").text());
     if (selected.includes("Ninguna")) {
         $('.my-select1').selectpicker('deselectAll');
         $('.my-select1').selectpicker({ title: 'Ninguna' }).selectpicker('toggle').selectpicker('render');
@@ -1262,7 +1292,7 @@ var Ninguno = "No";
 
 function apoyosper() {
     selected = $("#apoyospersonalll option:selected").text();
-    console.log($("#apoyospersonalll option:selected").text());
+    //console.log($("#apoyospersonalll option:selected").text());
     if (selected.includes("Ninguno")) {
         $('.my-select22').selectpicker('deselectAll');
         $('.my-select22').selectpicker({ title: 'Ninguno' }).selectpicker('toggle').selectpicker('render');
@@ -1315,6 +1345,7 @@ window.setInterval((function() {
 }()), 1000);
 
 $(document).ready(function() {
+    $(window).scrollTop(0);
     $("#myModal").modal('show');
 
 });
@@ -1368,7 +1399,10 @@ $('#avance').change(function() {
 });
 var ingresos = "";
 $('#ingresos').change(function() {
-    if ($(this).val().includes(".") || $(this).val().includes(",") || $(this).val().includes("-") || $(this).val().includes("$")) {
+    if ($(this).val() == "" || $(this).val() == 0) {
+        alert("Los ingresos mensuales NO pueden ser 0. Recuerde tomar en consideración el dinero que recibe de las personas de quienes usted depende económicamente que utiliza para sus gastos habituales en el semestre(alimentación, transporte, alojamiento, papelería y materiales, etc.)");
+        $("#ingresos").val("");
+    } else if ($(this).val().includes(".") || $(this).val().includes(",") || $(this).val().includes("-") || $(this).val().includes("$")) {
         alert("Solo introduzca valores enteros");
         $("#ingresos").val("");
     } else {
@@ -1377,7 +1411,10 @@ $('#ingresos').change(function() {
 });
 var gasto = "";
 $('#gasto').change(function() {
-    if ($(this).val().includes(".") || $(this).val().includes(",") || $(this).val().includes("-") || $(this).val().includes("$")) {
+    if ($(this).val() == "" || $(this).val() == 0) {
+        alert("Los gastos mensuales en alimentación NO pueden ser 0. Recuerde tomar en consideración el valor aproximado de lo que consumió en total en el último mes");
+        $("#gasto").val("");
+    } else if ($(this).val().includes(".") || $(this).val().includes(",") || $(this).val().includes("-") || $(this).val().includes("$")) {
         alert("Solo introduzca valores enteros");
         $("#gasto").val("");
     } else {
