@@ -1,0 +1,2699 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Formulario de Bienestar Universitario</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css'>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js" integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew==" crossorigin=""></script>
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.43/css/bootstrap-datetimepicker.min.css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-multiselect/0.9.13/css/bootstrap-multiselect.css">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/css/bootstrap-select.min.css">
+    <link rel='shortcut icon' type='image/x-icon' href='http://bienestarunbog.tools/favicon.ico' />
+
+
+</head>
+
+<body>
+    <!-- partial:index.partial.html -->
+    <!-- MultiStep Form -->
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <form id="msform" autocomplete="off">
+                <!-- progressbar -->
+                <ul id="progressbar">
+                    <li class="active" id="2">20%</li>
+                    <li id="3">40%</li>
+                    <li id="5">60%</li>
+                    <li id="7">80%</li>
+                    <li id="9">100%</li>
+                </ul>
+                <!-- fieldsets -->
+                <fieldset>
+                    <!-- Modal -->
+                    <div class="msform image"></div>
+                    <div class="modal fade" id="myModal" tabindex="0" role="dialog" aria-labelledby="myModalLabel">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                            aria-hidden="true">&times;</span></button>
+                                    <h4 class="modal-title" id="myModalLabel">CARACTERIZACIÓN DE ESTUDIANTES VULNERABLES FRENTE A LA EMERGENCIA SANITARIA DEL COVID-19</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <p>Estimado(a) estudiante</p>
+                                    <p>Esta encuesta tiene como objetivo evaluar sus actuales condiciones así como identificar POSIBLES estrategias para mitigar vulnerabilidades durante la emergencia sanitaria del COVID-19. Antes de continuar tenga en cuenta
+                                        las siguientes consideraciones:</p>
+                                    <p>1.Dada la gravedad de la actual coyuntura la encuesta tiene una extensión de 60 preguntas y dura aproximadamente 15 minutos en ser contestada. Lo anterior, con el fin de tener un conocimiento detallado de múltiples
+                                        condiciones relevantes</p>
+                                    <p> 2. Responder la encuesta no implica de ninguna manera o de forma automática la obtención de cualquier tipo de apoyo. El diligenciamiento de esta encuesta no es obligatorio pero hacerlo facilitará la toma de decisiones
+                                        y el desarrollo de estrategias institucionales.
+                                    </p>
+                                    <p>3. Cualquier apoyo o acompañamiento será determinado tras un proceso riguroso de verificación, ponderación y priorización tomando en cuenta las variables dispuestas en el presente formulario. </p>
+                                    <p>4. Considere si realmente su necesidad es crítica y no puede ser suplida por sus propios medios, a través de familiares o de programas del Gobierno de los que se beneficie. El mal uso de estas herramientas no le permitirá
+                                        a estudiantes con mayores necesidades acceder a eventuales programas de apoyo o acompañamiento.</p>
+                                    <p>5. Con su diligenciamiento del presente formulario, nos autoriza a realizar la verificación de su situación a través de la revisión de bases de datos internas y externas a las cuales tenemos acceso. En caso de verificarse
+                                        que reportó información falsa SERÁ EXCLUIDO(A) en cualquier proceso de priorización de los eventuales apoyos de los que se disponga.</p>
+                                    <p>6. Solo se estudiará una respuesta a la encuesta por estudiante activo. Si usted contesta la encuesta más de una vez, solo será tomada en cuenta su primera respuesta. </p>
+                                    <p>7. Al diligenciar este formulario, usted acepta todas las consideraciones estipuladas anteriormente así como que sus datos personales sean tratados únicamente para el propósito anteriormente descrito.</p>
+
+                                    <p>
+                                        <div class="alert alert-warning alert-dismissible" role="alert">
+                                            <strong>NOTA:</strong> Si conoce algún estudiante que probablemente no tenga posibilidad de diligenciar este formulario agradecemos se comunique con la persona telefónicamente y la asista en el diligenciamiento
+                                            del formulario.
+                                        </div>
+                                    </p>
+
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default center-block" onclick="$(window).scrollTop(0);" data-dismiss="modal">Aceptar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h2 class="fs-title">DATOS DE IDENTIFICACIÓN Y CONTACTO</h2>
+                    <hr>
+                    <p>Nombre(s) completos</p>
+                    <input type="text" name="fnames" id="fnames" placeholder="Nombres" />
+                    <p>Apellido(s) completos</p>
+                    <input type="text" name="lnames" id="lnames" placeholder="Apellidos" />
+                    <p>Correo institucional</p>
+                    <input type="email" name="email" id="email" placeholder="Correo" />
+
+                    <p>Numero de contacto <strong>(de preferencia celular)</strong></p>
+                    <div class="alert alert-warning alert-dismissible" role="alert">
+                        Si se encuentra fuera de Bogotá agregue el <strong>indicativo</strong> correspondiente a sus números de telefono fijo.
+                    </div>
+                    <input type="number" name="phone1" id="phone1" placeholder="Telefono 1" />
+                    <p>Numero de contacto adicional</p>
+                    <input type="number" name="phone2" id="phone2" placeholder="Telefono 2" />
+                    <p>Tipo de documento de Identificación</p>
+                    <div class="dropdown">
+                        <select name="identType" id="identType" class="form-control form-control-xs " class="dropbtn ">
+                            <option value="" selected hidden>Seleccione</option>
+                            <option value="1">Cedula de ciudadania</option>
+                            <option value="0">Cedula de extranjeria</option>
+                            <option value="2">Tarjeta de Identidad</option>
+                            <option value="3">Pasaporte</option>
+                        </select>
+                    </div>
+                    <p>Número de documento</p>
+                    <input type="number" name="ident" id="ident" placeholder="Numero de documento" />
+                    <br>
+
+                    <input type="button" name="next" class="next action-button" value="Siguiente" />
+
+
+                </fieldset>
+                <fieldset>
+
+                    <h2 class="fs-title">Lugar de procedencia y residencia</h2>
+                    <hr>
+
+                    <p>Indique por favor su <strong>lugar de procedencia</strong></p>
+                    <div class="alert alert-warning alert-dismissible" role="alert">
+                        <strong>¡Recuerde!</strong> El Área Metropolitana de Bogotá está conformada por los siguientes municipios: Bojacá, Cajicá, Chía, Cogua, Cota, El Rosal, Facatativá, Funza, Gachancipá, La Calera, Madrid, Mosquera, Nemocón, Soacha,
+                        Sibaté, Sopó, Subachoque, Tabio, Tenjo, Tocancipá, Zipacón y Zipaquirá
+                    </div>
+                    <div class="dropdown">
+                        <select name="procedencia" id="procedencia" class="form-control form-control-xs " class="dropbtn ">
+                            <option value="" selected hidden>Seleccione</option>
+                            <option value="1">Bogotá D.C</option>
+                            <option value="2">Municipio del Área Metropolitana de Bogotá</option>
+                            <option value="3">Soy de otra región o departamento de Colombia</option>
+                            <option value="4">Soy de otro país (Extranjero)</option>
+                        </select>
+                    </div>
+                    <p>Indique el departamento <strong>donde se encuentra actualmente</strong></p>
+                    <div class="dropdown">
+                        <select class="form-control form-control-xs " id="departamento" name="departamento" class="dropbtn">
+                            <option value="" selected hidden>Seleccione</option>
+                            <option value="1">Amazonas</option>
+                            <option value="2">Antioquia</option>
+                            <option value="3">Arauca</option>
+                            <option value="4">Atlántico</option>
+                            <option value="5">Bogotá D.C.</option>                            
+                            <option value="6">Bolívar</option>
+                            <option value="33">Boyacá</option>
+                            <option value="7">Caldas</option>
+                            <option value="8">Caquetá</option>
+                            <option value="9">Casanare</option>
+                            <option value="10">Cauca</option>
+                            <option value="11">Cesar</option>
+                            <option value="12">Chocó</option>
+                            <option value="13">Córdoba</option>
+                            <option value="14">Cundinamarca</option>
+                            <option value="15">Guainía</option>
+                            <option value="16">Guaviare</option>
+                            <option value="17">Huila</option>
+                            <option value="18">La Guajira</option>
+                            <option value="19">Magdalena</option>
+                            <option value="20">Meta</option>
+                            <option value="21">Nariño</option>
+                            <option value="22">Norte de Santander</option>
+                            <option value="23">Putumayo</option>
+                            <option value="24">Quindío</option>
+                            <option value="25">Risaralda</option>
+                            <option value="26">San Andrés y Providencia</option>
+                            <option value="27">Santander</option>
+                            <option value="28">Sucre</option>
+                            <option value="29">Tolima</option>
+                            <option value="30">Valle del Cauca</option>
+                            <option value="31">Vaupés</option>
+                            <option value="32">Vichada</option>
+
+
+                        </select>
+                    </div>
+                    <p>Ciudad o municipio <strong>donde se encuentra actualmente</strong></p>
+                    <input type="text" name="ciudad" id="ciudad" placeholder="Ciudad o municipio" />
+                    <h5>Si se encuentra actualmente en Bogotá o el Área Metropolitana, ¿Planea regresar a su lugar de procedencia <strong>por sus propios medios</strong> en el mes de abril o mayo?</h5>
+                    <div class="dropdown">
+                        <select name="viajar" id="viajar" onchange="showDiv('fechaviaje', this)" class="form-control form-control-xs " class="dropbtn ">
+                            <option value="" selected hidden>Seleccione</option>
+                            <option value="2">Sí</option>
+                            <option value="1">No</option>
+                            <option value="0">No Aplica (Soy de Bogotá o el Area Metropolitana)</option>
+                            <option value="0">No Aplica (Ya me regresé a mi lugar de procedencia)</option>
+
+                        </select>
+                    </div>
+                    <div class="form-group required " id="fechaviaje">
+                        <p>¿Cuándo planea regresar?</p>
+                        <div class="input-group col-md-12">
+                            <div class="input-group-addon">
+                                <span class="glyphicon glyphicon-calendar"></span>
+                            </div>
+                            <input type="text" class="form-control onlyDate" name="calOnlyDate" id="calOnlyDate" placeholder="dd/mm/aa">
+
+                        </div>
+                    </div>
+
+                    <input type="button" name="previous" class="previous action-button-previous" value="Anterior" />
+                    <input type="button" name="next" class="next action-button" value="Siguiente" />
+                </fieldset>
+                <fieldset>
+                    <h2 class="fs-title">UBICACIÓN DEL LUGAR DE RESIDENCIA ACTUAL</h2>
+                    <hr>
+                    <div class="alert alert-danger alert-dismissible" role="alert">
+                        <h3>Seleccione en el mapa la UBICACIÓN <strong>donde se encuentra viviendo actualmente</strong></h3>
+                    </div>
+                    </hr>
+                    <!--Google map-->
+                    <div id="mapid"></div><br>
+                    <input type="text" name="lat" id='lat' placeholder="Seleccione su UBICACION" readonly="readonly" />
+                    <input type="text" name="long" id='long' placeholder="Seleccione su UBICACION" readonly="readonly" />
+                    <!--Google Maps-->
+                    <hr />
+                    <h2 class="fs-title2">Dirección donde vive en estos momentos</h2><br>
+                    <img src="http://bienestarunbog.tools/Captura.svg" style="width:70%">
+                    <hr>
+
+                    <p>Indique la dirección <strong>donde esta viviendo actualmente</strong> sin el complemento (utilice de ser posible la que aparece en los recibos de servicios)</p>
+                    <div class="alert alert-warning alert-dismissible" role="alert">
+                        <p>Solo incluya la vía principal, vía secundaria(generadora) y numero de predio o placa (incluyendo letras y Bis, Este, Sur si aplica).</p>
+                        <p> Por ejemplo: <strong>DIAGONAL 32B BIS A SUR # 6C - 32 ESTE.</p></strong>
+                            <p> <strong>Solo</strong> incluya los símbolos <strong>#</strong> y <strong>-</strong></p>
+                        </p>
+                    </div>
+                    <input type="text" name="direccion" id="direccion" placeholder="Dirección" />
+
+                    <p>Indique el complemento de la dirección (si aplica)</p>
+                    <div class="alert alert-warning alert-dismissible" role="alert">
+                        Incluya aquí cualquier complemento a la dirección como Interior, Torre, Bloque, Conjunto, Apartamento, etc.
+                    </div>
+                    <input type="text" name="direccion2" id="direccion2" placeholder="Datos adicionales a dirección" />
+                    <p></p>
+
+                    <input type="button" name="previous" class="previous action-button-previous" value="Anterior" />
+                    <input type="button" name="next" class="next action-button" value="Siguiente" />
+                </fieldset>
+                <fieldset>
+                    <h2 class="fs-title">Factores agravantes del IVSE</h2>
+                    <hr>
+                    <div class="alert alert-warning alert-dismissible" role="alert"> A continuación se le preguntará si cuenta con alguno de los factores agravantes del Instrumento de Valoración Socioeconómica (IVSE)
+                        <a href="http://www.legal.unal.edu.co/rlunal/home/doc.jsp?d_i=76384" target="_blank">
+                            <p>https://bit.ly/34gRaEY</p>
+                        </a>
+                    </div>
+                    <p>¿Es víctima del conflicto armado en Colombia?</p>
+                    <div class="dropdown">
+                        <select class="form-control form-control-xs " id="desplazado" name="desplazado" class="dropbtn">
+                            <option value="" selected hidden>Seleccione</option>
+
+                            <option value="1">SI, y estoy certificada por el Departamento de Prosperidad Social (DPS)
+                            </option>
+                            <option value="2">SI, pero no estoy certificada por el DPS
+
+                            </option>
+                            <option value="0">NO</option>
+                        </select>
+                    </div>
+                    <p>¿Es persona damnificada por fenómenos naturales?</p>
+                    <div class="dropdown">
+                        <select class="form-control form-control-xs " id="fnaturales" name="fnaturales" class="dropbtn">
+                            <option value="" selected hidden>Seleccione</option>
+
+                            <option value="1">SI, y cuento con constancia expedida por la autoridad competente</option>
+                            <option value="2">SI, pero no cuento con constancia expedida.</option>
+                            <option value="0">NO</option>
+                        </select>
+                    </div>
+                    <p>¿Se reconoce usted como persona en situación de discapacidad? ¿De qué tipo?</p>
+                    <div class="alert alert-warning alert-dismissible" role="alert">
+                        <strong>Discapacidad:</strong> situaciones de orden físico, sensorial, mental o intelectual, las cuales afectan significativamente el nivel de desarrollo, las posibilidades funcionales, la comunicación, la interacción social y
+                        el aprendizaje.
+                    </div>
+                    <div class="dropdown">
+                        <select class="form-control form-control-xs " id="discapacidad" name="discapacidad" onchange="showDiv2('certificada', this)" class="dropbtn">
+                            <option value="" selected hidden>Seleccione</option>
+
+                            <option value="2">SI, Motora</option>
+                            <option value="3">SI, Hipoacusia</option>
+                            <option value="4">SI, Sordo (Deficiencia auditiva total)</option>
+                            <option value="5">SI, Visual (Baja visión)</option>
+                            <option value="6">SI, Visual (Ciego/a)</option>
+                            <option value="7">SI, Psicosocial </option>
+                            <option value="8">SI, Intelectual </option>
+                            <option value="9">SI, Discapacidades Múltiples</option>
+                            <option value="1">NO</option>
+                        </select>
+                    </div>
+
+                    <div class="dropdown" id="certificada" name="certificada">
+                        <p>¿Su condición de discapacidad se encuentra certificada por la EPS?</p>
+                        <select class="form-control form-control-xs " id="txtd" class="dropbtn">
+                            <option value="" selected hidden>Seleccione</option>
+                            <option value="1">SI</option>
+                            <option value="2">NO</option>
+                        </select>
+                    </div>
+                    <p>¿Tiene hijos?</p>
+                    <div class="dropdown">
+                        <select class="form-control form-control-xs " id="hijos" name="hijos" class="dropbtn">
+                            <option value="" selected hidden>Seleccione</option>
+                            <option value="1">SI, y alguno tiene entre 0 y 6 años</option>
+                            <option value="2">SI, y alguno tiene entre 7 y 12 años</option>
+                            <option value="3">SI, y alguno tiene 12 o más años</option>
+                            <option value="4">NO tengo hijos</option>
+                        </select>
+                    </div>
+                    <p>¿Se encuentra en condición de embarazo?</p>
+                    <div class="dropdown">
+                        <select class="form-control form-control-xs " id="embarazo" name="embarazo" class="dropbtn">
+                            <option value="" selected hidden>Seleccione</option>
+                            <option value="1">Sí</option>
+                            <option value="2">No</option>
+                            <option value="3">No Aplica</option>
+                        </select>
+                    </div>
+                    <p>¿Pertenece a algún grupo étnico?</p>
+                    <div class="alert alert-warning alert-dismissible" role="alert">
+                        <strong>Grupos étnicos:</strong> Comunidades indígenas, ROM, Raizales, Palenqueros, Negros o Afrodescendientes
+                    </div>
+                    <div class="dropdown">
+                        <select class="form-control form-control-xs " id="grupoe" name="grupoe" class="dropbtn">
+                            <option value="" selected hidden>Seleccione</option>
+                            <option value="1">SI, y estoy certificado por el Ministerio del Interior</option>
+                            <option value="2">SI, pero no estoy certificado por MinInterior</option>
+                            <option value="3">NO</option>
+                        </select>
+                    </div>
+                    <input type="button" name="previous" class="previous action-button-previous" value="Anterior" />
+                    <input type="button" name="next" class="next action-button" value="Siguiente" />
+                </fieldset>
+                <fieldset>
+                    <h2 class="fs-title">ASPECTOS SOCIOECONÓMICOS</h2>
+                    <hr>
+                    <h5>Indique de quien depende económicamente en la actualidad y en que porcentaje aproximadamente (la suma debe dar 100%)</h5>
+
+                    <div class="row">
+                        <div class="col-md-6"><input type="number" name="s1" id="s1" placeholder="Papá" /> <span class="pxSpan">%</span></div>
+                        <div class="col-md-6"><input type="number" name="s8" id="s8" placeholder="Otros parientes" /><span class="pxSpan">%</span></div>
+
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6"><input type="number" name="s2" id="s2" placeholder="Mamá" /><span class="pxSpan">%</span></div>
+                        <div class="col-md-6"><input type="number" name="s5" id="s5" placeholder="Pareja" /><span class="pxSpan">%</span></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6"><input type="number" name="s3" id="s3" placeholder="Hermanos" /><span class="pxSpan">%</span></div>
+                        <div class="col-md-6"><input type="number" name="s6" id="s6" placeholder="Particulares" /><span class="pxSpan">%</span></div>
+
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6"><input type="number" name="s4" id="s4" placeholder="Abuelos" /><span class="pxSpan">%</span></div>
+                        <div class="col-md-6"><input type="number" name="s7" id="s7" placeholder="Sí mismo" /><span class="pxSpan">%</span></div>
+                    </div>
+
+                    <div class="progress">
+                        <div class="progress-bar" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">0%</div>
+                    </div>
+
+                    <p>¿Alguna persona depende económicamente de usted? Indique en qué porcentaje aproximadamente según el caso. Si no tiene ningún dependiente deje todas las casillas vacías o con cero y continúe a la siguiente pregunta</p>
+                    <div class="row">
+                        <div class="col-md-6"><input type="number" name="s11" id="s11" placeholder="Papá" /> <span class="pxSpan">%</span></div>
+                        <div class="col-md-6"><input type="number" name="s44" id="s44" placeholder="Abuelos" /><span class="pxSpan">%</span></div>
+
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6"><input type="number" name="s22" id="s22" placeholder="Mamá" /><span class="pxSpan">%</span></div>
+                        <div class="col-md-6"><input type="number" name="s55" id="s55" placeholder="Pareja" /><span class="pxSpan">%</span></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6"><input type="number" name="s33" id="s33" placeholder="Hermanos" /><span class="pxSpan">%</span></div>
+                        <div class="col-md-6"><input type="number" name="s88" id="s88" placeholder="Otros parientes" /><span class="pxSpan">%</span></div>
+
+                    </div>
+                    <div class="row">
+
+                        <div class="col-md-6"><input type="number" name="s66" id="s66" placeholder="Hijos" /><span class="pxSpan">%</span></div>
+                        <div class="col-md-6"><input type="number" name="s77" id="s77" placeholder="Otras" /><span class="pxSpan">%</span></div>
+                    </div>
+                    <p>¿Convive en estos momentos con alguna de las personas que dependen económicamente de usted?</p>
+                    <div class="dropdown">
+                        <select class="form-control form-control-xs " id="convive" name="convive" class="dropbtn">
+                            <option value="" selected hidden>Seleccione</option>
+                            <option value="0">Si</option>
+                            <option value="1">No</option>
+                        </select>
+                    </div>
+
+                    <p><strong>Actualmente</strong> presenta alguna de las siguientes dificultades en el lugar
+                        <strong>donde reside en estos momentos</strong></p>
+                    <div class="dropdown">
+                        <select class="form-control form-control-xs " id="dificultades" name="dificultades" class="dropbtn">
+                            <option value="" selected hidden>Seleccione</option>
+                            <option value="0">Me estan pidiendo irme de donde vivo actualmente</option>
+                            <option value="1">Tengo planeado irme de donde vivo actualmente</option>
+                            <option value="2">Me están exigiendo gastos mayores a los habituales en donde vivo</option>
+                            <option value="3">Ninguna</option>
+                        </select>
+                    </div>
+                    <p>¿A cuánto ascienden <strong>ACTUALMENTE</strong> los ingresos mensuales <strong>propios y/o que
+                            recibe de las personas de quienes depende económicamente</strong>?
+                    </p>
+                    <input type="number" name="ingresos" id="ingresos" placeholder="Ingresos mensuales">
+                    <br>
+                    <p>Para la <strong>alimentación mía y de las personas a mi cargo con las que convivo </strong>(si aplica), <strong>ACTUALMENTE</strong> mi gasto mensual aproximado es de:</p>
+
+                    <input type="number" name="gasto" id="gasto" placeholder="Gasto mensual">
+                    <br>
+                    <p>Indique con qué servicios cuenta en <strong>donde reside actualmente</strong></p>
+                    <div id="servicios">
+                        <select title="Seleccione" class="form-control form-control-xs selectpicker my-select2" id="serviciossx" onchange="servicios()" multiple>
+                            <option value="0">Acueducto (Agua)</option>
+                            <option value="1">Alcantarillado</option>
+                            <option value="2">Electricidad</option>
+                            <option value="3">Gas natural</option>
+                            <option value="4">Computador</option>
+                            <option value="5">Acceso a internet</option>
+                            <option value="6">Ninguno</option>
+                        </select>
+                    </div>
+                    <p>Indique de que electrodomésticos y utensilios de cocina dispone en donde reside actualmente.</p>
+                    <div id="electrodo">
+                        <select title="Seleccione" class="form-control form-control-xs selectpicker my-select3" onchange="electrod()" multiple>
+                            <option value="0">Estufa</option>
+                            <option value="1">Nevera o refrigerador</option>
+                            <option value="2">Congelador</option>
+                            <option value="3">Horno microondas</option>
+                            <option value="4">Licuadora</option>
+                            <option value="5">Olla a presión</option>
+                            <option value="6">Ninguno</option>
+                        </select>
+                    </div>
+
+                    <p><strong>Actualmente recibe o disfruta</strong> de algún apoyo socioeconómico por parte de:</p>
+                    <div id="apoyosx">
+                        <select title="Seleccione" class="form-control form-control-xs selectpicker my-select5" onchange="apoyosxd()" multiple>
+                            <option value="0">Bienestar de Sede Bogota</option>
+                            <option value="1">Bienestar de Facultad</option>
+                            <option value="2">Sede de Presencia Nacional</option>
+                            <option value="2">Oficina de Enlace</option>
+                            <option value="3">Iniciativas estudiantiles</option>
+                            <option value="4">Iniciativas docentes</option>
+                            <option value="5">Iniciativas de egresados</option>
+                            <option value="6">Ninguno</option>
+                        </select>
+                    </div>
+                    <p>¿Actualmente tiene adjudicado alguno de los siguientes apoyos socioeconómicos externos gubernamentales?
+                    </p>
+                    <div class="dropdown">
+                        <select class="form-control form-control-xs " id="apoyos" name="apoyos" class="dropbtn">
+                            <option value="" selected hidden>Seleccione</option>
+
+                            <option value="1">Ser Pilo Paga</option>
+                            <option value="2">Generación E</option>
+                            <option value="3">Jóvenes en Acción</option>
+                            <option value="4">Crédito ICETEX</option>
+                            <option value="0">Ninguno</option>
+                        </select>
+                    </div>
+                    <p>¿Actualmente recibe algún beneficio socioeconómico estudiantil externo de organizaciones, fundaciones, bancos, etc.?</p>
+                    <div class="dropdown" id="apoyos2" name="apoyos2">
+                        <select class="form-control form-control-xs " onchange="showDiv11('apodohid', this)" class="dropbtn">
+                            <option value="" selected hidden>Seleccione</option>
+                            <option value="1">Sí</option>
+                            <option value="2">No</option>
+                        </select>
+                    </div>
+                    <div id="apodohid">
+                        <p>Indique por favor el nombre de la organización, fundación, banco, etc. de la que recibe apoyo
+                        </p>
+                        <input type="text" name="nombreOrg" id="nombreOrg" placeholder="Nombre" />
+
+                    </div>
+                    <p>¿Cuenta con puntaje SISBEN?</p>
+                    <div class="dropdown">
+                        <select class="form-control form-control-xs " id="SISBEN" name="SISBEN" onchange="showDiv3('puntajeSISBEN2', this)" class="dropbtn">
+                            <option value="" selected hidden>Seleccione</option>
+                            <option value="1">Sí</option>
+                            <option value="2">No</option>
+                        </select>
+                    </div>
+                    <div id="puntajeSISBEN2" name="puntajeSISBEN2">
+
+                        <p>Indique su puntaje SISBEN</p>
+                        <div class="alert alert-warning alert-dismissible" role="alert">
+                            Si no está seguro puede consultar su puntaje SISBEN acá:
+                            <a href="https://wssisbenconsulta.sisben.gov.co/dnp_sisbenconsulta/dnp_sisben_consulta.aspx" target="_blank">
+                                <p>https://bit.ly/2JDjsQr</p>
+                            </a>
+                        </div>
+                        <input type="number" name="puntajeSISBEN" id="puntajeSISBEN" placeholder="Puntaje" />
+                    </div>
+
+
+                    <input type="button" name="previous" class="previous action-button-previous" value="Anterior" />
+                    <input type="button" name="next" class="next action-button" value="Siguiente" />
+                </fieldset>
+                <fieldset>
+                    <h2 class="fs-title">ASPECTOS DE SALUD</h2>
+                    <hr />
+                    <br />
+                    <p>Indique por favor la EPS en la que se encuentra afiliado. Si no tiene EPS escriba <strong>NO
+                            TENGO.</strong></p>
+                    <input type="text" name="EPS" id="EPS" placeholder="EPS" />
+
+                    <p>¿Realizó la portabilidad de EPS a su actual lugar de residencia?</p>
+                    <div class="alert alert-warning alert-dismissible" role="alert">
+                        <strong>Portabilidad: </strong>Trámite por el cual usted traslada la cobertura en salud de su EPS de su cedencia al lugar donde se encuentra viviendo actualmente de forma temporal
+                    </div>
+                    <div class="dropdown">
+                        <select class="form-control form-control-xs " id="portabilidad" name="portabilidad" class="dropbtn">
+                            <option value="" selected hidden>Seleccione</option>
+                            <option value="0">Sí</option>
+                            <option value="1">No</option>
+                            <option value="2">No aplica (Me encuentro en mi lugar de procedencia)</option>
+                        </select>
+                    </div>
+                    <p>¿Es usted consumidor habitual (consumo de dos o más veces al mes) de sustancias como cigarrillo, alcohol, éxtasis (pepas), bazuco, cocaína (perico), hongos y/o alucinógenos (LSD), inhalantes (solventes), marihuana, heroína, energizantes,
+                        entre otros?</p>
+                    <div class="dropdown">
+                        <select class="form-control form-control-xs " id="consumidor" name="consumidor" onchange="showDiv4('consumov', this)" class="dropbtn">
+                            <option value="" selected hidden>Seleccione</option>
+                            <option value="0">Sí</option>
+                            <option value="1">No</option>
+                        </select>
+                    </div>
+                    <div id="consumov">
+                        <p>¿Se ha visto afectado en su consumo por la actual emergencia sanitaria? </p>
+                        <div class="dropdown" id="consumo" name="consumo">
+                            <select class="form-control form-control-xs " id="consumoxxx" class="dropbtn">
+                                <option value="" selected hidden>Seleccione</option>
+                                <option value="0">SI, ha aumentado mi consumo</option>
+                                <option value="1">SI, me he visto obligado a disminuir mi consumo</option>
+                                <option value="2">NO</option>
+                            </select>
+                        </div>
+                        <p>¿Considera que actualmente necesita algún tipo de apoyo o acompañamiento frente a su consumo?
+                        </p>
+                        <div class="dropdown" id="apoyoc" name="apoyoc">
+                            <select class="form-control form-control-xs " id="consumooo" class="dropbtn">
+                                <option value="" selected hidden>Seleccione</option>
+                                <option value="0">Sí</option>
+                                <option value="2">No</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <p>¿Cuántas horas en promedio esta durmiendo diariamente?</p>
+                    <input type="number" name="durmiendo" id="durmiendo" placeholder="Horas de sueño" />
+                    <p>¿Este sueño le aporta descanso?</p>
+                    <div class="dropdown">
+                        <select class="form-control form-control-xs " id="descanso" name="descanso" class="dropbtn">
+                            <option value="" selected hidden>Seleccione</option>
+                            <option value="0">Sí</option>
+                            <option value="2">No</option>
+                        </select>
+                    </div>
+                    <h2 class="fs-title2"><strong>Durante el último mes ha experimentado:</strong></h2>
+                    <h5>Tristeza</h5>
+                    <div class="dropdown">
+                        <select class="form-control form-control-xs " id="tristeza" name="tristeza" onchange="showDiv12('sintomas', this)" class="dropbtn">
+                            <option value="" selected hidden>Seleccione</option>
+                            <option value="0">Nunca</option>
+                            <option value="0">Pocas veces</option>
+                            <option value="1">Muchas veces</option>
+                            <option value="1">Siempre</option>
+                        </select>
+                    </div>
+                    <h5>Aislamiento mayor al habitual</h5>
+                    <div class="dropdown">
+                        <select class="form-control form-control-xs " id="Aislamiento" name="Aislamiento" onchange="showDiv12('sintomas', this)" class="dropbtn">
+                            <option value="" selected hidden>Seleccione</option>
+                            <option value="0">Nunca</option>
+                            <option value="0">Pocas veces</option>
+                            <option value="1">Muchas veces</option>
+                            <option value="1">Siempre</option>
+                        </select>
+                    </div>
+                    <h5>Poco interés por hacer cosas o desesperanza</h5>
+                    <div class="dropdown">
+                        <select class="form-control form-control-xs " id="desesperanza" name="desesperanza" onchange="showDiv12('sintomas', this)" class="dropbtn">
+                            <option value="" selected hidden>Seleccione</option>
+                            <option value="0">Nunca</option>
+                            <option value="0">Pocas veces</option>
+                            <option value="1">Muchas veces</option>
+                            <option value="1">Siempre</option>
+                        </select>
+                    </div>
+                    <h5>Irritabilidad, mal genio o enojo</h5>
+                    <div class="dropdown">
+                        <select class="form-control form-control-xs " id="enojo" name="enojo" onchange="showDiv12('sintomas', this)" class="dropbtn">
+                            <option value="" selected hidden>Seleccione</option>
+                            <option value="0">Nunca</option>
+                            <option value="0">Pocas veces</option>
+                            <option value="1">Muchas veces</option>
+                            <option value="1">Siempre</option>
+                        </select>
+                    </div>
+                    <h5>Angustia o ansiedad</h5>
+                    <div class="dropdown">
+                        <select class="form-control form-control-xs " id="ansiedad" name="ansiedad" onchange="showDiv12('sintomas', this)" class="dropbtn">
+                            <option value="" selected hidden>Seleccione</option>
+                            <option value="0">Nunca</option>
+                            <option value="0">Pocas veces</option>
+                            <option value="1">Muchas veces</option>
+                            <option value="1">Siempre</option>
+                        </select>
+                    </div>
+                    <h5>Autoagresión, deseos de hacerse daño</h5>
+                    <div class="dropdown">
+                        <select class="form-control form-control-xs " id="deseos" name="deseos" onchange="showDiv12('sintomas', this)" class="dropbtn">
+                            <option value="" selected hidden>Seleccione</option>
+                            <option value="0">Nunca</option>
+                            <option value="0">Pocas veces</option>
+                            <option value="1">Muchas veces</option>
+                            <option value="1">Siempre</option>
+                        </select>
+                    </div>
+                    <h5>Ideas suicidas</h5>
+                    <div class="dropdown">
+                        <select class="form-control form-control-xs " id="suicidas" name="suicidas" onchange="showDiv12('sintomas', this)" class="dropbtn">
+                            <option value="" selected hidden>Seleccione</option>
+                            <option value="0">Nunca</option>
+                            <option value="0">Pocas veces</option>
+                            <option value="1">Muchas veces</option>
+                            <option value="1">Siempre</option>
+                        </select>
+                    </div>
+                    <div id="sintomas">
+                        <h2 class="fs-title2">Indique a continuación, si los sentimientos experimentados <em><u>Muchas
+                                    veces</u></em> o <em><u>Siempre</u></em> que señaló en la pregunta anterior se acompañan de:</h2>
+                        <h5>Dolor de cabeza o espalda</h5>
+                        <div class="dropdown" id="Dolor" name="Dolor">
+                            <select class="form-control form-control-xs " name="dolor1" id="dolor1" class="dropbtn">
+                                <option value="" selected hidden>Seleccione</option>
+                                <option value="1">Nunca</option>
+                                <option value="2">Pocas veces</option>
+                                <option value="3">Muchas veces</option>
+                                <option value="4">Siempre</option>
+                            </select>
+                        </div>
+                        <h5>Cansancio, agotamiento o fatiga</h5>
+                        <div class="dropdown" id="agotamiento" name="agotamiento">
+                            <select class="form-control form-control-xs " name="dolor2" id="dolor2" class="dropbtn">
+                                <option value="" selected hidden>Seleccione</option>
+                                <option value="1">Nunca</option>
+                                <option value="2">Pocas veces</option>
+                                <option value="3">Muchas veces</option>
+                                <option value="4">Siempre</option>
+                            </select>
+                        </div>
+                        <h5>Pérdida o aumento del apetito</h5>
+                        <div class="dropdown" id="apetito" name="apetito">
+                            <select class="form-control form-control-xs " name="dolor3" id="dolor3" class="dropbtn">
+                                <option value="" selected hidden>Seleccione</option>
+                                <option value="1">Nunca</option>
+                                <option value="2">Pocas veces</option>
+                                <option value="3">Muchas veces</option>
+                                <option value="4">Siempre</option>
+                            </select>
+                        </div>
+                        <h5>Trastornos digestivos</h5>
+                        <div class="dropdown" id="digestivos" name="digestivos">
+                            <select class="form-control form-control-xs " name="dolor4" id="dolor4" class="dropbtn">
+                                <option value="" selected hidden>Seleccione</option>
+                                <option value="1">Nunca</option>
+                                <option value="2">Pocas veces</option>
+                                <option value="3">Muchas veces</option>
+                                <option value="4">Siempre</option>
+                            </select>
+                        </div>
+                        <h5>Dificultades o cambios en el sueño</h5>
+                        <div class="dropdown" id="sueo" name="sueo">
+                            <select class="form-control form-control-xs " name="dolor5" id="dolor5" class="dropbtn">
+                                <option value="" selected hidden>Seleccione</option>
+                                <option value="1">Nunca</option>
+                                <option value="2">Pocas veces</option>
+                                <option value="3">Muchas veces</option>
+                                <option value="4">Siempre</option>
+                            </select>
+                        </div>
+                    </div>
+                    <hr>
+                    <p>¿Alguna vez adelantó un proceso o fue atendido(a) por psicología y/o psiquiatría?</p>
+                    <div class="dropdown">
+                        <select class="form-control form-control-xs " id="emergencia" name="emergencia" onchange="showDiv6('necesita2', this)" class="dropbtn">
+                            <option value="" selected hidden>Seleccione</option>
+                            <option value="1">Sí</option>
+                            <option value="0">No</option>
+                        </select>
+                    </div>
+                    <p>¿Actualmente adelanta un proceso de atención por psicología y/o psiquiatría?</p>
+                    <div class="dropdown">
+                        <select class="form-control form-control-xs " id="recibiendo" name="recibiendo" onchange="showDiv6('necesita2', this)" class="dropbtn">
+                            <option value="" selected hidden>Seleccione</option>
+                            <option value="1">Sí</option>
+                            <option value="0">No</option>
+                        </select>
+                    </div>
+
+
+                    <div id="necesita2">
+                        <p>¿Se encuentra actualmente medicado(a) por psiquiatría?</p>
+                        <div class="dropdown" id="necesita" name="necesita">
+                            <select class="form-control form-control-xs " id="nenene" class="dropbtn">
+                                <option value="" selected hidden>Seleccione</option>
+                                <option value="2">SI, y continuó recibiendo mi medicación</option>
+                                <option value="3">SI, pero no estoy recibiendo mi medicación</option>
+                                <option value="4">No</option>
+                            </select>
+                        </div>
+                    </div>
+                    <p>¿Considera que en estos momentos necesita atención por psicología y/o psiquiatría?</p>
+                    <div class="dropdown">
+                        <select class="form-control form-control-xs " id="atenciónssssx" name="atenciónssssx" class="dropbtn">
+                            <option value="" selected hidden>Seleccione</option>
+                            <option value="1">Sí</option>
+                            <option value="2">No</option>
+                        </select></div>
+
+                    <p>¿Presenta actualmente alguna condición médica crónica (distinta a salud por psicología y/o psiquiatría)?
+                    </p>
+                    <div class="alert alert-warning alert-dismissible" role="alert">
+                        <strong>Enfermedad crónica:</strong> Enfermedades de larga duración (usualmente de 3 meses en adelante), por lo general de progresión lenta, que no responden completamente a tratamientos y suelen presentar periodos de remisión
+                        (ausencia de signos y síntomas comunes) y recaída persistiendo por largos periodos de tiempo.
+                    </div>
+                    <div id="crnica" name="crnica">
+                        <select title="Seleccione" class="form-control form-control-xs selectpicker my-select1" onchange="crnicax('otracronc',this)" multiple>
+                            <option value="0">EPOC</option>
+                            <option value="1">Asma</option>
+                            <option value="2">Hipertensión arterial</option>
+                            <option value="3">Diabetes</option>
+                            <option value="4">Cáncer</option>
+                            <option value="5">Enfermedades autoinmunes</option>
+                            <option value="6">Alteraciones inmunológicas</option>
+                            <option value="7">Otra</option>
+                            <option value="8">Ninguna</option>
+                        </select>
+                    </div><br>
+
+                    <div id="otracronc">
+                        <p>Indique por favor su enfermedad crónica
+                        </p>
+                        <input type="text" name="otracroncxx" id="otracroncxx" placeholder="Otra" />
+                    </div>
+
+                    <p>Actualmente está medicado(a) por alguna condición de salud (distinta a la medicación por psiquiatría, si la tiene)</p>
+                    <div class="dropdown">
+                        <select class="form-control form-control-xs " id="medicado" name="medicado" class="dropbtn">
+                            <option value="" selected hidden>Seleccione</option>
+                            <option value="2">SI, y actualmente sigo recibiendola</option>
+                            <option value="2">SI, pero actualmente no estoy recibiendola</option>
+                            <option value="1">No</option>
+                        </select>
+                    </div>
+
+                    <input type="button" name="previous" class="previous action-button-previous" value="Anterior" />
+                    <input type="button" name="next" class="next action-button" value="Siguiente" />
+                </fieldset>
+                <fieldset>
+                    <h2 class="fs-title">ASPECTOS DE DINÁMICA PERSONAL Y SOCIAL</h2>
+                    <hr>
+                    <h2 class="fs-title2"><strong>Por favor lea con atención cada uno de las siguientes afirmaciones y
+                            escoja la frecuencia con que mejor se aproximan a su propia vida en estos momentos.</strong>
+                    </h2>
+                    <h5>Creo que soy bueno(a) en lo que hago.</h5>
+                    <div class="dropdown">
+                        <select class="form-control form-control-xs " id="bueno" name="bueno" class="dropbtn">
+                            <option value="" selected hidden>Seleccione</option>
+                            <option value="1">Nunca</option>
+                            <option value="2">Pocas veces</option>
+                            <option value="3">Muchas veces</option>
+                            <option value="4">Siempre</option>
+                        </select>
+                    </div>
+                    <h5>La gente que me conoce cree que soy bueno(a) en lo que hago.</h5>
+                    <div class="dropdown">
+                        <select class="form-control form-control-xs " id="conoce" name="conoce" class="dropbtn">
+                            <option value="" selected hidden>Seleccione</option>
+                            <option value="1">Nunca</option>
+                            <option value="2">Pocas veces</option>
+                            <option value="3">Muchas veces</option>
+                            <option value="4">Siempre</option>
+                        </select>
+                    </div>
+                    <h5>Me llevo bien con la gente con la que entro en contacto.</h5>
+                    <div class="dropdown">
+                        <select class="form-control form-control-xs " id="gente" name="gente" class="dropbtn">
+                            <option value="" selected hidden>Seleccione</option>
+                            <option value="1">Nunca</option>
+                            <option value="2">Pocas veces</option>
+                            <option value="3">Muchas veces</option>
+                            <option value="4">Siempre</option>
+                        </select>
+                    </div>
+                    <h5>Me siento libre para expresar mis ideas y mis opiniones.</h5>
+                    <div class="dropdown">
+                        <select class="form-control form-control-xs " id="expresar" name="expresar" class="dropbtn">
+                            <option value="" selected hidden>Seleccione</option>
+                            <option value="1">Nunca</option>
+                            <option value="2">Pocas veces</option>
+                            <option value="3">Muchas veces</option>
+                            <option value="4">Siempre</option>
+                        </select>
+                    </div>
+                    <h5>Me siento libre para decidir cómo vivir mi vida.</h5>
+                    <div class="dropdown">
+                        <select class="form-control form-control-xs " id="libre" name="libre" class="dropbtn">
+                            <option value="" selected hidden>Seleccione</option>
+                            <option value="1">Nunca</option>
+                            <option value="2">Pocas veces</option>
+                            <option value="3">Muchas veces</option>
+                            <option value="4">Siempre</option>
+                        </select>
+                    </div>
+                    <hr>
+                    <p>Indique cuál de las siguientes afirmaciones se ajusta mejor a su situación donde se encuentra residiendo <strong>actualmente</strong></p>
+                    <div class="dropdown">
+                        <select class="form-control form-control-xs " id="situacion" name="situacion" class="dropbtn">
+                            <option value="" selected hidden>Seleccione</option>
+                            <option value="1">Estoy viviendo con mi nucleo familiar u otros familiares</option>
+                            <option value="2">Estoy viviendo en habitación de alojamiento o residencia estudiantil
+                            </option>
+                            <option value="3">Estoy viviendo en una habitación en una residencia familiar o de
+                                particulares</option>
+                            <option value="4">Estoy viviendo en una casa o apartamento compartido con amigos o
+                                compañeros</option>
+                            <option value="5">Estoy viviendo en una casa, apartamento o apartaestudio completamente solo
+                            </option>
+                        </select>
+                    </div>
+
+                    <p>Seleccione según corresponda si actualmente recibe apoyo emocional por parte de:
+                        <p>
+                            <p>
+                                <div class="alert alert-warning alert-dismissible" role="alert">
+                                    <strong>Apoyo emocional: </strong>Demostraciones de afecto, empatía, preocupación, cuidado, confianza, aprecio, elogios, etc.
+                                </div>
+                            </p>
+                            <div id="apoyospersonalll" name="apoyospersonalll">
+                                <select title="Seleccione" class="form-control form-control-xs selectpicker my-select22" onchange="apoyosper()" multiple>
+                                    <option value="0">Familia</option>
+                                    <option value="1">Amigos y/o pareja</option>
+                                    <option value="2">Compañeros de Universidad</option>
+                                    <option value="3">Docentes</option>
+                                    <option value="4">Administrativos</option>
+                                    <option value="5">Vecinos</option>
+                                    <option value="6">Organizaciones</option>
+                                    <option value="7">Ninguno</option>
+                                </select>
+                            </div>
+                            <h2 class="fs-title2"><strong>Usted diría que tiene dificultades relacionadas con:</strong>
+                            </h2>
+                            <h5>Comunicar a otros sus sentimientos.</h5>
+                            <div class="dropdown">
+                                <select class="form-control form-control-xs " id="sentimientos" name="sentimientos" class="dropbtn">
+                                    <option value="" selected hidden>Seleccione</option>
+                                    <option value="1">Nunca</option>
+                                    <option value="2">Pocas veces</option>
+                                    <option value="3">Muchas veces</option>
+                                    <option value="4">Siempre</option>
+                                </select>
+                            </div>
+                            <h5>Las relaciones afectivas con la familia, la pareja y/o los amigos.</h5>
+                            <div class="dropdown">
+                                <select class="form-control form-control-xs " id="afectivas" name="afectivas" class="dropbtn">
+                                    <option value="" selected hidden>Seleccione</option>
+                                    <option value="1">Nunca</option>
+                                    <option value="2">Pocas veces</option>
+                                    <option value="3">Muchas veces</option>
+                                    <option value="4">Siempre</option>
+                                </select>
+                            </div>
+                            <h5>La adaptación a situaciones nuevas o cambios importantes en su vida.</h5>
+                            <div class="dropdown">
+                                <select class="form-control form-control-xs " id="vida" name="vida" class="dropbtn">
+                                    <option value="" selected hidden>Seleccione</option>
+                                    <option value="1">Nunca</option>
+                                    <option value="2">Pocas veces</option>
+                                    <option value="3">Muchas veces</option>
+                                    <option value="4">Siempre</option>
+                                </select>
+                            </div>
+
+                            <h2 class="fs-title2"><strong>Se ha sentido vulnerado(a) en su integridad y derechos en
+                                    razón a
+                                    su:</strong></h2>
+                            <div class="alert alert-warning alert-dismissible" role="alert">
+                                Indique <strong>NO Aplica </strong>en los casos en que <strong>no pertenezca</strong> a dicha población
+                            </div>
+                            <h5>Origen étnico</h5>
+                            <div class="dropdown">
+                                <select class="form-control form-control-xs " id="tnico" name="tnico" class="dropbtn">
+                                    <option value="" selected hidden>Seleccione</option>
+                                    <option value="3">Sí</option>
+                                    <option value="2">No</option>
+                                    <option value="1">No Aplica</option>
+                                </select>
+                            </div>
+                            <h5>Lugar de origen</h5>
+                            <div class="dropdown">
+                                <select class="form-control form-control-xs " id="origens" name="origens" class="dropbtn">
+                                    <option value="" selected hidden>Seleccione</option>
+                                    <option value="3">Sí</option>
+                                    <option value="2">No</option>
+                                    <option value="1">No Aplica</option>
+                                </select>
+                            </div>
+                            <h5>Condición de victima del conflicto</h5>
+                            <div class="dropdown">
+                                <select class="form-control form-control-xs " id="conflictos" name="conflictos" class="dropbtn">
+                                    <option value="" selected hidden>Seleccione</option>
+                                    <option value="3">Sí</option>
+                                    <option value="2">No</option>
+                                    <option value="1">No Aplica</option>
+                                </select>
+                            </div>
+                            <h5>Género</h5>
+                            <div class="dropdown">
+                                <select class="form-control form-control-xs " id="Gnero" name="Gnero" class="dropbtn">
+                                    <option value="" selected hidden>Seleccione</option>
+                                    <option value="3">Sí</option>
+                                    <option value="2">No</option>
+                                    <option value="1">No Aplica</option>
+                                </select>
+                            </div>
+                            <h5>Orientación sexual</h5>
+                            <div class="dropdown">
+                                <select class="form-control form-control-xs " id="sexuals" name="sexuals" class="dropbtn">
+                                    <option value="" selected hidden>Seleccione</option>
+                                    <option value="3">Sí</option>
+                                    <option value="2">No</option>
+                                    <option value="1">No Aplica</option>
+                                </select>
+                            </div>
+                            <h5>Discapacidad</h5>
+                            <div class="dropdown">
+                                <select class="form-control form-control-xs " id="discpx" name="discpx" class="dropbtn">
+                                    <option value="" selected hidden>Seleccione</option>
+                                    <option value="3">Sí</option>
+                                    <option value="2">No</option>
+                                    <option value="1">No Aplica</option>
+                                </select>
+                            </div>
+                            <h5>Otra</h5>
+                            <div class="dropdown">
+                                <select class="form-control form-control-xs " onchange="showDiv7('otracom', this)" id="Otraxc" name="Otraxc" class="dropbtn">
+                                    <option value="" selected>Seleccione</option>
+                                    <option value="3">Sí</option>
+                                    <option value="2">No</option>
+
+                                </select>
+                            </div>
+                            <div id="otracom">
+                                <h5>Indique por cuál condición <strong>distinta de las anteriores</strong> ha sido vulnerado(a):
+                                </h5>
+                                <input type="text" name="otrra" id="otrra" placeholder="Otra" />
+                            </div>
+                            <input type="button" name="previous" class="previous action-button-previous" value="Anterior" />
+                            <input type="button" name="next" class="next action-button" value="Siguiente" />
+                </fieldset>
+                <fieldset>
+                    <h2 class="fs-title">ASPECTOS ACADÉMICOS</h2>
+                    <hr>
+                    <p>Indique por favor su porcentaje de avance de carrera actual</p>
+
+                    <input type="number" name="avance" id="avance" placeholder="Avance de carrera">
+
+                    <br>
+                    <p>Frente a las asignaturas que cursa actualmente, ha tenido dificultades relacionadas con:</p>
+                    <div id="difccs">
+                        <select title="Seleccione" class="form-control form-control-xs selectpicker my-select33" onchange="dificcc()" multiple>
+                            <option value="0">Los contenidos</option>
+                            <option value="1">La metodología</option>
+                            <option value="2">Actividades evaluables</option>
+                            <option value="3">Ninguna</option>
+                        </select>
+                    </div>
+                    <h2 class="fs-title2"><strong>Adicionalmente, usted diría que en la actualidad tiene dificultades
+                            relacionadas con:</strong></h2>
+                    <h5>La atención/concentración que se requiere para hacer trabajos y tareas académicas.</h5>
+                    <div class="dropdown">
+                        <select class="form-control form-control-xs " id="dificultadessss" name="dificultadessss" class="dropbtn">
+                            <option value="" selected>Seleccione</option>
+                            <option value="0">Nunca</option>
+                            <option value="1">Pocas veces</option>
+                            <option value="2">Muchas veces</option>
+                            <option value="3">Siempre</option>
+                        </select>
+                    </div>
+                    <h5>Leer y escribir textos exigidos en el aprendizaje en la Universidad.</h5>
+                    <div class="dropdown">
+                        <select class="form-control form-control-xs " id="textos" name="textos" class="dropbtn">
+                            <option value="" selected>Seleccione</option>
+                            <option value="0">Nunca</option>
+                            <option value="1">Pocas veces</option>
+                            <option value="2">Muchas veces</option>
+                            <option value="3">Siempre</option>
+                        </select>
+                    </div>
+                    <h5>Organizar y distribuir el tiempo.</h5>
+                    <div class="dropdown">
+                        <select class="form-control form-control-xs " id="tiempo" name="tiempo" class="dropbtn">
+                            <option value="" selected>Seleccione</option>
+                            <option value="0">Nunca</option>
+                            <option value="1">Pocas veces</option>
+                            <option value="2">Muchas veces</option>
+                            <option value="3">Siempre</option>
+                        </select>
+                    </div>
+                    <h5>Comunicar a otros sus ideas.</h5>
+                    <div class="dropdown">
+                        <select class="form-control form-control-xs " id="otrosxc" name="otrosxc" class="dropbtn">
+                            <option value="" selected>Seleccione</option>
+                            <option value="0">Nunca</option>
+                            <option value="1">Pocas veces</option>
+                            <option value="2">Muchas veces</option>
+                            <option value="3">Siempre</option>
+                        </select>
+                    </div>
+                    <h5>La comprensión y el análisis de operaciones lógicas.</h5>
+                    <div class="dropdown">
+                        <select class="form-control form-control-xs " id="operacionesx" name="operacionesx" class="dropbtn">
+                            <option value="" selected>Seleccione</option>
+                            <option value="0">Nunca</option>
+                            <option value="1">Pocas veces</option>
+                            <option value="2">Muchas veces</option>
+                            <option value="3">Siempre</option>
+                        </select>
+                    </div>
+                    <hr>
+                    <p>Requiere en este momento asesoría en algún trámite académico-administrativo (traslado, cancelación, etc.)</p>
+                    <div class="dropdown">
+                        <select class="form-control form-control-xs " id="momentoss" name="momentoss" class="dropbtn">
+                            <option value="" selected>Seleccione</option>
+                            <option value="1">Sí</option>
+                            <option value="0">No</option>
+
+                        </select>
+                    </div>
+                    <input type="button" name="previous" class="previous action-button-previous" value="Anterior" />
+                    <input type="button" name="next" class="next action-button" value="Siguiente" />
+                </fieldset>
+                <fieldset>
+                    <h2 class="fs-title">ASPECTOS DEPORTIVOS Y CULTURALES</h2>
+                    <hr>
+
+                    <p>¿Antes de la emergencia sanitaria practicaba con regularidad algún deporte o actividad física?
+                    </p>
+                    <div class="alert alert-warning alert-dismissible" role="alert">
+                        <strong>Actividad física:</strong> Trotar, caminar, gimnasio, etc.
+                    </div>
+                    <div class="dropdown">
+                        <select class="form-control form-control-xs " id="deporte" name="deporte" onchange="showDiv8('deportexx', this)" class="dropbtn">
+                            <option value="" selected hidden>Seleccione</option>
+                            <option value="1">Sí</option>
+                            <option value="2">No</option>
+
+                        </select>
+                    </div>
+                    <div id="deportexx">
+                        <p>Indique por favor la principal razón por la que no practicaba ninguna actividad física o deporte
+                        </p>
+                        <div class="dropdown" id="principalxxx" name="principalxxx">
+                            <select class="form-control form-control-xs " id="dsds" class="dropbtn">
+                                <option value="" selected hidden>Seleccione</option>
+                                <option value="1">No tiene con quién</option>
+                                <option value="1">Falta de tiempo</option>
+                                <option value="1">No le interesa</option>
+                                <option value="1">Pereza</option>
+                                <option value="1">Problemas de salud</option>
+                                <option value="1">Factores económicos</option>
+
+                            </select>
+                        </div>
+                    </div>
+                    <p>¿Estaría interesado en acompañamiento para que pueda practicar alguna actividad física en donde reside actualmente?
+                    </p>
+                    <div class="dropdown">
+                        <select class="form-control form-control-xs " id="residesss" name="residesss" class="dropbtn">
+                            <option value="" selected hidden>Seleccione</option>
+                            <option value="1">Sí</option>
+                            <option value="0">No</option>
+
+                        </select>
+                    </div>
+
+                    <p>¿Antes de la emergencia sanitaria realizaba con regularidad alguna actividad artística o cultural?
+                    </p>
+                    <div class="alert alert-warning alert-dismissible" role="alert">
+                        <strong>Actividad artística o cultural:</strong> Cantar, pintar, bailar, escribir cuentos o poesía, tocar algún instrumento,hacer videos o producciones de radio o televisión, fotografía,artes gráficas, artesanías o manualidades,
+                        etc.
+                    </div>
+                    <div class="dropdown">
+                        <select class="form-control form-control-xs " id="culturalsss" name="culturalsss" onchange="showDiv22('validadordeportes', this)" class="dropbtn">
+                            <option value="" selected hidden>Seleccione</option>
+                            <option value="0">Sí</option>
+                            <option value="1">No</option>
+                        </select>
+                    </div>
+                    <div id="validadordeportes">
+                        <p>Indique por favor la principal razón por la que no practicaba ninguna actividad artística o cultural
+                        </p>
+                        <div class="dropdown" id="practicabaxx" name="practicabaxx">
+                            <select class="form-control form-control-xs " id="depdo" class="dropbtn">
+                                <option value="" selected hidden>Seleccione</option>
+                                <option value="0">Falta de tiempo</option>
+                                <option value="1">No le interesa</option>
+                                <option value="1">Pereza</option>
+                                <option value="1">No ha tenido la oportunidad</option>
+                                <option value="1">No tiene este tipo de habilidades artísticas</option>
+                                <option value="1">Factores económicos</option>
+                            </select>
+                        </div>
+                    </div>
+                    <p>¿Estaría interesado en acompañamiento para que pueda practicar alguna actividad artística o cultural en donde reside actualmente?</p>
+                    <div class="dropdown">
+                        <select class="form-control form-control-xs " id="actividadscss" name="actividadscss" class="dropbtn">
+                            <option value="" selected hidden>Seleccione</option>
+                            <option value="1">Sí</option>
+                            <option value="0">No</option>
+
+                        </select>
+                    </div>
+
+                    <hr />
+
+                    <input type="button" name="previous" class="previous action-button-previous" value="Anterior" />
+                    <input type="button" name="next" class="next action-button" value="Siguiente" />
+
+                </fieldset>
+
+                <fieldset>
+                    <!-- Modal -->
+
+
+                    <h2 class="fs-title">COMENTARIOS FINALES</h2>
+                    <hr>
+                    <p>¿Tiene alguna duda, inquietud o situación adicional en la que requiera acompañamiento y que quisiera comentar?</p>
+                    <textarea class="form-control" rows="5" name="Comentariosxx" maxlength="300" id='Comentariosxx' placeholder="..."></textarea>
+
+
+                    <input type="button" name="previous" class="previous action-button-previous" value="Anterior" />
+                    <input type="submit" name="submit" onclick="postToGoogle()" class="submit action-button" value="Enviar" />
+
+                    <div class="modal fade" id="myModal2" tabindex="0" role="dialog" aria-labelledby="myModalLabel">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+
+                                    <h4 class="modal-title" id="myModalLabel">DATOS ENVIADOS</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <p><strong>¡SUS RESPUESTAS FUERON ENVIADAS EXITOSAMENTE!</strong></p>
+                                    <p>Desde la Dirección de Bienestar de la Sede Bogotá agradecemos enormemente el tiempo dedicado a diligenciar este formulario así como la información suministrada.
+                                    </p>
+                                    <p>Nuevamente le solicitamos de forma respetuosa que
+                                        <strong> si conoce estudiantes que no tengan los medios para diligenciar el formulario, se comunique con ellos y les asista en el diligenciamiento.</strong>
+                                    </p>
+                                    <a href="https://forms.gle/Txv9Sa5FuypGep2t8">
+                                        <p>https://forms.gle/Txv9Sa5FuypGep2t8</p>
+                                    </a>
+
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default center-block" onclick="location.href = 'http://medicina.bogota.unal.edu.co/coronavirus';" data-dismiss="modal">Aceptar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+
+            </form>
+            <!--
+     gg                                                 ,ggg,      gg      ,gg               ,ggg,        gg                              
+    dP8,                 ,dPYb,                        dP""Y8a     88     ,8P               dP""Y8b       88                              
+   dP Yb                 IP'`Yb                        Yb, `88     88     d8'               Yb, `88       88                              
+  ,8  `8,                I8  8I                         `"  88     88     88                 `"  88       88                              
+  I8   Yb                I8  8'                             88     88     88                     88aaaaaaa88                              
+  `8b, `8,     ,ggggg,   I8 dPgg,     ,gggg,gg   ,ggg,,ggg, 88     88     88  ,gggg,gg    ,g,    88"""""""88   ,ggg,    ,gggggg,   ,ggg,  
+   `"Y88888   dP"  "Y8gggI8dP" "8I   dP"  "Y8I  ,8" "8P" "8,88     88     88 dP"  "Y8I   ,8'8,   88       88  i8" "8i   dP""""8I  i8" "8i 
+       "Y8   i8'    ,8I  I8P    I8  i8'    ,8I  I8   8I   8IY8    ,88,    8Pi8'    ,8I  ,8'  Yb  88       88  I8, ,8I  ,8'    8I  I8, ,8I 
+        ,88,,d8,   ,d8' ,d8     I8,,d8,   ,d8b,,dP   8I   Yb,Yb,,d8""8b,,dP,d8,   ,d8b,,8'_   8) 88       Y8, `YbadP' ,dP     Y8, `YbadP' 
+    ,ad88888P"Y8888P"   88P     `Y8P"Y8888P"`Y88P'   8I   `Y8 "88"    "88" P"Y8888P"`Y8P' "YY8P8P88       `Y8888P"Y8888P      `Y8888P"Y888
+  ,dP"'   Yb                                                                                                                              
+ ,8'      I8                                                                                                                              
+,8'       I8                                                                                                                              
+I8,      ,8'                                                                                                                              
+`Y8,___,d8'                                                                                                                               
+  "Y888P"     
+            -->
+        </div>
+    </div>
+
+
+    <!-- /.MultiStep Form -->
+    <!-- partial -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+    <script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js'></script>
+    <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.19.1/jquery.validate.min.js"></script>
+    <script src="https://momentjs.com/downloads/moment.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.43/js/bootstrap-datetimepicker.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-multiselect/0.9.13/js/bootstrap-multiselect.js"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.9/dist/js/bootstrap-select.min.js"></script>
+    <script>
+        //jQuery time
+        var current_fs, next_fs, previous_fs; //fieldsets
+        var left, opacity, scale; //fieldset properties which we will animate
+        var animating; //flag to prevent quick multi-click glitches
+
+        jQuery.validator.addMethod("customEmail", function(value, element) {
+            return this.optional(element) || /^[a-zA-Z0-9._-]+@[unal.edu.co]{11}$/i.test(value);
+        }, "Please enter valid emaildd address!");
+
+
+        var aux_next = 1;
+        $(".next").click(function() {
+            $('#msform').validate({
+                invalidHandler: function(form, validator) {
+                    $('html, body').animate({
+                        scrollTop: '0px'
+                    }, 300);
+                },
+                // Specify validation rules
+                rules: {
+                    // The key name on the left side is the name attribute
+                    // of an input field.Validation rules are defined
+                    // on the right side
+                    fnames: "required",
+                    lnames: "required",
+                    lat: "required",
+                    email: {
+                        required: true,
+                        // Specify that email should be validated
+                        // by the built-in "email" rule
+                        email: false,
+                        customEmail: true
+                    },
+                    phone1: {
+                        required: true,
+                        digits: true,
+                        minlength: 7,
+                        maxlength: 10
+                    },
+                    phone2: {
+                        required: false,
+                        digits: true,
+                        minlength: 7,
+                        maxlength: 10
+                    },
+                    ident: "required",
+                    identType: {
+                        required: true
+                    },
+                    procedencia: "required",
+                    departamento: "required",
+                    ciudad: "required",
+                    direccion: "required",
+                    desplazado: "required",
+                    fnaturales: "required",
+                    discapacidad: "required",
+                    hijos: "required",
+                    embarazo: "required",
+                    grupoe: "required",
+                    convive: "required",
+                    apoyos: "required",
+                    apoyos2: "required",
+                    SISBEN: "required",
+                    EPS: "required",
+                    portabilidad: "required",
+                    consumidor: "required",
+                    durmiendo: "required",
+                    descanso: "required",
+                    tristeza: "required",
+                    Aislamiento: "required",
+                    desesperanza: "required",
+                    enojo: "required",
+                    ansiedad: "required",
+                    deseos: "required",
+                    suicidas: "required",
+                    emergencia: "required",
+                    recibiendo: "required",
+                    atenciónssssx: "required",
+                    medicado: "required",
+                    bueno: "required",
+                    conoce: "required",
+                    gente: "required",
+                    expresar: "required",
+                    libre: "required",
+                    situacion: "required",
+                    sentimientos: "required",
+                    afectivas: "required",
+                    vida: "required",
+                    tnico: "required",
+                    origens: "required",
+                    conflictos: "required",
+                    Gnero: "required",
+                    sexuals: "required",
+                    discpx: "required",
+                    Otraxc: "required",
+                    dificultadessss: "required",
+                    textos: "required",
+                    tiempo: "required",
+                    otrosxc: "required",
+                    operacionesx: "required",
+                    momentoss: "required",
+                    deporte: "required",
+                    residesss: "required",
+                    culturalsss: "required",
+                    actividadscss: "required",
+                    ingresos: "required",
+                    gasto: "required",
+                    avance: "required",
+                    dolor1: "required",
+                    dolor2: "required",
+                    dolor3: "required",
+                    dolor3: "required",
+                    dolor4: "required",
+                    dolor5: "required",
+                },
+                // Specify validation error messages
+                messages: {
+                    fnames: "Introduce tus nombres",
+                    lnames: "Introduce tus apellidos",
+                    email: "Introduce tu correo institucional",
+                    phone1: "Introduce tu teléfono principal (de 7 a 10 digitos)",
+                    phone2: "Introduce tu teléfono secundario (de 7 a 10 digitos)",
+                    ident: "Introduce tu documento de identificación",
+                    identType: "Escoge tu tipo de documento",
+                    procedencia: "Escoge tu lugar de procedencia",
+                    departamento: "Escoge el departamento donde te encuentras",
+                    ciudad: "Escribe la ciudad donde te encuentras",
+                    lat: "SELECCIONE SU UBICACIÓN EN EL MAPA",
+                    direccion: "Introduce tu dirección",
+                    desplazado: "Seleccione una opción",
+                    fnaturales: "Seleccione una opción",
+                    discapacidad: "Seleccione una opción",
+                    hijos: "Seleccione una opción",
+                    embarazo: "Seleccione una opción",
+                    grupoe: "Seleccione una opción",
+                    convive: "Seleccione una opción",
+                    apoyos: "Seleccione una opción",
+                    apoyos2: "Seleccione una opción",
+                    SISBEN: "Seleccione una opción",
+                    EPS: "Seleccione una opción",
+                    portabilidad: "Indique por favor la EPS",
+                    consumidor: "Seleccione una opción",
+                    durmiendo: "Indique por favor las horas",
+                    descanso: "Seleccione una opción",
+                    tristeza: "Seleccione una opción",
+                    Aislamiento: "Seleccione una opción",
+                    desesperanza: "Seleccione una opción",
+                    enojo: "Seleccione una opción",
+                    ansiedad: "Seleccione una opción",
+                    deseos: "Seleccione una opción",
+                    suicidas: "Seleccione una opción",
+                    emergencia: "Seleccione una opción",
+                    recibiendo: "Seleccione una opción",
+                    atenciónssssx: "Seleccione una opción",
+                    medicado: "Seleccione una opción",
+                    bueno: "Seleccione una opción",
+                    conoce: "Seleccione una opción",
+                    gente: "Seleccione una opción",
+                    expresar: "Seleccione una opción",
+                    libre: "Seleccione una opción",
+                    situacion: "Seleccione una opción",
+                    sentimientos: "Seleccione una opción",
+                    afectivas: "Seleccione una opción",
+                    vida: "Seleccione una opción",
+                    tnico: "Seleccione una opción",
+                    origens: "Seleccione una opción",
+                    conflictos: "Seleccione una opción",
+                    Gnero: "Seleccione una opción",
+                    sexuals: "Seleccione una opción",
+                    discpx: "Seleccione una opción",
+                    Otraxc: "Seleccione una opción",
+                    dificultadessss: "Seleccione una opción",
+                    textos: "Seleccione una opción",
+                    tiempo: "Seleccione una opción",
+                    otrosxc: "Seleccione una opción",
+                    operacionesx: "Seleccione una opción",
+                    momentoss: "Seleccione una opción",
+                    deporte: "Seleccione una opción",
+                    residesss: "Seleccione una opción",
+                    culturalsss: "Seleccione una opción",
+                    actividadscss: "Seleccione una opción",
+                    ingresos: "Debe introducir un valor",
+                    gasto: "Debe introducir un valor",
+                    avance: "Debe introducir un valor",
+                    dolor1: "Seleccione una opción",
+                    dolor2: "Seleccione una opción",
+                    dolor3: "Seleccione una opción",
+                    dolor4: "Seleccione una opción",
+                    dolor5: "Seleccione una opción",
+                },
+
+            });
+            if (!$('#msform').valid()) {
+                return false;
+            }
+            if (animating) return false;
+            animating = true;
+
+            current_fs = $(this).parent();
+            next_fs = $(this).parent().next();
+            aux_next += 1;
+            //console.log(aux_next);
+            //activate next step on progressbar using the index of next_fs
+            if (aux_next == 3) {
+                ($("#3")).addClass("active");
+            }
+            if (aux_next == 5) {
+                ($("#5")).addClass("active");
+            }
+            if (aux_next == 7) {
+                ($("#7")).addClass("active");
+            }
+            if (aux_next == 9) {
+                ($("#9")).addClass("active");
+            }
+            $(window).scrollTop(0);
+            //show the next fieldset
+            next_fs.show();
+            //hide the current fieldset with style
+            current_fs.animate({
+                opacity: 0
+            }, {
+                step: function(now, mx) {
+                    //as the opacity of current_fs reduces to 0 - stored in "now"
+                    //1. scale current_fs down to 80%
+                    scale = 1;
+                    //2. bring next_fs from the right(50%)
+                    left = (now * 50) + "%";
+                    //3. increase opacity of next_fs to 1 as it moves in
+                    opacity = 1 - now;
+                    current_fs.css({
+                        'transform': 'scale(' + scale + ')',
+                        'position': 'absolute'
+                    });
+                    next_fs.css({
+                        'left': left,
+                        'opacity': opacity
+                    });
+                },
+                duration: 800,
+                complete: function() {
+                    current_fs.hide();
+                    animating = false;
+                },
+                //this comes from the custom easing plugin
+                easing: 'easeInOutBack'
+            });
+            mymap.invalidateSize();
+        });
+
+        $(".previous").click(function() {
+            if (animating) return false;
+            animating = true;
+
+            current_fs = $(this).parent();
+            previous_fs = $(this).parent().prev();
+            $(window).scrollTop(0);
+            //de-activate current step on progressbar
+            aux_next -= 1;
+            //console.log("para atrás" + aux_next);
+            //activate next step on progressbar using the index of next_fs
+            if (aux_next == 2) {
+                ($("#3")).removeClass("active");
+            }
+            if (aux_next == 4) {
+                ($("#5")).removeClass("active");
+            }
+            if (aux_next == 6) {
+                ($("#7")).removeClass("active");
+            }
+            if (aux_next == 8) {
+                ($("#9")).removeClass("active");
+            }
+            // $("#progressbar li").eq($("fieldset").index(current_fs)).removeClass("active");
+            $(window).scrollTop(0);
+            //show the previous fieldset
+            previous_fs.show();
+            //hide the current fieldset with style
+            current_fs.animate({
+                opacity: 0
+            }, {
+                step: function(now, mx) {
+                    //as the opacity of current_fs reduces to 0 - stored in "now"
+                    //1. scale previous_fs from 80% to 100%
+                    scale = 1;
+                    //2. take current_fs to the right(50%) - from 0%
+                    left = ((1 - now) * 50) + "%";
+                    //3. increase opacity of previous_fs to 1 as it moves in
+                    opacity = 1 - now;
+                    current_fs.css({
+                        'left': left
+                    });
+                    previous_fs.css({
+                        'transform': 'scale(' + scale + ')',
+                        'opacity': opacity
+                    });
+                },
+                duration: 800,
+                complete: function() {
+                    current_fs.hide();
+                    animating = false;
+                },
+                //this comes from the custom easing plugin
+                easing: 'easeInOutBack'
+            });
+        });
+
+        $(".submit").click(function() {
+            return false;
+        })
+        var theMarker = {};
+        var mymap = L.map('mapid').setView([4.634771, -74.081599], 14);
+        L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
+            maxZoom: 18,
+            attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
+                '<a href="https://creativecommons.org/licenses/by-sa/2.0/">UNAL</a>, ' +
+                'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+            id: 'mapbox/streets-v11',
+            tileSize: 512,
+            zoomOffset: -1
+        }).addTo(mymap);
+        newMarkerGroup = new L.LayerGroup();
+        mymap.on('click', addMarker);
+        mymap.on('zoomend', function(e) {
+
+            //console.log(e.target.getZoom());
+
+        })
+        mymap.on('click', function(ev) {
+            var coordinates = mymap.mouseEventToLatLng(ev.originalEvent);
+            console.log(coordinates.lat + ', ' + coordinates.lng);
+            document.getElementById('lat').value = coordinates.lat;
+            document.getElementById('long').value = coordinates.lng;
+        });
+        theMarker = new L.marker([4.634771, -74.081599]).addTo(mymap);
+
+        function addMarker(e) {
+            // Add marker to map at click location; add popup window
+            // var newMarker = new L.marker(e.latlng).addTo(map);
+            if (theMarker != undefined) {
+                mymap.removeLayer(theMarker);
+            }
+
+            //Add a marker to show where you clicked.
+
+
+            theMarker = new L.marker(e.latlng).addTo(mymap);
+        }
+
+
+        function postToGoogle() {
+            //console.log("Im in");
+            var field1 = $("#fnames").val();
+            var field2 = $("#lnames").val();
+            var field3 = $("#email").val();
+            var field4 = $("#phone1").val();
+            var field5 = $("#phone2").val();
+            var field6 = $("#ident").val();
+            var field7 = $("#identType option:selected").text() == "Seleccione" ? '' : $("#identType option:selected").text();
+            var field8 = $("#procedencia option:selected").text() == "Seleccione" ? '' : $("#procedencia option:selected").text();
+            var field9 = $("#departamento option:selected").text() == "Seleccione" ? '' : $("#departamento option:selected").text();
+            var field10 = $("#ciudad").val();
+            var field11 = $("#viajar option:selected").text() == "Seleccione" ? '' : $("#viajar option:selected").text();
+            var field12 = $("#calOnlyDate").val();
+            var field13 = $("#lat").val();;
+            var field14 = $("#long").val();;
+            var field15 = $("#direccion").val();
+            var field16 = $("#direccion2").val();
+            var field17 = $("#desplazado option:selected").text() == "Seleccione" ? '' : $("#desplazado option:selected").text();
+            var field18 = $("#fnaturales option:selected").text() == "Seleccione" ? '' : $("#fnaturales option:selected").text();
+            var field19 = $("#discapacidad option:selected").text() == "Seleccione" ? '' : $("#discapacidad option:selected").text();
+            var field20 = $("#certificada option:selected").text() == "Seleccione" ? '' : $("#certificada option:selected").text();
+            var field21 = $("#hijos option:selected").text() == "Seleccione" ? '' : $("#hijos option:selected").text();
+            var field22 = $("#embarazo option:selected").text() == "Seleccione" ? '' : $("#embarazo option:selected").text();
+            var field23 = $("#grupoe option:selected").text() == "Seleccione" ? '' : $("#grupoe option:selected").text();
+            var field24 = s1;
+            var field25 = s2;
+            var field26 = s3;
+            var field27 = s4;
+            var field28 = s5;
+            var field29 = s6;
+            var field30 = s7;
+            var field31 = s8;
+            var field32 = ingresos;
+            var field33 = s11;
+            var field34 = s22;
+            var field35 = s33;
+            var field36 = s44;
+            var field37 = s55;
+            var field38 = s66;
+            var field39 = s77;
+            var field40 = s88;
+            var field41 = $("#convive option:selected").text() == "Seleccione" ? '' : $("#convive option:selected").text();
+            var field42 = $("#situacion option:selected").text() == "Seleccione" ? '' : $("#situacion option:selected").text();
+            var field43 = $("#dificultades option:selected").text() == "Seleccione" ? '' : $("#dificultades option:selected").text();
+            var field44 = acueducto;
+            var field45 = alcant;
+            var field46 = elect;
+            var field47 = gas;
+            var field48 = comp;
+            var field49 = acces;
+            var field491 = ningun_servicio;
+            var field50 = estf;
+            var field51 = nev;
+            var field52 = cong;
+            var field53 = horn;
+            var field54 = licuad;
+            var field55 = ollap;
+            var field551 = ningun_electrodo;
+            var field56 = gasto;
+            var field57 = biebog;
+            var field58 = biefac;
+            var field59 = sedepre;
+            var field60 = ofcenl;
+            var field61 = inicest;
+            var field62 = inicdoc;
+            var field63 = inicegr;
+            var field631 = ningun_apoyo;
+            var field64 = $("#apoyos option:selected").text() == "Seleccione" ? '' : $("#apoyos option:selected").text();
+            var field65 = $("#apoyos2 option:selected").text() == "Seleccione" ? '' : $("#apoyos2 option:selected").text();
+            var field652 = $("#nombreOrg").val();
+            var field66 = $("#SISBEN option:selected").text() == "Seleccione" ? '' : $("#SISBEN option:selected").text();
+            var field67 = puntSISB;
+            var field68 = $("#EPS").val();
+            var field69 = $("#portabilidad option:selected").text() == "Seleccione" ? '' : $("#portabilidad option:selected").text();
+            var field70 = $("#consumidor option:selected").text() == "Seleccione" ? '' : $("#consumidor option:selected").text();
+            var field71 = $("#consumo option:selected").text() == "Seleccione" ? '' : $("#consumo option:selected").text();
+            var field72 = $("#apoyoc option:selected").text() == "Seleccione" ? '' : $("#apoyoc option:selected").text();
+            var field73 = durmiendo;
+            var field74 = $("#descanso option:selected").text() == "Seleccione" ? '' : $("#descanso option:selected").text();
+            var field75 = $("#tristeza option:selected").text() == "Seleccione" ? '' : $("#tristeza option:selected").text();
+            var field76 = $("#Aislamiento option:selected").text() == "Seleccione" ? '' : $("#Aislamiento option:selected").text();
+            var field77 = $("#desesperanza option:selected").text() == "Seleccione" ? '' : $("#desesperanza option:selected").text();
+            var field78 = $("#enojo option:selected").text() == "Seleccione" ? '' : $("#enojo option:selected").text();
+            var field79 = $("#ansiedad option:selected").text() == "Seleccione" ? '' : $("#ansiedad option:selected").text();
+            var field80 = $("#deseos option:selected").text() == "Seleccione" ? '' : $("#deseos option:selected").text();
+            var field81 = $("#suicidas option:selected").text() == "Seleccione" ? '' : $("#suicidas option:selected").text();
+            var field82 = $("#Dolor option:selected").text() == "Seleccione" ? '' : $("#Dolor option:selected").text();
+            var field83 = $("#agotamiento option:selected").text() == "Seleccione" ? '' : $("#agotamiento option:selected").text();
+            var field84 = $("#apetito option:selected").text() == "Seleccione" ? '' : $("#apetito option:selected").text();
+            var field85 = $("#digestivos option:selected").text() == "Seleccione" ? '' : $("#digestivos option:selected").text();
+            var field86 = $("#sueo option:selected").text() == "Seleccione" ? '' : $("#sueo option:selected").text();
+            var field87 = $("#emergencia option:selected").text() == "Seleccione" ? '' : $("#emergencia option:selected").text();
+            var field88 = $("#recibiendo option:selected").text() == "Seleccione" ? '' : $("#recibiendo option:selected").text();
+            var field89 = $("#necesita option:selected").text() == "Seleccione" ? '' : $("#necesita option:selected").text();
+            var field899 = $("#atenciónssssx option:selected").text() == "Seleccione" ? '' : $("#atenciónssssx option:selected").text();
+            var field90 = EPOC;
+            var field901 = Asma;
+            var field902 = Hiper;
+            var field903 = Diabetes;
+            var field904 = Cncer;
+            var field905 = fermeda;
+            var field906 = lter;
+            var field907 = Otra;
+            var field9071 = $("#otracroncxx").val();
+            var field908 = Ninguna;
+            var field91 = $("#medicado option:selected").text() == "Seleccione" ? '' : $("#medicado option:selected").text();
+            var field92 = $("#bueno option:selected").text() == "Seleccione" ? '' : $("#bueno option:selected").text();
+            var field93 = $("#conoce option:selected").text() == "Seleccione" ? '' : $("#conoce option:selected").text();
+            var field94 = $("#gente option:selected").text() == "Seleccione" ? '' : $("#gente option:selected").text();
+            var field95 = $("#expresar option:selected").text() == "Seleccione" ? '' : $("#expresar option:selected").text();
+            var field96 = $("#libre option:selected").text() == "Seleccione" ? '' : $("#libre option:selected").text();
+            var field961 = Familia;
+            var field962 = Amigos;
+            var field963 = Universidad;
+            var field964 = Docentes;
+            var field965 = Administrativos;
+            var field966 = Vecinos;
+            var field967 = Organizaciones;
+            var field968 = Ninguno;
+            var field97 = $("#sentimientos option:selected").text() == "Seleccione" ? '' : $("#sentimientos option:selected").text();
+            var field98 = $("#afectivas option:selected").text() == "Seleccione" ? '' : $("#afectivas option:selected").text();
+            var field99 = $("#vida option:selected").text() == "Seleccione" ? '' : $("#vida option:selected").text();
+            var field100 = $("#tnico option:selected").text() == "Seleccione" ? '' : $("#tnico option:selected").text();
+            var field101 = $("#origens option:selected").text() == "Seleccione" ? '' : $("#origens option:selected").text();
+            var field102 = $("#conflictos option:selected").text() == "Seleccione" ? '' : $("#conflictos option:selected").text();
+            var field103 = $("#Gnero option:selected").text() == "Seleccione" ? '' : $("#Gnero option:selected").text();
+            var field104 = $("#sexuals option:selected").text() == "Seleccione" ? '' : $("#sexuals option:selected").text();
+            var field1041 = $("#discpx option:selected").text() == "Seleccione" ? '' : $("#discpx option:selected").text();
+            var field105 = $("#Otraxc option:selected").text() == "Seleccione" ? '' : $("#Otraxc option:selected").text();
+            var field106 = $("#otrra").val();
+            var field107 = avance;
+            var field108 = contenidos;
+            var field109 = metodologia;
+            var field110 = activida;
+            var field111 = $("#dificultadessss option:selected").text() == "Seleccione" ? '' : $("#dificultadessss option:selected").text();
+            var field112 = $("#textos option:selected").text() == "Seleccione" ? '' : $("#textos option:selected").text();
+            var field113 = $("#tiempo option:selected").text() == "Seleccione" ? '' : $("#tiempo option:selected").text();
+            var field114 = $("#otrosxc option:selected").text() == "Seleccione" ? '' : $("#otrosxc option:selected").text();
+            var field115 = $("#operacionesx option:selected").text() == "Seleccione" ? '' : $("#operacionesx option:selected").text();
+            var field116 = $("#momentoss option:selected").text() == "Seleccione" ? '' : $("#momentoss option:selected").text();
+            var field117 = $("#deporte option:selected").text() == "Seleccione" ? '' : $("#deporte option:selected").text();
+            var field118 = $("#principalxxx option:selected").text() == "Seleccione" ? '' : $("#principalxxx option:selected").text();
+            var field119 = $("#residesss option:selected").text() == "Seleccione" ? '' : $("#residesss option:selected").text();
+            var field120 = $("#culturalsss option:selected").text() == "Seleccione" ? '' : $("#culturalsss option:selected").text();
+            var field121 = $("#practicabaxx option:selected").text() == "Seleccione" ? '' : $("#practicabaxx option:selected").text();
+            var field122 = $("#actividadscss option:selected").text() == "Seleccione" ? '' : $("#actividadscss option:selected").text();
+            var field123 = $("#Comentariosxx").val();
+            var field124 = seconds;
+
+
+            $.ajax({
+                url: "https://docs.google.com/forms/d/e/1FAIpQLSfzvMaSrQ3av-zHwDbgsiuNo01Vvo4Zl6nnwhsx1Y67oG-L9w/formResponse?",
+                data: {
+                    "entry.63239375": field1,
+                    "entry.1657029345": field2,
+                    "entry.2116409393": field3,
+                    "entry.1488905014": field4,
+                    "entry.625134310": field5,
+                    "entry.296721696": field6,
+                    "entry.1783679049": field7,
+                    "entry.572159507": field8,
+                    "entry.949462633": field9,
+                    "entry.993142050": field10,
+                    "entry.1357354671": field11,
+                    "entry.244694180": field12,
+                    "entry.1746041750": field13 + "," + field14,
+                    "entry.1296630800": field15,
+                    "entry.1192925202": field16,
+                    "entry.270039355": field17,
+                    "entry.1890282427": field18,
+                    "entry.1075300217": field19,
+                    "entry.1935229610": field20,
+                    "entry.939462389": field21,
+                    "entry.198443173": field22,
+                    "entry.1186600724": field23,
+                    "entry.1578912813": field24,
+                    "entry.1884854998": field25,
+                    "entry.557155323": field26,
+                    "entry.397859611": field27,
+                    "entry.202719196": field28,
+                    "entry.652175737": field29,
+                    "entry.1934925109": field30,
+                    "entry.2084707201": field31,
+                    "entry.33009119": field32,
+                    "entry.546445831": field33,
+                    "entry.1643167239": field34,
+                    "entry.2131812851": field35,
+                    "entry.690253575": field36,
+                    "entry.1410830964": field37,
+                    "entry.835326598": field38,
+                    "entry.449338845": field39,
+                    "entry.1510232298": field40,
+                    "entry.876190699": field41,
+                    "entry.1780490293": field42,
+                    "entry.1216315286": field43,
+                    "entry.1872084796": field44,
+                    "entry.1808827953": field45,
+                    "entry.1987616593": field46,
+                    "entry.182456937": field47,
+                    "entry.175054468": field48,
+                    "entry.551781470": field49,
+                    "entry.280712791": field491,
+                    "entry.1953301116": field50,
+                    "entry.1488842576": field51,
+                    "entry.235626117": field52,
+                    "entry.267851069": field53,
+                    "entry.312527539": field54,
+                    "entry.734447041": field55,
+                    "entry.234291241": field551,
+                    "entry.1736797025": field56,
+                    "entry.1132064888": field57,
+                    "entry.741842804": field58,
+                    "entry.280634950": field59,
+                    "entry.641818861": field60,
+                    "entry.245314995": field61,
+                    "entry.1241573090": field62,
+                    "entry.1041653785": field63,
+                    "entry.1039855794": field631,
+                    "entry.666783339": field64,
+                    "entry.1232687743": field65,
+                    "entry.1240816135": field652,
+                    "entry.1031260405": field66,
+                    "entry.2071298946": field67,
+                    "entry.1885844296": field68,
+                    "entry.1040836054": field69,
+                    "entry.736246518": field70,
+                    "entry.1690344826": field71,
+                    "entry.1216340233": field72,
+                    "entry.1583336159": field73,
+                    "entry.1470948377": field74,
+                    "entry.237743306": field75,
+                    "entry.633088828": field76,
+                    "entry.370629063": field77,
+                    "entry.599395758": field78,
+                    "entry.2006398351": field79,
+                    "entry.754804040": field80,
+                    "entry.1032834224": field81,
+                    "entry.2054972484": field82,
+                    "entry.2012718046": field83,
+                    "entry.459287686": field84,
+                    "entry.92958207": field85,
+                    "entry.1062334295": field86,
+                    "entry.1119522594": field87,
+                    "entry.1505427679": field88,
+                    "entry.638904233": field89,
+                    "entry.1049260498": field899,
+                    "entry.848595781": field90,
+                    "entry.973541792": field901,
+                    "entry.1838340259": field902,
+                    "entry.791358865": field903,
+                    "entry.1929832113": field904,
+                    "entry.891379331": field905,
+                    "entry.310545802": field906,
+                    "entry.1618015468": field907,
+                    "entry.1611815189": field9071,
+                    "entry.17735485": field908,
+                    "entry.26211303": field91,
+                    "entry.1005258058": field92,
+                    "entry.1916481191": field93,
+                    "entry.946705736": field94,
+                    "entry.560763160": field95,
+                    "entry.2140856534": field96,
+                    "entry.1967738068": field961,
+                    "entry.1677701240": field962,
+                    "entry.128622296": field963,
+                    "entry.880475679": field964,
+                    "entry.1620525830": field965,
+                    "entry.382780459": field966,
+                    "entry.722534779": field967,
+                    "entry.1602932697": field968,
+                    "entry.1940773056": field97,
+                    "entry.317011737": field98,
+                    "entry.705130837": field99,
+                    "entry.701580189": field100,
+                    "entry.1361834887": field101,
+                    "entry.412699393": field102,
+                    "entry.2100127934": field103,
+                    "entry.1718266099": field104,
+                    "entry.1811904872": field1041,
+                    "entry.1579842858": field105,
+                    "entry.657673320": field106,
+                    "entry.887329038": field107,
+                    "entry.2073018581": field108,
+                    "entry.1269299118": field109,
+                    "entry.334425939": field110,
+                    "entry.1850576392": field111,
+                    "entry.462370468": field112,
+                    "entry.1212104280": field113,
+                    "entry.1691713046": field114,
+                    "entry.128028503": field115,
+                    "entry.1558555179": field116,
+                    "entry.1556264042": field117,
+                    "entry.487711132": field118,
+                    "entry.1771198517": field119,
+                    "entry.2131863278": field120,
+                    "entry.1321957669": field121,
+                    "entry.385170939": field122,
+                    "entry.811313855": field123,
+                    "entry.1651726137": field124
+                },
+                type: "GET",
+                dataType: "jsonp",
+                success: function(d) {
+                    alert("Formulario enviado con exito");
+
+                },
+                error: function(x, y, z) {
+                    //document.getElementById("dadaada").innerHTML = "Tiempo en responder el formulario: " + seconds + " segundos.";
+                    //console.log("ESO");
+
+                }
+            });
+            $("#myModal2").modal({
+                backdrop: 'static'
+            });
+            return false;
+        }
+
+
+        function showDiv(divId, element) {
+            document.getElementById(divId).style.display = element.value == 2 ? 'block' : 'none';
+            if (element.value != 2) {
+                document.getElementById('calOnlyDate').value = "";
+            }
+        }
+
+        function showDiv2(divId, element) {
+            document.getElementById(divId).style.display = element.value != 1 ? 'block' : 'none';
+            if (element.value == 1) {
+                document.getElementById('txtd').value = "";
+            }
+        }
+
+        function showDiv3(divId, element) {
+            document.getElementById(divId).style.display = element.value == 1 ? 'block' : 'none';
+            if (element.value != 1) {
+                document.getElementById('puntajeSISBEN').value = "";
+            }
+        }
+
+        function showDiv4(divId, element) {
+            document.getElementById(divId).style.display = element.value == 0 ? 'block' : 'none';
+            if (element.value != 0) {
+                document.getElementById('consumoxxx').value = "";
+                document.getElementById('consumooo').value = "";
+            }
+        }
+
+
+        function showDiv6(divId, element) {
+            var control1 = $("#emergencia option:selected").val();
+            var control2 = $("#recibiendo option:selected").val();
+            total = parseInt(control1 + control2);
+
+            document.getElementById(divId).style.display = total != 0 ? 'block' : 'none';
+            if (total == 0) {
+                document.getElementById('nenene').value = "";
+            }
+            //mi solucion, un funcion que sume todos los select si != 0, mostrarlo
+        }
+
+        function showDiv7(divId, element) {
+            document.getElementById(divId).style.display = element.value == 3 ? 'block' : 'none';
+            if (element.value != 3) {
+                document.getElementById('otrra').value = "";
+            }
+        }
+
+        function showDiv8(divId, element) {
+            document.getElementById(divId).style.display = element.value == 2 ? 'block' : 'none';
+            if (element.value != 2) {
+                document.getElementById('dsds').value = "";
+            }
+        }
+
+        function showDiv9(divId, element) {
+            document.getElementById(divId).style.display = element.value == 2 ? 'block' : 'none';
+        }
+
+        function showDiv10(divId, element) {
+            document.getElementById(divId).style.display = element.value == 4 ? 'block' : 'none';
+        }
+
+        function showDiv11(divId, element) {
+            document.getElementById(divId).style.display = element.value == 1 ? 'block' : 'none';
+            if (element.value != 1) {
+                document.getElementById('nombreOrg').value = "";
+            }
+        }
+
+        function showDiv22(divId, element) {
+            document.getElementById(divId).style.display = element.value == 1 ? 'block' : 'none';
+            if (element.value != 1) {
+                document.getElementById('depdo').value = "";
+            }
+        }
+
+
+        function showDiv12(divId, element) {
+            var control1 = $("#tristeza option:selected").val();
+            var control2 = $("#Aislamiento option:selected").val();
+            var control3 = $("#desesperanza option:selected").val();
+            var control4 = $("#enojo option:selected").val();
+            var control5 = $("#ansiedad option:selected").val();
+            var control6 = $("#deseos option:selected").val();
+            var control7 = $("#suicidas option:selected").val();
+            total = parseInt(control1 + control2 + control3 + control4 + control5 + control6 + control7);
+            //console.log(total);
+            document.getElementById(divId).style.display = total != 0 ? 'block' : 'none';
+            if (element.value != 1) {
+                document.getElementById('dolor1').value = "";
+                document.getElementById('dolor2').value = "";
+                document.getElementById('dolor3').value = "";
+                document.getElementById('dolor4').value = "";
+                document.getElementById('dolor5').value = "";
+            }
+            //mi solucion, un funcion que sume todos los select si != 0, mostrarlo
+        }
+        $('.alert').alert()
+
+        // total files
+        var s1 = 0;
+        var s2 = 0;
+        var s3 = 0;
+        var s4 = 0;
+        var s5 = 0;
+        var s6 = 0;
+        var s7 = 0;
+        var s8 = 0;
+        var percentage = 0;
+        // find progress bar
+        const progressBar = document.querySelector('.progress-bar[role="progressbar"]');
+
+
+
+        function onFileChange() {
+            // calculate percentage
+            percentage = parseFloat(s1) + parseFloat(s2) + parseFloat(s3) + parseFloat(s4) + parseFloat(s5) +
+                parseFloat(s6) + parseFloat(s7) + parseFloat(s8);
+
+
+            // apply percentage
+            if (percentage > 100) {
+                $("#s1").val("");
+                $("#s2").val("");
+                $("#s3").val("");
+                $("#s4").val("");
+                $("#s5").val("");
+                $("#s6").val("");
+                $("#s7").val("");
+                $("#s8").val("");
+                s1 = 0;
+                s2 = 0;
+                s3 = 0;
+                s4 = 0;
+                s5 = 0;
+                s6 = 0;
+                s7 = 0;
+                s8 = 0;
+
+                percentage = 0;
+
+                alert(">100");
+            }
+            progressBar.style.width = percentage + '%';
+            progressBar.innerText = percentage + '%';
+
+
+        }
+
+
+
+
+
+
+
+        // simulate file change
+
+        $("#s1").bind("change paste keyup", function() {
+            if (parseFloat($(this).val()) > 100) {
+                alert(">100");
+                $("#s1").val("");
+                s1 = 0;
+            } else {
+                if ($(this).val() == "") {
+                    s1 = 0;
+                } else {
+                    s1 = $(this).val();
+                }
+            }
+
+
+
+            onFileChange();
+        });
+        $("#s2").bind("change paste keyup", function() {
+            if (parseFloat($(this).val()) > 100) {
+                alert(">100");
+                $("#s2").val("");
+                s2 = 0;
+            } else {
+                if ($(this).val() == "") {
+                    s2 = 0;
+                } else {
+                    s2 = $(this).val();
+                }
+            }
+            onFileChange();
+        });
+        $("#s3").bind("change paste keyup", function() {
+            if (parseFloat($(this).val()) > 100) {
+                alert(">100");
+                $("#s3").val("");
+                s3 = 0;
+            } else {
+                if ($(this).val() == "") {
+                    s3 = 0;
+                } else {
+                    s3 = $(this).val();
+                }
+            }
+            onFileChange();
+        });
+        $("#s4").bind("change paste keyup", function() {
+            if (parseFloat($(this).val()) > 100) {
+                alert(">100");
+                $("#s4").val("");
+                s4 = 0;
+            } else {
+                if ($(this).val() == "") {
+                    s4 = 0;
+                } else {
+                    s4 = $(this).val();
+                }
+            }
+            onFileChange();
+        });
+        $("#s5").bind("change paste keyup", function() {
+            if (parseFloat($(this).val()) > 100) {
+                alert(">100");
+                $("#s5").val("");
+                s5 = 0;
+            } else {
+                if ($(this).val() == "") {
+                    s5 = 0;
+                } else {
+                    s5 = $(this).val();
+                }
+            }
+            onFileChange();
+        });
+        $("#s6").bind("change paste keyup", function() {
+            if (parseFloat($(this).val()) > 100) {
+                alert(">100");
+                $("#s6").val("");
+                s6 = 0;
+            } else {
+                if ($(this).val() == "") {
+                    s6 = 0;
+                } else {
+                    s6 = $(this).val();
+                }
+            }
+            onFileChange();
+        });
+        $("#s7").bind("change paste keyup", function() {
+            if (parseFloat($(this).val()) > 100) {
+                alert(">100");
+                $("#s7").val("");
+                s7 = 0;
+            } else {
+                if ($(this).val() == "") {
+                    s7 = 0;
+                } else {
+                    s7 = $(this).val();
+                }
+            }
+            onFileChange();
+        });
+        $("#s8").bind("change paste keyup", function() {
+            if (parseFloat($(this).val()) > 100) {
+                alert(">100");
+                $("#s8").val("");
+                s8 = 0;
+            } else {
+                if ($(this).val() == "") {
+                    s8 = 0;
+                } else {
+                    s8 = $(this).val();
+                }
+            }
+            onFileChange();
+        });
+
+        var s11 = 0;
+        var s22 = 0;
+        var s33 = 0;
+        var s44 = 0;
+        var s55 = 0;
+        var s66 = 0;
+        var s77 = 0;
+        var s88 = 0;
+        $("#s11").bind("change paste keyup", function() {
+            if (parseFloat($(this).val()) > 100) {
+                alert(">100");
+                $("#s11").val("");
+                s11 = 0;
+            } else {
+                if ($(this).val() == "") {
+                    s11 = 0;
+                } else {
+                    s11 = $(this).val();
+                }
+            }
+
+        });
+        $("#s22").bind("change paste keyup", function() {
+            if (parseFloat($(this).val()) > 100) {
+                alert(">100");
+                $("#s22").val("");
+                s22 = 0;
+            } else {
+                if ($(this).val() == "") {
+                    s22 = 0;
+                } else {
+                    s22 = $(this).val();
+                }
+            }
+        });
+        $("#s33").bind("change paste keyup", function() {
+            if (parseFloat($(this).val()) > 100) {
+                alert(">100");
+                $("#s33").val("");
+                s33 = 0;
+            } else {
+                if ($(this).val() == "") {
+                    s33 = 0;
+                } else {
+                    s33 = $(this).val();
+                }
+            }
+        });
+        $("#s44").bind("change paste keyup", function() {
+            if (parseFloat($(this).val()) > 100) {
+                alert(">100");
+                $("#s44").val("");
+                s44 = 0;
+            } else {
+                if ($(this).val() == "") {
+                    s44 = 0;
+                } else {
+                    s44 = $(this).val();
+                }
+            }
+        });
+        $("#s55").bind("change paste keyup", function() {
+            if (parseFloat($(this).val()) > 100) {
+                alert(">100");
+                $("#s55").val("");
+                s55 = 0;
+            } else {
+                if ($(this).val() == "") {
+                    s55 = 0;
+                } else {
+                    s55 = $(this).val();
+                }
+            }
+        });
+        $("#s66").bind("change paste keyup", function() {
+            if (parseFloat($(this).val()) > 100) {
+                alert(">100");
+                $("#s66").val("");
+                s66 = 0;
+            } else {
+                if ($(this).val() == "") {
+                    s66 = 0;
+                } else {
+                    s66 = $(this).val();
+                }
+            }
+        });
+        $("#s77").bind("change paste keyup", function() {
+            if (parseFloat($(this).val()) > 100) {
+                alert(">100");
+                $("#s77").val("");
+                s77 = 0;
+            } else {
+                if ($(this).val() == "") {
+                    s77 = 0;
+                } else {
+                    s77 = $(this).val();
+                }
+            }
+        });
+        $("#s88").bind("change paste keyup", function() {
+            if (parseFloat($(this).val()) > 100) {
+                alert(">100");
+                $("#s8").val("");
+                s88 = 0;
+            } else {
+                if ($(this).val() == "") {
+                    s88 = 0;
+                } else {
+                    s88 = $(this).val();
+                }
+            }
+        });
+        var ttl = parseFloat(s11) + parseFloat(s22) + parseFloat(s33) + parseFloat(s44) + parseFloat(s55) +
+            parseFloat(s66) + parseFloat(s77) + parseFloat(s88);
+
+        $(function() {
+            $('.my-select').selectpicker();
+        });
+        var acueducto = "No";
+        var alcant = "No";
+        var elect = "No";
+        var gas = "No";
+        var comp = "No";
+        var acces = "No";
+        var ningun_servicio = "No";
+
+        function servicios() {
+            selected = $("#servicios option:selected").text();
+            // console.log($("#servicios option:selected").text());
+            if (selected.includes("Ninguno")) {
+                $('.my-select2').selectpicker('deselectAll');
+                $('.my-select2').selectpicker({
+                    title: 'Ninguno'
+                }).selectpicker('toggle').selectpicker('render');
+                ningun_servicio = "Si";
+            } else {
+                ningun_servicio = "No";
+            }
+            if (selected.includes("Acueducto (Agua)")) {
+                acueducto = "Si";
+            } else {
+                acueducto = "No";
+            }
+            if (selected.includes("Alcantarillado")) {
+                alcant = "Si";
+            } else {
+                alcant = "No";
+            }
+            if (selected.includes("Electricidad")) {
+                elect = "Si";
+            } else {
+                elect = "No";
+            }
+            if (selected.includes("Gas natural")) {
+                gas = "Si";
+            } else {
+                gas = "No";
+            }
+            if (selected.includes("Computador")) {
+                comp = "Si";
+            } else {
+                comp = "No";
+            }
+            if (selected.includes("Acceso a internet")) {
+                acces = "Si";
+            } else {
+                acces = "No";
+            }
+        }
+
+        var estf = "No";
+        var nev = "No";
+        var cong = "No";
+        var horn = "No";
+        var licuad = "No";
+        var ollap = "No";
+        var ningun_electrodo = "No";
+
+        function electrod() {
+            selected = $("#electrodo option:selected").text();
+            // console.log($("#electrodo option:selected").text());
+            if (selected.includes("Ninguno")) {
+                $('.my-select3').selectpicker('deselectAll');
+                $('.my-select3').selectpicker({
+                    title: 'Ninguno'
+                }).selectpicker('toggle').selectpicker('render');
+                ningun_electrodo = "Si";
+            } else {
+                ningun_electrodo = "No";
+            }
+            if (selected.includes("Estufa")) {
+                estf = "Si";
+            } else {
+                estf = "No";
+            }
+            if (selected.includes("Nevera o refrigerador")) {
+                nev = "Si";
+            } else {
+                nev = "No";
+            }
+            if (selected.includes("Congelador")) {
+                cong = "Si";
+            } else {
+                cong = "No";
+            }
+            if (selected.includes("Horno microondas")) {
+                horn = "Si";
+            } else {
+                horn = "No";
+            }
+            if (selected.includes("Licuadora")) {
+                licuad = "Si";
+            } else {
+                licuad = "No";
+            }
+            if (selected.includes("Olla a presión")) {
+                ollap = "Si";
+            } else {
+                ollap = "No";
+            }
+            // console.log(estf + nev + cong + horn + licuad + ollap);
+        }
+
+        var biebog = "No";
+        var biefac = "No";
+        var sedepre = "No";
+        var ofcenl = "No";
+        var inicest = "No";
+        var inicdoc = "No";
+        var inicegr = "No";
+        var ningun_apoyo = "No";
+
+        function apoyosxd() {
+            selected = $("#apoyosx option:selected").text();
+            // console.log($("#apoyosx option:selected").text());
+            if (selected.includes("Ninguno")) {
+                $('.my-select5').selectpicker('deselectAll');
+                $('.my-select5').selectpicker({
+                    title: 'Ninguno'
+                }).selectpicker('toggle').selectpicker('render');
+                ningun_apoyo = "Si";
+            } else {
+                ningun_apoyo = "No";
+            }
+            if (selected.includes("Bienestar de Sede Bogota")) {
+                biebog = "Si";
+            } else {
+                biebog = "No";
+            }
+            if (selected.includes("Bienestar de Facultad")) {
+                biefac = "Si";
+            } else {
+                biefac = "No";
+            }
+            if (selected.includes("Sede de Presencia Nacional")) {
+                sedepre = "Si";
+            } else {
+                sedepre = "No";
+            }
+            if (selected.includes("Oficina de Enlace")) {
+                ofcenl = "Si";
+            } else {
+                ofcenl = "No";
+            }
+            if (selected.includes("Iniciativas estudiantiles")) {
+                inicest = "Si";
+            } else {
+                inicest = "No";
+            }
+            if (selected.includes("Iniciativas docentes")) {
+                inicdoc = "Si";
+            } else {
+                inicdoc = "No";
+            }
+            if (selected.includes("Iniciativas de egresados")) {
+                inicegr = "Si";
+            } else {
+                inicegr = "No";
+            }
+            // console.log(biebog + biefac + sedepre + ofcenl + inicest + inicdoc + inicegr);
+        }
+
+        var contenidos = "No";
+        var metodologia = "No";
+        var activida = "No";
+        var nna = "No";
+
+        function dificcc() {
+            selected = $("#difccs option:selected").text();
+            //  console.log($("#difccs option:selected").text());
+            if (selected.includes("Ninguna")) {
+                $('.my-select33').selectpicker('deselectAll');
+                $('.my-select33').selectpicker({
+                    title: 'Ninguna'
+                }).selectpicker('toggle').selectpicker('render');
+                nna = "Si";
+            } else {
+                nna = "No";
+            }
+            if (selected.includes("Los contenidos de las asignaturas que curso")) {
+                contenidos = "Si";
+            } else {
+                contenidos = "No";
+            }
+            if (selected.includes("La metodología de las asignaturas que curso")) {
+                metodologia = "Si";
+            } else {
+                metodologia = "No";
+            }
+            if (selected.includes("Actividades evaluables")) {
+                activida = "Si";
+            } else {
+                activida = "No";
+            }
+            // console.log(contenidos + metodologia + activida);
+        }
+        var seconds = 0;
+        var EPOC = "No";
+        var Asma = "No";
+        var Hiper = "No";
+        var Diabetes = "No";
+        var Cncer = "No";
+        var fermeda = "No";
+        var lter = "No";
+        var Otra = "No";
+        var Ninguna = "No";
+
+        function crnicax(divId, element) {
+            selected = $("#crnica option:selected").text();
+            // console.log($("#crnica option:selected").text());
+            if (selected.includes("Ninguna")) {
+                $('.my-select1').selectpicker('deselectAll');
+                $('.my-select1').selectpicker({
+                    title: 'Ninguna'
+                }).selectpicker('toggle').selectpicker('render');
+                Ninguna = "Si";
+            } else {
+                Ninguna = "No";
+            }
+            if (selected.includes("Otra")) {
+                document.getElementById(divId).style.display = 'block';
+                Otra = "Si";
+                document.getElementById('otracroncxx').value = "";
+            } else {
+                document.getElementById(divId).style.display = 'none';
+                Otra = "No";
+            }
+            if (selected.includes("EPOC- Enfermedad Pulmonar Obstructiva Crónica")) {
+                EPOC = "Si";
+            } else {
+                EPOC = "No";
+            }
+            if (selected.includes("Asma")) {
+                Asma = "Si";
+            } else {
+                Asma = "No";
+            }
+            if (selected.includes("Hipertensión arterial")) {
+                Hiper = "Si";
+            } else {
+                Hiper = "No";
+            }
+            if (selected.includes("Diabetes")) {
+                Diabetes = "Si";
+            } else {
+                Diabetes = "No";
+            }
+            if (selected.includes("Cáncer")) {
+                Cncer = "Si";
+            } else {
+                Cncer = "No";
+            }
+            if (selected.includes("Enfermedades autoinmunes")) {
+                fermeda = "Si";
+            } else {
+                fermeda = "No";
+            }
+            if (selected.includes("Alteraciones inmunológicas")) {
+                lter = "Si";
+            } else {
+                lter = "No";
+            }
+        }
+        var Familia = "No";
+        var Amigos = "No";
+        var Universidad = "No";
+        var Docentes = "No";
+        var Administrativos = "No";
+        var Vecinos = "No";
+        var Organizaciones = "No";
+        var Ninguno = "No";
+
+        function apoyosper() {
+            selected = $("#apoyospersonalll option:selected").text();
+            //console.log($("#apoyospersonalll option:selected").text());
+            if (selected.includes("Ninguno")) {
+                $('.my-select22').selectpicker('deselectAll');
+                $('.my-select22').selectpicker({
+                    title: 'Ninguno'
+                }).selectpicker('toggle').selectpicker('render');
+                Ninguno = "Si";
+            } else {
+                Ninguno = "No";
+            }
+            if (selected.includes("Familia")) {
+                Familia = "Si";
+            } else {
+                Familia = "No";
+            }
+            if (selected.includes("Amigos y/o pareja")) {
+                Amigos = "Si";
+            } else {
+                Amigos = "No";
+            }
+            if (selected.includes("Compañeros de Universidad")) {
+                Universidad = "Si";
+            } else {
+                Universidad = "No";
+            }
+            if (selected.includes("Docentes")) {
+                Docentes = "Si";
+            } else {
+                Docentes = "No";
+            }
+            if (selected.includes("Administrativos")) {
+                Administrativos = "Si";
+            } else {
+                Administrativos = "No";
+            }
+            if (selected.includes("Vecinos autoinmunes")) {
+                Vecinos = "Si";
+            } else {
+                Vecinos = "No";
+            }
+            if (selected.includes("Organizaciones")) {
+                Organizaciones = "Si";
+            } else {
+                Organizaciones = "No";
+            }
+
+        }
+        window.setInterval((function() {
+            var start = Date.now();
+            return function() {
+                seconds = Math.floor((Date.now() - start) / 1000);
+            };
+        }()), 1000);
+
+        $(document).ready(function() {
+            $(window).scrollTop(0);
+            $("#myModal").modal('show');
+
+        });
+        $(document).on("wheel", "input[type=number]", function(e) {
+            $(this).blur();
+        });
+        // $('#direccion').change(function() {
+        //     if (!($(this).val().includes("#") && $(this).val().includes("-"))) {
+        //         alert("Su dirección debe contener los carácteres # y -");
+        //         $("#direccion").val("");
+        //         s8 = 0;
+        //     }
+        // });
+        var durmiendo = 0;
+        $('#durmiendo').change(function() {
+            if (!(parseInt($(this).val()) >= 0 && parseInt($(this).val()) <= 24)) {
+                alert("Debe introducir un valor entre 0 y 24");
+                $("#durmiendo").val("");
+                durmiendo = 0;
+            } else if ($(this).val().includes(".") || $(this).val().includes(",") || $(this).val().includes("-")) {
+                alert("Solo debe ingresar numeros enteros positivos");
+                $("#durmiendo").val("");
+                durmiendo = 0;
+            } else {
+                durmiendo = $(this).val();
+            }
+        });
+        var puntSISB = "";
+        $('#puntajeSISBEN').change(function() {
+            if (!(parseInt($(this).val()) >= 0 && parseInt($(this).val()) <= 100)) {
+                alert("El valor debe estar entre 0 y 100");
+                $("#puntajeSISBEN").val("");
+                puntSISB = "";
+            } else {
+                puntSISB = $(this).val();
+            }
+        });
+        var avance = "";
+        $('#avance').change(function() {
+            if (!(parseInt($(this).val()) >= 0 && parseInt($(this).val()) < 100)) {
+                alert("El valor debe estar entre 0 y menor que 100");
+                $("#avance").val("");
+                avance = 0;
+            } else if ($(this).val().includes("%")) {
+                alert("No incluya el simbolo %");
+                $("#avance").val("");
+                avance = 0;
+            } else {
+                avance = $(this).val();
+            }
+        });
+        var ingresos = "";
+        $('#ingresos').change(function() {
+            if ($(this).val() == "" || $(this).val() == 0 || $(this).val() <= 1000) {
+                alert("Los ingresos mensuales NO pueden ser 0 ó menores que 1000. Recuerde incluir TODOS los dígitos sin puntos ni comas. Por ejemplo: si su ingreso es $100.000 escriba 100000 y NO 100 , adicionalmente tome en consideración el dinero que recibe de las personas de quienes usted depende económicamente que utiliza para sus gastos habituales en el semestre(alimentación, transporte, alojamiento, papelería y materiales, etc.)");
+                $("#ingresos").val("");
+            } else if ($(this).val().includes(".") || $(this).val().includes(",") || $(this).val().includes("-") || $(this).val().includes("$")) {
+                alert("Solo introduzca valores enteros");
+                $("#ingresos").val("");
+            } else {
+                ingresos = $(this).val();
+            }
+        });
+        var gasto = "";
+        $('#gasto').change(function() {
+            if ($(this).val() == "" || $(this).val() == 0 || $(this).val() <= 1000) {
+                alert("Los gastos mensuales en alimentación NO pueden ser 0. Recuerde incluir TODOS los dígitos sin puntos ni comas. Por ejemplo: si su gasto es $100.000 escriba 100000 y NO 100 , adicionalmente tome en consideración el valor aproximado de lo que consumió en total en el último mes");
+                $("#gasto").val();
+            } else if ($(this).val().includes(".") || $(this).val().includes(",") || $(this).val().includes("-") || $(this).val().includes("$")) {
+                alert("Solo introduzca valores enteros");
+                $("#gasto").val();
+            } else {
+                gasto = $(this).val();
+            }
+        });
+        $("#calOnlyDate").datetimepicker({
+            minDate: new Date(),
+            maxDate: '2020-06-01',
+            format: 'DD/MM/YYYY'
+        });
+
+
+        $(document).keypress(function(event) {
+            var keycode = (event.keyCode ? event.keyCode : event.which);
+            if (keycode == '13') {
+                event.preventDefault();
+                return false;
+            }
+        });
+    </script>
+
+
+</body>
+
+</html>
