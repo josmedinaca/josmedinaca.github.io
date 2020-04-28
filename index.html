@@ -88,7 +88,8 @@
                     <input type="text" name="lnames" id="lnames" placeholder="Apellidos" />
                     <p>Correo institucional</p>
                     <input type="email" name="email" id="email" placeholder="Correo" />
-
+                    <p>Introduzca su correo institucional de nuevo</p>
+                    <input type="email" name="email2" id="email2" placeholder="Confirmación Correo institucional" />
                     <p>Numero de contacto <strong>(de preferencia celular)</strong></p>
                     <div class="alert alert-warning alert-dismissible" role="alert">
                         Si se encuentra fuera de Bogotá agregue el <strong>indicativo</strong> correspondiente a sus números de telefono fijo.
@@ -108,6 +109,8 @@
                     </div>
                     <p>Número de documento</p>
                     <input type="number" name="ident" id="ident" placeholder="Numero de documento" />
+                    <p>Introduzca su número de documento de nuevo</p>
+                    <input type="number" name="ident2" id="ident2" placeholder="Confirmación número de documento" />
                     <br>
 
                     <input type="button" name="next" class="next action-button" value="Siguiente" />
@@ -1228,7 +1231,12 @@ I8,      ,8'
         jQuery.validator.addMethod("customEmail", function(value, element) {
             return this.optional(element) || /^[a-zA-Z0-9._-]+@[unal.edu.co]{11}$/i.test(value);
         }, "Please enter valid emaildd address!");
-
+        jQuery.validator.addMethod("customEmail2", function(value, element) {
+            return this.optional(element) || ($("#email2").val() === $("#email").val()) && (/^[a-zA-Z0-9._-]+@[unal.edu.co]{11}$/i.test(value));
+        }, "Please enter valid emaildd address!");
+        jQuery.validator.addMethod("customIdent", function(value, element) {
+            return this.optional(element) || ($("#ident2").val() == $("#ident").val());
+        }, "Deben ser iguales");
 
         var aux_next = 1;
         $(".next").click(function() {
@@ -1253,6 +1261,13 @@ I8,      ,8'
                     //     email: false,
                     //     customEmail: true
                     // },
+                    // email2: {
+                    //     required: true,
+                    //     // Specify that email should be validated
+                    //     // by the built-in "email" rule
+                    //     email: false,
+                    //     customEmail2: true
+                    // },
                     // phone1: {
                     //     required: true,
                     //     digits: true,
@@ -1265,7 +1280,15 @@ I8,      ,8'
                     //     minlength: 7,
                     //     maxlength: 10
                     // },
-                    // ident: "required",
+                    // ident: {
+                    //     required: true,
+                    //     digits: true
+                    // },
+                    // ident2: {
+                    //     required: true,
+                    //     digits: true,
+                    //     customIdent: true
+                    // },
                     // identType: {
                     //     required: true
                     // },
@@ -1340,9 +1363,11 @@ I8,      ,8'
                     fnames: "Introduce tus nombres",
                     lnames: "Introduce tus apellidos",
                     email: "Introduce tu correo institucional",
+                    email2: "Confirma tu correo institucional",
                     phone1: "Introduce tu teléfono principal (de 7 a 10 digitos)",
                     phone2: "Introduce tu teléfono secundario (de 7 a 10 digitos)",
                     ident: "Introduce tu documento de identificación",
+                    ident2: "Confirma tu documento de identificación",
                     identType: "Escoge tu tipo de documento",
                     procedencia: "Escoge tu lugar de procedencia",
                     departamento: "Escoge el departamento donde te encuentras",
