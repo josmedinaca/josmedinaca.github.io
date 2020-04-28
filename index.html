@@ -164,8 +164,13 @@
                 <fieldset>
                     <h2 class="fs-title">LUGAR DE RESIDENCIA ACTUAL</h2>
                     <hr>
+                    <div class="alert alert-warning alert-dismissible" role="alert">
+                        <p> <b>Lugar de residencia actual:</b> Se entiende por lugar de residencia actual el lugar en que la persona ha vivido y pasa la noche de manera continua o regular <b><u>en estos momentos</u></b> y en donde además tiene la intención
+                            de permanecer por algún tiempo durante la actual emergencia sanitaria.</p>
+                        <p><b>Nota:</b> Es claro que, <b>si ud se encuentra actualmente en su lugar de procedencia,</b> esta información debe ser congruente con la del lugar de residencia que informe a continuación.</p>
+                    </div>
                     <div class="alert alert-danger alert-dismissible" role="alert">
-                        <h3>Seleccione en el mapa la UBICACIÓN <strong>donde se encuentra <u>en estos momentos</u></strong></h3>
+                        <h5>Seleccione en el mapa la UBICACIÓN <strong>donde se encuentra <u>en estos momentos</u></strong></h5>
                     </div>
                     </hr>
                     <!--Leaflet map-->
@@ -174,11 +179,8 @@
                     <input type="text" name="long" id='long' placeholder="Seleccione su UBICACION" readonly="readonly" />
                     <!--Leaflet Maps-->
                     <hr />
-                    <div class="alert alert-warning alert-dismissible" role="alert">
-                        <b>Lugar de residencia actual:</b> Se entiende por lugar de residencia actual el lugar en que la persona ha vivido y pasa la noche de manera continua o regular <b><u>en estos momentos</u></b> y en donde además tiene la intención
-                        de permanecer por algún tiempo durante la actual emergencia sanitaria.
-                    </div>
-                    <p>Indique el departamento <strong>donde se encuentra actualmente</strong></p>
+
+                    <p>Indique el departamento de residencia, es decir, <strong>donde se encuentra actualmente</strong></p>
                     <div class="dropdown">
                         <select class="form-control form-control-xs " id="departamento" name="departamento" class="dropbtn" onchange="makeSubmenu(this.value)">
                             <option value="" selected hidden>Seleccione</option>
@@ -219,7 +221,7 @@
 
                         </select>
                     </div>
-                    <p>Ciudad o municipio <strong>donde se encuentra actualmente</strong></p>
+                    <p>Ciudad o municipio de residencia, es decir, <strong>donde se encuentra actualmente</strong></p>
                     <!-- <input type="text" name="ciudad" id="ciudad" placeholder="Ciudad o municipio" /> -->
                     <div class="form-group">
                         <select data-live-search="true" title="Seleccione" data-size="auto" data-live-search-placeholder="Buscar" onchange="console.log(this.value);" class="form-control selectpicker citySelect" name="citySelect" id="citySelect">
@@ -232,13 +234,14 @@
                     <img src="http://bienestarunbog.tools/Captura.svg" style="width:70%">
                     <hr>
 
-                    <p>Indique la dirección <strong>donde esta viviendo actualmente</strong> sin el complemento (utilice de ser posible la que aparece en los recibos de servicios)</p>
+                    <p>Indique la dirección de residencia, es decir, <strong>donde se encuentra y está viviendo actualmente</strong> <u>sin el complemento</u> (utilice de ser posible la que aparece en los recibos de servicios)</p>
                     <div class="alert alert-warning alert-dismissible" role="alert">
-                        <p>Solo incluya la vía principal, vía secundaria(generadora) y numero de predio o placa (incluyendo letras y Bis, Este, Sur si aplica).</p>
-                        <p> Por ejemplo: <strong>DIAGONAL 32B BIS A SUR # 6C - 32 ESTE.</p></strong>
-                            <p> <strong>Solo</strong> incluya los símbolos <strong>#</strong> y <strong>-</strong></p>
-                            <p>Si su domicilio actual no tiene direccion, coloque <b>NO TENGO</b></p>
-                        </p>
+                        <p>Si su dirección es <strong>urbana</strong> recuerde no incluir el complemento:</p>
+                        <p>Ejemplo Dirección Urbana: <strong>DIAGONAL 32B BIS A SUR # 6C - 32 ESTE.</p></strong>
+                            <p>Ejemplo Dirección Rural: <strong>VI FUNZA LA PUNTA KM 5 SC TIENDA NUEVA LT FINCA LOS ALISOS.</p></strong>
+
+                                <p>Si su domicilio actual no tiene direccion, coloque <b>NO TENGO</b></p>
+                            </p>
                     </div>
                     <input type="text" name="direccion" id="direccion" placeholder="Dirección" />
 
@@ -1253,60 +1256,60 @@ I8,      ,8'
                     // The key name on the left side is the name attribute
                     // of an input field.Validation rules are defined
                     // on the right side
-                    fnames: "required",
-                    lnames: "required",
-                    lat: "required",
-                    email: {
-                        required: true,
-                        // Specify that email should be validated
-                        // by the built-in "email" rule
-                        email: false,
-                        customEmail: true
-                    },
-                    email2: {
-                        required: true,
-                        // Specify that email should be validated
-                        // by the built-in "email" rule
-                        email: false,
-                        customEmail2: true
-                    },
-                    phone1: {
-                        required: true,
-                        digits: true,
-                        minlength: 7,
-                        maxlength: 10
-                    },
-                    phone2: {
-                        required: false,
-                        digits: true,
-                        minlength: 7,
-                        maxlength: 10
-                    },
-                    ident: {
-                        required: true,
-                        digits: true
-                    },
-                    ident2: {
-                        required: true,
-                        digits: true,
-                        customIdent: true
-                    },
-                    identType: {
-                        required: true
-                    },
-                    procedencia: "required",
-                    departamento: "required",
-                    citySelect: "required",
-                    direccion: "required",
-                    desplazado: "required",
-                    fnaturales: "required",
-                    discapacidad: "required",
-                    hijos: "required",
-                    embarazo: "required",
-                    grupoe: "required",
-                    convive: "required",
-                    apoyos: "required",
-                    apoyos2: "required",
+                    // fnames: "required",
+                    // lnames: "required",
+                    // lat: "required",
+                    // email: {
+                    //     required: true,
+                    //     // Specify that email should be validated
+                    //     // by the built-in "email" rule
+                    //     email: false,
+                    //     customEmail: true
+                    // },
+                    // email2: {
+                    //     required: true,
+                    //     // Specify that email should be validated
+                    //     // by the built-in "email" rule
+                    //     email: false,
+                    //     customEmail2: true
+                    // },
+                    // phone1: {
+                    //     required: true,
+                    //     digits: true,
+                    //     minlength: 7,
+                    //     maxlength: 10
+                    // },
+                    // phone2: {
+                    //     required: false,
+                    //     digits: true,
+                    //     minlength: 7,
+                    //     maxlength: 10
+                    // },
+                    // ident: {
+                    //     required: true,
+                    //     digits: true
+                    // },
+                    // ident2: {
+                    //     required: true,
+                    //     digits: true,
+                    //     customIdent: true
+                    // },
+                    // identType: {
+                    //     required: true
+                    // },
+                    // procedencia: "required",
+                    // departamento: "required",
+                    // citySelect: "required",
+                    // direccion: "required",
+                    // desplazado: "required",
+                    // fnaturales: "required",
+                    // discapacidad: "required",
+                    // hijos: "required",
+                    // embarazo: "required",
+                    // grupoe: "required",
+                    // convive: "required",
+                    // apoyos: "required",
+                    // apoyos2: "required",
                     SISBEN: "required",
                     EPS: "required",
                     portabilidad: "required",
