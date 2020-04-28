@@ -377,3 +377,7 @@ textarea {
     top: 930px;
     width: 85%;
 }
+
+#conviv {
+    display: none;
+}

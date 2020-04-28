@@ -164,6 +164,16 @@
                 <fieldset>
                     <h2 class="fs-title">LUGAR DE RESIDENCIA ACTUAL</h2>
                     <hr>
+                    <div class="alert alert-danger alert-dismissible" role="alert">
+                        <h3>Seleccione en el mapa la UBICACIÓN <strong>donde se encuentra <u>en estos momentos</u></strong></h3>
+                    </div>
+                    </hr>
+                    <!--Leaflet map-->
+                    <div id="mapid"></div><br>
+                    <input type="text" name="lat" id='lat' placeholder="Seleccione su UBICACION" readonly="readonly" />
+                    <input type="text" name="long" id='long' placeholder="Seleccione su UBICACION" readonly="readonly" />
+                    <!--Leaflet Maps-->
+                    <hr />
                     <div class="alert alert-warning alert-dismissible" role="alert">
                         <b>Lugar de residencia actual:</b> Se entiende por lugar de residencia actual el lugar en que la persona ha vivido y pasa la noche de manera continua o relugar <b><u>en estos momentos</u></b> y en donde además tiene la intención
                         de permanecer por algún tiempo durante la actual emergencia sanitaria.
@@ -217,16 +227,7 @@
                             <option></option>   
 						</select>
                     </div>
-                    <div class="alert alert-danger alert-dismissible" role="alert">
-                        <h3>Seleccione en el mapa la UBICACIÓN <strong>donde se encuentra <u>en estos momentos</u></strong></h3>
-                    </div>
-                    </hr>
-                    <!--Leaflet map-->
-                    <div id="mapid"></div><br>
-                    <input type="text" name="lat" id='lat' placeholder="Seleccione su UBICACION" readonly="readonly" />
-                    <input type="text" name="long" id='long' placeholder="Seleccione su UBICACION" readonly="readonly" />
-                    <!--Leaflet Maps-->
-                    <hr />
+
                     <h2 class="fs-title2">Dirección donde vive en estos momentos</h2><br>
                     <img src="http://bienestarunbog.tools/Captura.svg" style="width:70%">
                     <hr>
@@ -393,8 +394,9 @@
                         <div class="col-md-6"><input type="number" name="s66" id="s66" placeholder="Hijos" /><span class="pxSpan">%</span></div>
                         <div class="col-md-6"><input type="number" name="s77" id="s77" placeholder="Otras" /><span class="pxSpan">%</span></div>
                     </div>
-                    <p>¿Convive en estos momentos con alguna de las personas que dependen económicamente de usted?</p>
-                    <div class="dropdown">
+
+                    <div class="dropdown" id="conviv" name="conviv">
+                        <p>¿Convive en estos momentos con alguna de las personas que dependen económicamente de usted?</p>
                         <select class="form-control form-control-xs " id="convive" name="convive" class="dropbtn">
                             <option value="" selected hidden>Seleccione</option>
                             <option value="0">Si</option>
@@ -2198,18 +2200,37 @@ I8,      ,8'
         var s66 = 0;
         var s77 = 0;
         var s88 = 0;
+        var flag = false;
+        var flag2 = false;
+        var flag3 = false;
+        var flag4 = false;
+        var flag5 = false;
+        var flag6 = false;
+        var flag7 = false;
+        var flag8 = false;
         $("#s11").bind("change paste keyup", function() {
             if (parseFloat($(this).val()) > 100) {
                 alert(">100");
                 $("#s11").val("");
                 s11 = 0;
+                flag = false;
             } else {
                 if ($(this).val() == "") {
                     s11 = 0;
+                    flag = false;
                 } else {
                     s11 = $(this).val();
+                    flag = true;
                 }
             }
+            if (flag || flag2 || flag3 || flag4 || flag5 || flag6 || flag7 || flag8) {
+                document.getElementById('conviv').style.display = 'block';
+            } else {
+                document.getElementById('conviv').style.display = 'none';
+                document.getElementById('conviv').value = "";
+            }
+
+
 
         });
         $("#s22").bind("change paste keyup", function() {
@@ -2217,12 +2238,21 @@ I8,      ,8'
                 alert(">100");
                 $("#s22").val("");
                 s22 = 0;
+                flag2 = false;
             } else {
                 if ($(this).val() == "") {
                     s22 = 0;
+                    flag2 = false;
                 } else {
                     s22 = $(this).val();
+                    flag2 = true;
                 }
+            }
+            if (flag || flag2 || flag3 || flag4 || flag5 || flag6 || flag7 || flag8) {
+                document.getElementById('conviv').style.display = 'block';
+            } else {
+                document.getElementById('conviv').style.display = 'none';
+                document.getElementById('conviv').value = "";
             }
         });
         $("#s33").bind("change paste keyup", function() {
@@ -2230,12 +2260,21 @@ I8,      ,8'
                 alert(">100");
                 $("#s33").val("");
                 s33 = 0;
+                flag3 = false;
             } else {
                 if ($(this).val() == "") {
                     s33 = 0;
+                    flag3 = false;
                 } else {
                     s33 = $(this).val();
+                    flag3 = true;
                 }
+            }
+            if (flag || flag2 || flag3 || flag4 || flag5 || flag6 || flag7 || flag8) {
+                document.getElementById('conviv').style.display = 'block';
+            } else {
+                document.getElementById('conviv').style.display = 'none';
+                document.getElementById('conviv').value = "";
             }
         });
         $("#s44").bind("change paste keyup", function() {
@@ -2243,12 +2282,21 @@ I8,      ,8'
                 alert(">100");
                 $("#s44").val("");
                 s44 = 0;
+                flag4 = false;
             } else {
                 if ($(this).val() == "") {
                     s44 = 0;
+                    flag4 = false;
                 } else {
                     s44 = $(this).val();
+                    flag4 = true;
                 }
+            }
+            if (flag || flag2 || flag3 || flag4 || flag5 || flag6 || flag7 || flag8) {
+                document.getElementById('conviv').style.display = 'block';
+            } else {
+                document.getElementById('conviv').style.display = 'none';
+                document.getElementById('conviv').value = "";
             }
         });
         $("#s55").bind("change paste keyup", function() {
@@ -2256,12 +2304,21 @@ I8,      ,8'
                 alert(">100");
                 $("#s55").val("");
                 s55 = 0;
+                flag5 = false;
             } else {
                 if ($(this).val() == "") {
                     s55 = 0;
+                    flag5 = false;
                 } else {
                     s55 = $(this).val();
+                    flag5 = true;
                 }
+            }
+            if (flag || flag2 || flag3 || flag4 || flag5 || flag6 || flag7 || flag8) {
+                document.getElementById('conviv').style.display = 'block';
+            } else {
+                document.getElementById('conviv').style.display = 'none';
+                document.getElementById('conviv').value = "";
             }
         });
         $("#s66").bind("change paste keyup", function() {
@@ -2269,12 +2326,21 @@ I8,      ,8'
                 alert(">100");
                 $("#s66").val("");
                 s66 = 0;
+                flag6 = false;
             } else {
                 if ($(this).val() == "") {
                     s66 = 0;
+                    flag6 = false;
                 } else {
                     s66 = $(this).val();
+                    flag6 = true;
                 }
+            }
+            if (flag || flag2 || flag3 || flag4 || flag5 || flag6 || flag7 || flag8) {
+                document.getElementById('conviv').style.display = 'block';
+            } else {
+                document.getElementById('conviv').style.display = 'none';
+                document.getElementById('conviv').value = "";
             }
         });
         $("#s77").bind("change paste keyup", function() {
@@ -2282,12 +2348,21 @@ I8,      ,8'
                 alert(">100");
                 $("#s77").val("");
                 s77 = 0;
+                flag7 = false;
             } else {
                 if ($(this).val() == "") {
                     s77 = 0;
+                    flag7 = false;
                 } else {
                     s77 = $(this).val();
+                    flag7 = true;
                 }
+            }
+            if (flag || flag2 || flag3 || flag4 || flag5 || flag6 || flag7 || flag8) {
+                document.getElementById('conviv').style.display = 'block';
+            } else {
+                document.getElementById('conviv').style.display = 'none';
+                document.getElementById('conviv').value = "";
             }
         });
         $("#s88").bind("change paste keyup", function() {
@@ -2295,20 +2370,33 @@ I8,      ,8'
                 alert(">100");
                 $("#s8").val("");
                 s88 = 0;
+                flag8 = false;
             } else {
                 if ($(this).val() == "") {
                     s88 = 0;
+                    flag8 = false;
                 } else {
                     s88 = $(this).val();
+                    flag8 = true;
                 }
             }
+            if (flag || flag2 || flag3 || flag4 || flag5 || flag6 || flag7 || flag8) {
+                document.getElementById('conviv').style.display = 'block';
+            } else {
+                document.getElementById('conviv').style.display = 'none';
+                document.getElementById('conviv').value = "";
+            }
+
         });
-        var ttl = parseFloat(s11) + parseFloat(s22) + parseFloat(s33) + parseFloat(s44) + parseFloat(s55) +
-            parseFloat(s66) + parseFloat(s77) + parseFloat(s88);
+
+
 
         $(function() {
             $('.my-select').selectpicker();
         });
+
+
+
         var acueducto = "No";
         var alcant = "No";
         var elect = "No";
